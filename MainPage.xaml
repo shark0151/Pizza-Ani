@@ -16,12 +16,13 @@
 
             <Setter Property="Background" Value="Transparent" ></Setter>
             <Setter Property="Padding" Value="0"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="Margin" Value="0"></Setter>
         </Style>
     </Page.Resources>
 
     <Grid>
-        <SplitView x:Name="SideMenu" IsPaneOpen="False" DisplayMode="CompactInline" OpenPaneLength="200" CompactPaneLength="50" PaneBackground="RoyalBlue">
+        <SplitView x:Name="SideMenu" IsPaneOpen="False" DisplayMode="CompactInline" OpenPaneLength="200" CompactPaneLength="50" PaneBackground="Firebrick">
 
             <SplitView.Pane>
                 <Grid Width="{Binding}"  HorizontalAlignment="Left">
@@ -146,7 +147,7 @@
             </SplitView.Pane>
 
             <SplitView.Content>
-                <Frame x:Name="Content"></Frame>
+                <Frame x:Name="Content" Background="White"></Frame>
             </SplitView.Content>
         </SplitView>
     </Grid>

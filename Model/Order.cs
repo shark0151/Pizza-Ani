@@ -10,13 +10,13 @@ namespace Pizza_Ani_Time.Model
 {
     class Order
     {
-        public List<Product> Products { get; }
-        public double TotalAmmount
+        public List<Product> Items { get; }
+        public double TotalPrice
         {
             get
             {
                 double sum = 0;
-                foreach(var x in Products)
+                foreach(var x in Items)
                 {
                     sum = sum + x.Price;
                 }
@@ -25,11 +25,11 @@ namespace Pizza_Ani_Time.Model
         }
         public User Customer { get; }
 
-        public bool Active { get; }
+        public bool Active { get; set; }//whatever
 
-        public Order(List<Product> products,User user)
+        public Order(List<Product> items,User user)
         {
-            Products = products;
+            Items = items;
             Customer = user;
         }
     }

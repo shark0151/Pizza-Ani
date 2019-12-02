@@ -8,5 +8,6 @@ namespace Pizza_Ani_Time.Model
 {
     class Inventory
     {
+        public List<Product> AllAvailableProducts { get; }
     }
 }

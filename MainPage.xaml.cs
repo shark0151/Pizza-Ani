@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using Pizza_Ani_Time.View;
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Pizza_Ani_Time
@@ -26,7 +28,7 @@ namespace Pizza_Ani_Time
         {
             this.InitializeComponent();
             SideMenu.DataContext = SideMenu.CompactPaneLength;
-            Content.Navigate(typeof(EmptyPage), null);
+            Content.Navigate(typeof(PromotionsPage), null);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

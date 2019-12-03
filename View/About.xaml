@@ -9,6 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image></Image>
+            <TextBlock Text="Pizza Ani-Time" HorizontalAlignment="Center" Foreground="Gray"></TextBlock>
+            <TextBlock Text="Version: 1.0" HorizontalAlignment="Center" Foreground="Gray"></TextBlock>
+            <TextBlock Height="25"></TextBlock>
+            <TextBlock Text="Contact us:" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Text="Phone: +4512345678" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Text="Address: 4000, Maglegaardsvej 2.,Roskilde" HorizontalAlignment="Center"></TextBlock>
+        </StackPanel>
     </Grid>
 </Page>

@@ -31,7 +31,7 @@ namespace Pizza_Ani_Time
             Content.Navigate(typeof(PromotionsPage), null);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Pane_Click(object sender, RoutedEventArgs e)
         {
             SideMenu.IsPaneOpen = !SideMenu.IsPaneOpen;
             if (SideMenu.IsPaneOpen == true)
@@ -44,22 +44,22 @@ namespace Pizza_Ani_Time
             }
 
         }
-        private void Contact_Click(object sender, RoutedEventArgs e)
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            Content.Navigate(typeof(PromotionsPage), e);
+
+        }
+        private void Menu_Click(object sender, RoutedEventArgs e)
         {
             Content.Navigate(typeof(EmptyPage), e);
 
         }
-        private void Details_Click(object sender, RoutedEventArgs e)
+        private void History_Click(object sender, RoutedEventArgs e)
         {
             Content.Navigate(typeof(EmptyPage), e);
 
         }
-        private void Add_Click(object sender, RoutedEventArgs e)
-        {
-            Content.Navigate(typeof(EmptyPage), e);
-
-        }
-        private void Edit_Click(object sender, RoutedEventArgs e)
+        private void Cart_Click(object sender, RoutedEventArgs e)
         {
             Content.Navigate(typeof(EmptyPage), e);
 
@@ -73,6 +73,11 @@ namespace Pizza_Ani_Time
         {
             Content.Navigate(typeof(EmptyPage), e);
 
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            Content.Navigate(typeof(EmptyPage), e);
         }
     }
 }

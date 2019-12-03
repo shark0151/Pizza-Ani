@@ -5,10 +5,33 @@
     xmlns:local="using:Pizza_Ani_Time.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <TextBlock Grid.Row="2"
+                   Margin="10,20"
+                   HorizontalAlignment="Center"
+                   FontSize="20"
+                   Text="It can also be used for background painting:" />
+
+        <controls:TileControl Grid.Row="3"
+                          Background="DarkGray"
+                          ImageSource="/Assets/LockScreenLogo.png"
+                          ParallaxSpeedRatio="1.2"
+                          ScrollViewerContainer="{Binding ElementName=FlipView, Mode=OneTime}">
+            <FlipView x:Name="FlipView">
+
+                <Border>
+                    <TextBlock Text="Parallax with FlipView &gt;"></TextBlock>
+                </Border>
+
+                <Border>
+                    <TextBlock Text="&lt; Parallax with FlipView"></TextBlock>
+                </Border>
+            </FlipView>
+        </controls:TileControl>
 
     </Grid>
 </Page>

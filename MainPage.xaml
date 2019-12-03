@@ -98,7 +98,7 @@
                                     <ColumnDefinition  Width="50"></ColumnDefinition>
                                     <ColumnDefinition Width="150"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <SymbolIcon Symbol ="Edit" Grid.Column="0"></SymbolIcon>
+                                <SymbolIcon Symbol ="Accept" Grid.Column="0"></SymbolIcon>
                                 <TextBlock Grid.Column="1" Text="Edit" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 </TextBlock>
                             </Grid>

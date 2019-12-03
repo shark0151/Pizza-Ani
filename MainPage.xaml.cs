@@ -51,17 +51,17 @@ namespace Pizza_Ani_Time
         }
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
-            Content.Navigate(typeof(EmptyPage), e);
+            Content.Navigate(typeof(ProductList), e);
 
         }
         private void History_Click(object sender, RoutedEventArgs e)
         {
-            Content.Navigate(typeof(EmptyPage), e);
+            Content.Navigate(typeof(OrderHistory), e);
 
         }
         private void Cart_Click(object sender, RoutedEventArgs e)
         {
-            Content.Navigate(typeof(EmptyPage), e);
+            Content.Navigate(typeof(ShoppingCart), e);
 
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -77,7 +77,7 @@ namespace Pizza_Ani_Time
 
         private void About_Click(object sender, RoutedEventArgs e)
         {
-            Content.Navigate(typeof(EmptyPage), e);
+            Content.Navigate(typeof(About), e);
         }
     }
 }

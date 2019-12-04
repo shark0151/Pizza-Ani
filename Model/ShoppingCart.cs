@@ -16,7 +16,7 @@ namespace Pizza_Ani_Time.Model
                 double sum = 0;
                 foreach (var x in Products)
                 {
-                    sum = sum + x.Price;
+                    sum += x.Price;
                 }
                 return sum;
             }
@@ -27,6 +27,9 @@ namespace Pizza_Ani_Time.Model
             Products.Add(product);
         }
 
-        
+        public void RemoveProduct(Product product)
+        {
+            Products.Remove(product);
+        }
     }
 }

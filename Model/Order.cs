@@ -18,7 +18,7 @@ namespace Pizza_Ani_Time.Model
                 double sum = 0;
                 foreach(var x in Items)
                 {
-                    sum = sum + x.Price;
+                    sum += x.Price;
                 }
                 return sum;
             }

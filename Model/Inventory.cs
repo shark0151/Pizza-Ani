@@ -5,26 +5,20 @@ using System.Linq;
 using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
-using  Windows.UI.Popups;
+using Windows.UI.Popups;
 
 namespace Pizza_Ani_Time.Model
 {
     class Inventory
     {
-        public static List<Product> AllAvailableProducts = new List<Product>();
+        //Instance Fields
+        public List<Product> AllAvailableProducts { get; }
 
+        //Constructor
         public Inventory()
         {
-            /*
-            AllAvailableProducts.Add(new Product("Pizza1", "", 50, "default pizza"));
-            AllAvailableProducts.Add(new Product("Pizza2", "", 50, "default pizza"));
-            AllAvailableProducts.Add(new Product("Pizza3", "", 50, "default pizza"));
-            AllAvailableProducts.Add(new Product("Pizza4", "", 50, "default pizza"));
-            AllAvailableProducts.Add(new Product("Pizza5", "", 50, "default pizza"));
-            AllAvailableProducts.Add(new Product("Pizza6", "", 50, "default pizza"));
-            */
-            
-            try //make async
+            //File read
+            try
             {
                 StreamReader sr = File.OpenText("");
                 while (!sr.EndOfStream)
@@ -35,6 +29,7 @@ namespace Pizza_Ani_Time.Model
                 }
                 sr.Close();
             }
+            //File read error
             catch
             {
                 dbError();
@@ -47,6 +42,7 @@ namespace Pizza_Ani_Time.Model
             return AllAvailableProducts;
         }
 
+        //File read error message
         private async void dbError()
         {
             var messageDialog = new MessageDialog("Database error.");

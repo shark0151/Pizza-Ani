@@ -9,19 +9,47 @@ namespace Pizza_Ani_Time.ViewModel
 {
     class PizzaViewModel
     {
-        Inventory inv;
-        ShoppingCart sc;
+        //Instance Fields
+        readonly Inventory inv = new Inventory();
+        ShoppingCart sc = new ShoppingCart();
+        OrderCatalog oc = new OrderCatalog();
 
-        public PizzaViewModel()
-        {
-            inv = new Inventory();
-            sc = new ShoppingCart();
-        }
-        public void displayCart()
+        //Constructor
+        public PizzaViewModel() { }
+
+        //Methods
+        //XAML Pages
+        public void DisplayCart()
         {
             //code to display in xaml
         }
 
+        public void DisplayOrders()
+        {
+            //code to display in xaml
+        }
+
+        //Orders
+        public void CreateOrder()
+        {
+            oc.CreateOrder(sc);
+        }
+
+        public void DeactivateOrder()
+        {
+            oc._orderCatalog.Last().Active = false;
+        }
+
+        //Shopping Cart
+        public void AddItemToCart(Product product)
+        {
+            sc.AddProduct(product);
+        }
+
+        public void RemoveItemFromCart(Product product)
+        {
+            sc.RemoveProduct(product);
+        }
         public List<Product> GetInventory()
         {
             return inv.All();

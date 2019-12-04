@@ -9,6 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <StackPanel HorizontalAlignment="Center" MinWidth="750">
+            <StackPanel x:Name="activeOrders"></StackPanel>
+            <StackPanel x:Name="recentOrders"></StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

@@ -8,25 +8,36 @@ namespace Pizza_Ani_Time.Model
 {
     class ShoppingCart
     {
+        //Instance Fields
         public List<Product> Products { get; }
-        public double TotalAmmount
+        public User Customer { get; }
+
+        //Constructors
+        public ShoppingCart() { }
+
+        //Properties
+        public double TotalAmount
         {
             get
             {
                 double sum = 0;
                 foreach (var x in Products)
                 {
-                    sum = sum + x.Price;
+                    sum += x.Price;
                 }
                 return sum;
             }
         }
-        public User Customer { get; }
+
+        //Methods
         public void AddProduct(Product product)
         {
             Products.Add(product);
         }
 
-        
+        public void RemoveProduct(Product product)
+        {
+            Products.Remove(product);
+        }
     }
 }

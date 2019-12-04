@@ -79,5 +79,10 @@ namespace Pizza_Ani_Time
         {
             Content.Navigate(typeof(About), e);
         }
+
+        private void ContactUs_Click(object sender, RoutedEventArgs e)
+        {
+            Content.Navigate(typeof(ContactUs), e);
+        }
     }
 }

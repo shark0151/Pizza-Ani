@@ -8,10 +8,13 @@ namespace Pizza_Ani_Time.Model
 {
     class OrderCatalog
     {
+        //Instance Fields
         public List<Order> _orderCatalog;
 
+        //Constructor
         public OrderCatalog() { }
 
+        //Methods
         public void CreateOrder(ShoppingCart cart)
         {
             Order NewOrder = new Order(cart.Products, cart.Customer);

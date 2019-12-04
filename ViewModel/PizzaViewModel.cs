@@ -9,16 +9,30 @@ namespace Pizza_Ani_Time.ViewModel
 {
     class PizzaViewModel
     {
+        //Instance Fields
         readonly Inventory inv = new Inventory();
         ShoppingCart sc = new ShoppingCart();
         OrderCatalog oc = new OrderCatalog();
 
-
+        //Constructor
         public PizzaViewModel() { }
 
+        //Methods
+        //XAML Pages
         public void DisplayCart()
         {
             //code to display in xaml
+        }
+
+        public void DisplayOrders()
+        {
+            //code to display in xaml
+        }
+
+        //Orders
+        public void CreateOrder()
+        {
+            oc.CreateOrder(sc);
         }
 
         public void DeactivateOrder()
@@ -26,11 +40,7 @@ namespace Pizza_Ani_Time.ViewModel
             oc._orderCatalog.Last().Active = false;
         }
 
-        public void CreateOrder()
-        {
-            oc.CreateOrder(sc);
-        }
-
+        //Shopping Cart
         public void AddItemToCart(Product product)
         {
             sc.AddProduct(product);

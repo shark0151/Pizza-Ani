@@ -5,16 +5,19 @@ using System.Linq;
 using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
-using  Windows.UI.Popups;
+using Windows.UI.Popups;
 
 namespace Pizza_Ani_Time.Model
 {
     class Inventory
     {
+        //Instance Fields
         public List<Product> AllAvailableProducts { get; }
 
+        //Constructor
         public Inventory()
         {
+            //File read
             try
             {
                 StreamReader sr = File.OpenText("");
@@ -26,12 +29,14 @@ namespace Pizza_Ani_Time.Model
                 }
                 sr.Close();
             }
+            //File read error
             catch
             {
                 dbError();
             }
         }
 
+        //File read error message
         private async void dbError()
         {
             var messageDialog = new MessageDialog("Database error.");

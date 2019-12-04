@@ -10,6 +10,56 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Column="0" Background="White">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Row="0" Margin="50">
+                <Image Source="../Assets/picturetopeople.org-5e221c24fbbc8153ce9063bbe1c842f414aaafe969453d36e0.png" Width="180" Height="160" VerticalAlignment="Top" ></Image>
+                <Image Source="../Assets/picturetopeople.org-2e26c0cafbeefad4fe8af17057fd49ef9eeef681f19a519b09.png" Width="180" Height="100" VerticalAlignment="Bottom"   ></Image>
+                <Image Source="../Assets/LOGO.png" Width="140" Height="150" ></Image>
+            </Grid>
+            <Grid Grid.Column="0" Row="1" Margin="50">
+                <TextBlock
+                       VerticalAlignment="Top" 
+                       FontFamily="Brush Script MT" 
+                       TextWrapping="WrapWholeWords"
+                       Text="Delicious food at reasonable prices? We have it! At Pizza Ani-time we keep the standards up with our fresh and high quality products. Get ready to choose your preferences from our diversity of pizzas "
+                       Foreground="Black" 
+                       FontSize="30">
+                </TextBlock>
+            </Grid>
+
+        </Grid>
+
+        <Grid Column="1">
+            <controls:TileControl Grid.Row="3"
+                                 ParallaxSpeedRatio="1.2"
+                                 ScrollViewerContainer="{Binding ElementName=FlipView, Mode=OneTime}">
+                <FlipView x:Name="FlipView">
+                    <Border>
+                        <Image Source="../Assets/1 pizza 1 drink.jpg"></Image>
+                    </Border>
+
+                    <Border>
+                        <Image Source="../Assets/2 pizzas 2 drinks.jpg"></Image>
+                    </Border>
+
+                    <Border>
+                        <Image Source="../Assets/free drink.jpg"></Image>
+                    </Border>
+                </FlipView>
+            </controls:TileControl>
+        </Grid>
+    </Grid>
+
+    <!--<Grid>
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="../Assets/pizza-wallpaper-phone-amazing-wallpapers-in-2018-pinterest.jpg"/>
         </Grid.Background>
@@ -19,11 +69,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Margin="50,50,50,50" Grid.Row="0" HorizontalAlignment="Center">
-            
-            <Image Source="../Assets/picturetopeople.org-b141716b52c1fde0229f9975d40980f7f965510e96741a2baf.png" Width="180" Height="160" VerticalAlignment="Top" ></Image>
-            <Image Source="../Assets/picturetopeople.org-4689ca1ead7f74899d01a36d7e155e24f71d8adfe7beb8c48e.png" Width="180" Height="100" VerticalAlignment="Bottom"   ></Image>
-            <Image Source="../Assets/LOGO.png" Width="140" Height="150" ></Image>
+        <Grid Margin="50" Grid.Row="0" HorizontalAlignment="Center">
+            <Image Source="../Assets/picturetopeople.org-5e221c24fbbc8153ce9063bbe1c842f414aaafe969453d36e0.png" Width="180" Height="160" VerticalAlignment="Top" ></Image>
+            <Image Source="../Assets/picturetopeople.org-2e26c0cafbeefad4fe8af17057fd49ef9eeef681f19a519b09.png" Width="180" Height="100" VerticalAlignment="Bottom"   ></Image>
+            <Image Source="../Assets/LOGO.png" Width="150" Height="150" ></Image>
         </Grid>
 
 
@@ -33,36 +82,45 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Grid Background="#FF939393" Grid.Column="0" Margin="50,50,30,50">
-                <TextBlock Margin="50,50,50,500" Text="Welcome" Foreground="Black" FontSize="50" FontFamily="Garamond" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Margin="50,130,50,50" Text="Pizza Ani-time is..........." Foreground="Black" FontSize="30"></TextBlock>
+            <Grid Grid.Column="0">
+                <Grid Margin="50" Background="White" CornerRadius="10,10,10,10" >
+                    <TextBlock
+                           
+                           VerticalAlignment="Top" 
+                           FontFamily="Garamond" 
+                           TextWrapping="WrapWholeWords"
+                           Text="Delicious food at reasonable prices? We have it! At Pizza Ani-time we keep the standards up with our fresh and high quality products. Get ready to choose your preferences from our diversity of pizzas "
+                           Foreground="Black" 
+                           FontSize="30" >
+                    </TextBlock>
+                </Grid>
             </Grid>
 
-            <Grid Grid.Column="1" Margin="30,50,50,50">
+            <Grid Grid.Column="1" Margin="130.5,0,130.5,50">
                 <TextBlock Grid.Row="2"
-                           Margin="10,20"
                            HorizontalAlignment="Center"
                            FontSize="20"
                            Text="It can also be used for background painting:" />
 
                 <controls:TileControl Grid.Row="3"
                                       Background="DarkGray"
-                                      ImageSource="/Assets/LockScreenLogo.png"
                                       ParallaxSpeedRatio="1.2"
                                       ScrollViewerContainer="{Binding ElementName=FlipView, Mode=OneTime}">
                     <FlipView x:Name="FlipView">
                         <Border>
                             <Grid>
-                                <Image Source="../Assets/1 pizza 1 drink.jpg"></Image>
+                                <Image Source="../Assets/1 pizza 1 drink.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
                             </Grid>
                         </Border>
 
                         <Border>
-                            <TextBlock Text="&lt; Parallax with FlipView"></TextBlock>
+                            <Grid>
+                                <Image Source="../Assets/2 pizzas 2 drinks.jpg"></Image>
+                            </Grid>
                         </Border>
                     </FlipView>
                 </controls:TileControl>
             </Grid>
         </Grid>
-    </Grid>
+    </Grid> -->
 </Page>

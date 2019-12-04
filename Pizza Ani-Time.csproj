@@ -159,8 +159,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\1 pizza 1 drink.jpg" />
+    <Content Include="Assets\2 pizzas 2 drinks.jpg" />
+    <Content Include="Assets\free drink.jpg" />
     <Content Include="Assets\LOGO.png" />
+    <Content Include="Assets\picturetopeople.org-2e26c0cafbeefad4fe8af17057fd49ef9eeef681f19a519b09.png" />
     <Content Include="Assets\picturetopeople.org-4689ca1ead7f74899d01a36d7e155e24f71d8adfe7beb8c48e.png" />
+    <Content Include="Assets\picturetopeople.org-5e221c24fbbc8153ce9063bbe1c842f414aaafe969453d36e0.png" />
     <Content Include="Assets\picturetopeople.org-b141716b52c1fde0229f9975d40980f7f965510e96741a2baf.png" />
     <Content Include="Assets\pizza-wallpaper-phone-amazing-wallpapers-in-2018-pinterest.jpg" />
     <Content Include="Assets\pizza1.jpg" />

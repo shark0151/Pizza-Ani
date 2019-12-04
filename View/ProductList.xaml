@@ -8,7 +8,10 @@
     mc:Ignorable="d"
     Background="Black">
 
+  
     <Grid x:Name="Grid">
+        <ListView x:Name="List">
 
+        </ListView>
     </Grid>
 </Page>

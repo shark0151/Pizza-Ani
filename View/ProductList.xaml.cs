@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using Pizza_Ani_Time.ViewModel;
+using Pizza_Ani_Time.Model;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Pizza_Ani_Time.View
@@ -25,7 +27,15 @@ namespace Pizza_Ani_Time.View
         public ProductList()
         {
             this.InitializeComponent();
-           
+            PizzaViewModel viewModel = new PizzaViewModel();
+            List<Product> x = viewModel.GetInventory();
+            foreach (var y in x)
+            {
+                ListViewItem asda = new ListViewItem();
+                asda.Content = y.Name;
+
+                List.Items.Add(asda);
+            }
             /*
             //example of adding xaml from c#
             Windows.UI.Xaml.Controls.Button asda= new Button();

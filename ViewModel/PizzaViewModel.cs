@@ -9,11 +9,22 @@ namespace Pizza_Ani_Time.ViewModel
 {
     class PizzaViewModel
     {
-        Inventory inv = new Inventory();
-        ShoppingCart sc = new ShoppingCart();
+        Inventory inv;
+        ShoppingCart sc;
+
+        public PizzaViewModel()
+        {
+            inv = new Inventory();
+            sc = new ShoppingCart();
+        }
         public void displayCart()
         {
             //code to display in xaml
+        }
+
+        public List<Product> GetInventory()
+        {
+            return inv.All();
         }
 
     }

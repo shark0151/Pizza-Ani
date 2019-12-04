@@ -9,7 +9,7 @@
     Background="Black">
 
   
-    <Grid x:Name="Grid">
+    <Grid>
         <ListView x:Name="List">
 
         </ListView>

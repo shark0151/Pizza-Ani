@@ -29,6 +29,7 @@ namespace Pizza_Ani_Time.View
             this.InitializeComponent();
             PizzaViewModel viewModel = new PizzaViewModel();
             List<Product> x = viewModel.GetInventory();
+            //check for empty
             foreach (var y in x)
             {
                 ListViewItem asda = new ListViewItem();
@@ -38,10 +39,10 @@ namespace Pizza_Ani_Time.View
             }
             /*
             //example of adding xaml from c#
-            Windows.UI.Xaml.Controls.Button asda= new Button();
-            asda.Content = "sadas";
+            Windows.UI.Xaml.Controls.Button buttonfromcode= new Button();
+            buttonfromcode.Content = "Press me";
            
-            Grid.Children.Add(asda);
+            Grid.Children.Add(buttonfromcode);
             Grid.VerticalAlignment = VerticalAlignment.Top;
             */
 

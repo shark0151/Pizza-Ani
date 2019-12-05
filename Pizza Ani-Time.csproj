@@ -158,11 +158,13 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\1 pizza 1 drink.jpg" />
-    <Content Include="Assets\2 pizzas 2 drinks.jpg" />
+    <Content Include="Assets\444.jpg" />
     <Content Include="Assets\file.txt" />
     <Content Include="Assets\free drink.jpg" />
     <Content Include="Assets\LOGO.png" />
+    <Content Include="Assets\Offer1 %281%29.jpg" />
+    <Content Include="Assets\Offer2.jpg" />
+    <Content Include="Assets\Offer3.jpg" />
     <Content Include="Assets\picturetopeople.org-2e26c0cafbeefad4fe8af17057fd49ef9eeef681f19a519b09.png" />
     <Content Include="Assets\picturetopeople.org-4689ca1ead7f74899d01a36d7e155e24f71d8adfe7beb8c48e.png" />
     <Content Include="Assets\picturetopeople.org-5e221c24fbbc8153ce9063bbe1c842f414aaafe969453d36e0.png" />
@@ -171,11 +173,6 @@
     <Content Include="Assets\pizza1.jpg" />
     <Content Include="Assets\pizza2.jpg" />
     <Content Include="Assets\pizza_PNG44093.png" />
-    <Content Include="Assets\wood.jpg" />
-    <Content Include="Assets\wood2.jpg" />
-    <Content Include="Assets\wood3.jpg" />
-    <Content Include="Assets\wood4.jpg" />
-    <Content Include="Assets\wood5.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

@@ -55,20 +55,20 @@
         </Grid>
 
         <Grid Column="1">
-            <controls:TileControl Grid.Row="3"
-                                 ParallaxSpeedRatio="1.2"
+            <controls:TileControl
+                ParallaxSpeedRatio="1.2"
                                  ScrollViewerContainer="{Binding ElementName=FlipView, Mode=OneTime}">
                 <FlipView x:Name="FlipView">
                     <Border>
-                        <Image Source="../Assets/1 pizza 1 drink.jpg"></Image>
+                        <Image Source="../Assets/1 pizza 1 drink.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                     </Border>
 
                     <Border>
-                        <Image Source="../Assets/2 pizzas 2 drinks.jpg"></Image>
+                        <Image Source="../Assets/2 pizzas 2 drinks.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                     </Border>
 
                     <Border>
-                        <Image Source="../Assets/free drink.jpg"></Image>
+                        <Image Source="../Assets/free drink.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                     </Border>
                 </FlipView>
             </controls:TileControl>

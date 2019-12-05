@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <Grid Column="0">
             <Grid.Background>
-                <ImageBrush Stretch="Fill" ImageSource="../Assets/wood4.jpg"/>
+                <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/wood4.jpg"/>
             </Grid.Background>
             
             <Grid.RowDefinitions>
@@ -54,7 +54,7 @@
             </Grid>
         </Grid>
 
-        <Grid Column="1">
+        <Grid Column="1" >
             <controls:TileControl Grid.Row="3"
                                  ParallaxSpeedRatio="1.2"
                                  ScrollViewerContainer="{Binding ElementName=FlipView, Mode=OneTime}">

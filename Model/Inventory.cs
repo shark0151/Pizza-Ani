@@ -18,7 +18,8 @@ namespace Pizza_Ani_Time.Model
         public Inventory()
         {
             //Helper method to add items to database
-            DataCreator();
+            var Create = Task.Run(() => DataCreator());
+            Create.Wait();
 
             //Reads from file async
             ReadData();
@@ -78,14 +79,19 @@ namespace Pizza_Ani_Time.Model
             await messageDialog.ShowAsync();
         }
 
-        private async void DataCreator()
+        private async Task DataCreator()
         {
             Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            //Overwrites existing files
             Windows.Storage.StorageFile DataFile = await storageFolder.CreateFileAsync("Data.txt", Windows.Storage.CreationCollisionOption.ReplaceExisting);
             //Copy paste this to add items
-            await Windows.Storage.FileIO.WriteTextAsync(DataFile, "pizza1; ;22;none;");
-            
+            await Windows.Storage.FileIO.WriteTextAsync(DataFile
+                ,"pizza1; ;22;none;"
+                +"pizza2; ;22;none;"
+                +"pizza3; ;22;none;"
+                +"pizza4; ;22;none;"
+                );
+
+
         }
     }
 }

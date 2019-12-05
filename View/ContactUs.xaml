@@ -7,44 +7,35 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <StackPanel Width="900" VerticalAlignment="Top" Margin="190,166,190,0">
 
-    <Grid Margin="25,100,25,100">
-        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="41*"/>
-                <RowDefinition Height="41*"/>
-                <RowDefinition Height="103*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="47*"/>
-                <ColumnDefinition Width="98*"/>
-            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Padding="5">
+                <TextBlock Width="100" Text="Name: " Foreground="Gray"></TextBlock>
+                <TextBox Height="40" Width="750"/>
+            </StackPanel>
 
-            <Grid Grid.Row="0" Padding="20,0,20,0">
-                <TextBlock Text="Name:" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="0,10,0,0"/>
-            </Grid>
-            <RichEditBox   Grid.Column="1" x:Name="NameLabel" AutomationProperties.Name="Simple Text Editor" Margin="10,10,10,100" />
+            <StackPanel Orientation="Horizontal" Padding="5">
+                <TextBlock Width="100" Text="E-mail: " Foreground="Gray"></TextBlock>
+                <TextBox Height="40"  Width="750"/>
+            </StackPanel>
 
-            <Grid Grid.Row="1" Padding="20,0,20,0">
-                <TextBlock Text="E-mail:" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"/>
-            </Grid>
-            <RichEditBox  Grid.Row="1" Grid.Column="1" x:Name="EmailLabel" AutomationProperties.Name="Simple Text Editor" Margin="10,10,10,100" />
+            <StackPanel Orientation="Horizontal" Padding="5">
+                <TextBlock Width="100" Text="Massage: " Foreground="Gray"></TextBlock>
+                <TextBox Height="180"  Width="750"/>
+            </StackPanel>
 
-            <Grid Grid.Row="2" Padding="20,0,20,0" Margin="0,0,0,248">
-                <TextBlock Text="Message:" Grid.Row="2" Grid.Column="0" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Grid>
-            <RichEditBox  Grid.Row="2" Grid.Column="1" x:Name="MessageLabel" AutomationProperties.Name="Simple Text Editor" Margin="10,10,10,248" />
-        </Grid>
+        </StackPanel>
 
-
-
-        <Grid Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
-            <Button Content="Send" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="Green" Click="SendMail_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            <!--<Button Content="Button" Grid.Row="2" Grid.Column="1" Background="Red" Click="Button_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
-        </Grid>
-
-
-
+        <StackPanel VerticalAlignment="Bottom" Padding="0,0,0,50">
+            <TextBlock Text="Pizza Ani-Time" HorizontalAlignment="Center" Foreground="Gray"/>
+            <TextBlock Text="Version: 1.0" HorizontalAlignment="Center" Foreground="Gray"/>
+            <TextBlock Height="25"/>
+            <TextBlock Text="Contact us:" HorizontalAlignment="Center"/>
+            <TextBlock Text="Phone: +4512345678" HorizontalAlignment="Center"/>
+            <TextBlock Text="Address: 4000, Maglegaardsvej 2,Roskilde" HorizontalAlignment="Center"/>
+        </StackPanel>
     </Grid>
+
 
 </Page>

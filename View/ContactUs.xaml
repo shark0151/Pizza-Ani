@@ -8,7 +8,11 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid MaxWidth="800">
-        <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Stretch" Padding="0,200,0,0" MinWidth="300">
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="550"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Padding="0,200,0,0" MinWidth="300">
 
             
             <Grid Padding="5">
@@ -41,7 +45,7 @@
             <Button Width="100" Style="{StaticResource ButtonRevealStyle}" Background="Green" Content="Send" HorizontalAlignment="Center" Click="SendButton_Click"/>
         </StackPanel>
 
-        <StackPanel VerticalAlignment="Bottom" Padding="0,0,0,50">
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Padding="0,0,0,50">
             <TextBlock Text="Pizza Ani-Time" HorizontalAlignment="Center" Foreground="Gray"/>
             <TextBlock Text="Version: 1.0" HorizontalAlignment="Center" Foreground="Gray"/>
             <TextBlock Height="25"/>

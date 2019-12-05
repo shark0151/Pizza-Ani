@@ -160,6 +160,7 @@
   <ItemGroup>
     <Content Include="Assets\1 pizza 1 drink.jpg" />
     <Content Include="Assets\2 pizzas 2 drinks.jpg" />
+    <Content Include="Assets\file.txt" />
     <Content Include="Assets\free drink.jpg" />
     <Content Include="Assets\LOGO.png" />
     <Content Include="Assets\picturetopeople.org-2e26c0cafbeefad4fe8af17057fd49ef9eeef681f19a519b09.png" />

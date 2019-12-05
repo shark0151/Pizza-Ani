@@ -6,18 +6,24 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid MaxHeight="900" MaxWidth="1850" MinHeight="450" MinWidth="925">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Column="0" Background="White">
-
+        <Grid Column="0">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="../Assets/wood4.jpg"/>
+            </Grid.Background>
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="300"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Row="0" Margin="50">
@@ -25,17 +31,27 @@
                 <Image Source="../Assets/picturetopeople.org-2e26c0cafbeefad4fe8af17057fd49ef9eeef681f19a519b09.png" Width="180" Height="100" VerticalAlignment="Bottom"   ></Image>
                 <Image Source="../Assets/LOGO.png" Width="140" Height="150" ></Image>
             </Grid>
-            <Grid Grid.Column="0" Row="1" Margin="50">
-                <TextBlock
-                       VerticalAlignment="Top" 
-                       FontFamily="Brush Script MT" 
-                       TextWrapping="WrapWholeWords"
-                       Text="Delicious food at reasonable prices? We have it! At Pizza Ani-time we keep the standards up with our fresh and high quality products. Get ready to choose your preferences from our diversity of pizzas "
-                       Foreground="Black" 
-                       FontSize="30">
-                </TextBlock>
+            <Grid Grid.Column="0" Grid.Row="1" Margin="50" CornerRadius="10">
+                <Grid>
+                    <interactivity:Interaction.Behaviors>
+                        <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
+                    </interactivity:Interaction.Behaviors>
+                </Grid>
+                <Grid>
+                    <TextBlock
+                        Padding="10"
+                        VerticalAlignment="Top" 
+                        FontFamily="Freestyle Script" 
+                        TextWrapping="WrapWholeWords"
+                        Text="Delicious food at reasonable prices? We have it! At Pizza Ani-time we keep the standards up with our fresh and high quality products. Get ready to choose your preferences from our diversity of pizzas "
+                        Foreground="Black" 
+                        FontSize="35">
+                    </TextBlock>
+                </Grid>
             </Grid>
+            <Grid Column="0" Row="2">
 
+            </Grid>
         </Grid>
 
         <Grid Column="1">

@@ -22,7 +22,11 @@
     </Page.Resources>
 
     <Grid>
-        <SplitView x:Name="SideMenu" IsPaneOpen="False" DisplayMode="CompactInline" OpenPaneLength="200" CompactPaneLength="50" PaneBackground="Firebrick">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="181*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <SplitView x:Name="SideMenu" IsPaneOpen="False" DisplayMode="CompactInline" OpenPaneLength="200" CompactPaneLength="50" PaneBackground="Firebrick" Grid.RowSpan="2">
 
             <SplitView.Pane>
                 <Grid Width="{Binding}"  HorizontalAlignment="Left">
@@ -131,7 +135,7 @@
                         </Button>
                     </Grid>
                     <Grid MaxHeight="50" Grid.Row="1" VerticalAlignment="Bottom">
-                        <Button Click="About_Click" Style="{StaticResource ButtonStyle}">
+                        <Button Click="ContactUs_Click" Style="{StaticResource ButtonStyle}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition  Width="50"></ColumnDefinition>

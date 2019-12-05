@@ -12,7 +12,7 @@ namespace Pizza_Ani_Time.Model
     class Inventory
     {
         //Instance Fields
-        public List<Product> AllAvailableProducts { get; }
+        private List<Product> AllAvailableProducts = new List<Product>();
 
         //Constructor
         public Inventory()
@@ -23,6 +23,7 @@ namespace Pizza_Ani_Time.Model
             //Reads from file async
             ReadData();
             
+            
         }
 
         //Methods
@@ -31,25 +32,24 @@ namespace Pizza_Ani_Time.Model
             return AllAvailableProducts;
         }
 
-        private async void ReadData()
+        private void ReadData()
         {
-            var ReadTask = ReadFile();
-            string Text = await ReadTask;
+            var ReadTask = Task.Run(()=>ReadFile());
+            ReadTask.Wait();
+            string Text = ReadTask.Result;
 
-            try
+
+            string[] line = Text.Split(";");
+            for (int i = 0; i < line.Count() - 3; i++)
             {
-                string[] line = Text.Split(";");
-                for (int i = 0; i < line.Count(); i++)
-                {
-                    Product p = new Product(line[i], line[i + 1], double.Parse(line[i + 2]), line[i + 3]);
-                    AllAvailableProducts.Add(p);
-                    i = i + 3;
-                }
+
+                Product p = new Product(line[i], line[i + 1], double.Parse(line[i + 2]), line[i + 3]);
+                AllAvailableProducts.Add(p);
+
+                i = i + 3;
             }
-            catch
-            {
-                dbError();
-            }
+            
+            
         }
 
         private async Task<string> ReadFile()
@@ -84,7 +84,8 @@ namespace Pizza_Ani_Time.Model
             //Overwrites existing files
             Windows.Storage.StorageFile DataFile = await storageFolder.CreateFileAsync("Data.txt", Windows.Storage.CreationCollisionOption.ReplaceExisting);
             //Copy paste this to add items
-            await Windows.Storage.FileIO.WriteTextAsync(DataFile, "pizza;;22;none;");
+            await Windows.Storage.FileIO.WriteTextAsync(DataFile, "pizza1; ;22;none;");
+            
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Pizza_Ani_Time.Model
             //File read
             try
             {
-                StreamReader sr = File.OpenText("");
+                StreamReader sr = File.OpenText("file.txt");
                 while (!sr.EndOfStream)
                 {
                     string[] line = sr.ReadLine().Split(';');

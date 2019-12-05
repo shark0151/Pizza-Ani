@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid MaxWidth="800">
+    <ScrollViewer HorizontalContentAlignment="Center" MaxWidth="800">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="550"></RowDefinition>
             <RowDefinition Height="200"></RowDefinition>
@@ -53,7 +54,8 @@
             <TextBlock Text="Phone: +4512345678" HorizontalAlignment="Center"/>
             <TextBlock Text="Address: 4000, Maglegaardsvej 2,Roskilde" HorizontalAlignment="Center"/>
         </StackPanel>
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 
 
 </Page>

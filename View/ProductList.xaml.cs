@@ -35,10 +35,10 @@ namespace Pizza_Ani_Time.View
             {
                 foreach (var y in x)
                 {
-                    ListViewItem asda = new ListViewItem();
-                    asda.Content = y.Name;
+                    ListViewItem Item = new ListViewItem();
+                    Item.Content = y.Name;
 
-                    List.Items.Add(asda);
+                    List.Items.Add(Item);
                 }
             }
             catch { }

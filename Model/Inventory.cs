@@ -17,12 +17,15 @@ namespace Pizza_Ani_Time.Model
         //Constructor
         public Inventory()
         {
-            
+            //Helper method to add items to database
             DataCreator();
+
+            //Reads from file async
             ReadData();
             
         }
 
+        //Methods
         public List<Product> All()
         {
             return AllAvailableProducts;
@@ -68,8 +71,8 @@ namespace Pizza_Ani_Time.Model
             return rawtext;
         }
 
-        //File read error message
-        private async void dbError()
+       
+        private async void dbError()  //File read error message
         {
             var messageDialog = new MessageDialog("Database error.");
             await messageDialog.ShowAsync();
@@ -78,7 +81,9 @@ namespace Pizza_Ani_Time.Model
         private async void DataCreator()
         {
             Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            Windows.Storage.StorageFile DataFile = await storageFolder.CreateFileAsync("Data.txt", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            //Overwrites existing files
+            Windows.Storage.StorageFile DataFile = await storageFolder.CreateFileAsync("Data.txt", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+            //Copy paste this to add items
             await Windows.Storage.FileIO.WriteTextAsync(DataFile, "pizza;;22;none;");
         }
     }

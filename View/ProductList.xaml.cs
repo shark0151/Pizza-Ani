@@ -30,6 +30,7 @@ namespace Pizza_Ani_Time.View
             PizzaViewModel viewModel = new PizzaViewModel();
             List<Product> x = viewModel.GetInventory();
             //check for empty
+            
             try
             {
                 foreach (var y in x)
@@ -40,10 +41,7 @@ namespace Pizza_Ani_Time.View
                     List.Items.Add(asda);
                 }
             }
-            catch
-            {
-
-            }
+            catch { }
             /*
             //example of adding xaml from c#
             Windows.UI.Xaml.Controls.Button buttonfromcode= new Button();

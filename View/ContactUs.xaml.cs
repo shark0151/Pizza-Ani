@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,6 +32,18 @@ namespace Pizza_Ani_Time.View
         private void SendMail_Click(object sender, RoutedEventArgs e)
         {
             this.InitializeComponent();
+        }
+
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.InitializeComponent();
+            Thanks();
+        }
+        private async void Thanks()
+        {
+            var messageDialog = new MessageDialog("Thank you!");
+            await messageDialog.ShowAsync();
         }
     }
 }

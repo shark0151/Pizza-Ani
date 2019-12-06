@@ -19,6 +19,7 @@ using Pizza_Ani_Time.ViewModel;
 using Pizza_Ani_Time.Model;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Text;
+using Windows.UI.Popups;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Pizza_Ani_Time.View
@@ -114,7 +115,7 @@ namespace Pizza_Ani_Time.View
             }
             catch 
             {
-
+                layoytError();
             }
 
             
@@ -128,6 +129,12 @@ namespace Pizza_Ani_Time.View
             */
 
 
+        }
+
+        private async void layoytError()  //Error message
+        {
+            var messageDialog = new MessageDialog("Failed to crate layout");
+            await messageDialog.ShowAsync();
         }
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)

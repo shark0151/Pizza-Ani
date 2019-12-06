@@ -11,13 +11,13 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid MaxHeight="900" MaxWidth="1850" MinHeight="450" MinWidth="925">
+    <Grid  MinHeight="450" MinWidth="925">
         <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/444.jpg"/>
+            <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/Background.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" MinWidth="200"/>
         </Grid.ColumnDefinitions>
         <Grid Column="0">
             <!--  <Grid.Background>
@@ -30,8 +30,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Row="0" Margin="50">
-                <Image Source="../Assets/picturetopeople.org-5e221c24fbbc8153ce9063bbe1c842f414aaafe969453d36e0.png" Width="180" Height="160" VerticalAlignment="Top" ></Image>
-                <Image Source="../Assets/picturetopeople.org-2e26c0cafbeefad4fe8af17057fd49ef9eeef681f19a519b09.png" Width="180" Height="100" VerticalAlignment="Bottom"   ></Image>
+                <Image Source="../Assets/LogoTextTop.png" Width="180" Height="160" VerticalAlignment="Top" ></Image>
+                <Image Source="../Assets/LogoTextBottom.png" Width="180" Height="100" VerticalAlignment="Bottom"   ></Image>
                 <Image Source="../Assets/LOGO.png" Width="140" Height="150" ></Image>
             </Grid>
             <Grid Grid.Column="0" Grid.Row="1" Margin="50" CornerRadius="10">
@@ -48,7 +48,7 @@
                         TextWrapping="WrapWholeWords"
                         Text="Delicious food at reasonable prices? We have it! At Pizza Ani-time we keep the standards up with our fresh and high quality products. Get ready to choose your preferences from our diversity of pizzas "
                         Foreground="Black" 
-                        FontSize="35">
+                        FontSize="30">
                     </TextBlock>
                 </Grid>
             </Grid>

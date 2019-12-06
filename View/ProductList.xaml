@@ -5,14 +5,33 @@
     xmlns:local="using:Pizza_Ani_Time.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <ScrollViewer HorizontalContentAlignment="Center" Margin="40">
-        <Grid>
-            <ListView x:Name="List">
-
-            </ListView>
-        </Grid>
+        <controls:UniformGrid Orientation="Horizontal" x:Name="ProductGrid" Columns="3">
+            <!--
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="../Assets/Products/pz_Chicago.png"></Image>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="50kr" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" ></TextBlock>
+                    <TextBlock Grid.Row="1" Text="Super Pizza" HorizontalAlignment="Center" FontSize="50" FontWeight="Light" ></TextBlock>
+                    <TextBlock Grid.Row="2" Text="Wow!" HorizontalAlignment="Center" FontSize="30" FontWeight="Light" ></TextBlock>
+                    <Button Grid.Row="3" Content="Add to Cart"  HorizontalAlignment="Center" Click="AddToCart_Click"></Button>
+                </Grid>
+            </Grid>
+            -->
+        </controls:UniformGrid>
     </ScrollViewer>
 </Page>

@@ -10,16 +10,17 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="../Assets/444.jpg" Stretch="UniformToFill"></ImageBrush>
+                <ImageBrush ImageSource="../Assets/Background.jpg" Stretch="UniformToFill"></ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" Width="900" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5">
+        <Grid Grid.Row="1" MaxWidth="900" HorizontalAlignment="Stretch" VerticalAlignment="Center" CornerRadius="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -72,4 +73,5 @@
             </Grid>
         </Grid>
     </Grid>
+    </ScrollViewer>
 </Page>

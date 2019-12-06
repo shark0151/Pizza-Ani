@@ -83,12 +83,22 @@ namespace Pizza_Ani_Time.Model
         {
             Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             Windows.Storage.StorageFile DataFile = await storageFolder.CreateFileAsync("Data.txt", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+            string ImageFolder = "Assets/Products/";
             //Copy paste this to add items
             await Windows.Storage.FileIO.WriteTextAsync(DataFile
-                ,"pizza1; ;22;none;"
-                +"pizza2; ;22;none;"
-                +"pizza3; ;22;none;"
-                +"pizza4; ;22;none;"
+                ,"Chicago Bold Fold;"+ImageFolder+"pz_Chicago"+".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Tes2;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "test3;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "test4;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Tes2;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "test3;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "test4;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Tes2;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "test3;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "test4;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Tes2;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "test3;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "test4;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
                 );
 
 

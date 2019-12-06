@@ -17,6 +17,8 @@ using System.IO;
 using Windows.UI.Xaml.Media.Imaging;
 using Pizza_Ani_Time.ViewModel;
 using Pizza_Ani_Time.Model;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Text;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Pizza_Ani_Time.View
@@ -26,6 +28,67 @@ namespace Pizza_Ani_Time.View
     /// </summary>
     public sealed partial class ProductList : Page
     {
+        private void CreateProductItem(Product item)
+        {
+            
+            Grid Main = new Grid();
+            ProductGrid.Children.Add(Main);
+
+            RowDefinition row0 = new RowDefinition();
+            RowDefinition row1 = new RowDefinition();
+            Main.RowDefinitions.Add(row0);
+            Main.RowDefinitions.Add(row1);
+
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri("ms-appx:///"+ item.Image));
+            Main.Children.Add(image);
+            Grid.SetRow(image, 0);
+
+            Grid TextFields = new Grid();
+            Grid.SetRow(TextFields, 1);
+            RowDefinition trow0 = new RowDefinition();
+            RowDefinition trow1 = new RowDefinition();
+            RowDefinition trow2 = new RowDefinition();
+            RowDefinition trow3 = new RowDefinition();
+            TextFields.RowDefinitions.Add(trow0);
+            TextFields.RowDefinitions.Add(trow1);
+            TextFields.RowDefinitions.Add(trow2);
+            TextFields.RowDefinitions.Add(trow3);
+            Main.Children.Add(TextFields);
+
+            TextBlock price = new TextBlock();
+            price.Text = item.Price.ToString()+"kr";
+            price.FontSize = 20;
+            price.HorizontalAlignment = HorizontalAlignment.Center;
+            price.FontWeight = FontWeights.Bold;
+
+            TextBlock name = new TextBlock();
+            name.Text = item.Name;
+            name.FontSize = 30;
+            name.HorizontalAlignment = HorizontalAlignment.Center;
+            name.FontWeight = FontWeights.SemiLight;
+
+            TextBlock description = new TextBlock();
+            description.Text = item.Details;
+            description.FontSize = 20;
+            description.HorizontalAlignment = HorizontalAlignment.Center;
+            description.FontWeight = FontWeights.Light;
+
+            Button toCart = new Button();
+            toCart.Content = "Add To Cart";
+            toCart.Click += AddToCart_Click;
+
+            TextFields.Children.Add(price);
+            TextFields.Children.Add(name);
+            TextFields.Children.Add(description);
+            TextFields.Children.Add(toCart);
+            Grid.SetRow(price, 0);
+            Grid.SetRow(name, 1);
+            Grid.SetRow(description, 2);
+            Grid.SetRow(toCart, 3);
+           
+
+        }
         public ProductList()
         {
             this.InitializeComponent();
@@ -38,17 +101,19 @@ namespace Pizza_Ani_Time.View
                 new Product("Offer 2", "", 130, "Buy 2 pizzas and 2 drinks with a discount"),
                 new Product("Offer 3", "", 200, "DISCOUNT")
             };
+            List<Product> List = viewModel.GetInventory();
             //check for empty
 
             try
             {
-                foreach (var y in x)
+                foreach (var item in List)
                 {
-                    ListViewItem Item = new ListViewItem();
-                    Item.Content = y.Name;
-
-                    List.Items.Add(Item);
+                    CreateProductItem(item);
                 }
+            }
+            catch 
+            {
+
             }
             catch { }
 
@@ -103,6 +168,11 @@ namespace Pizza_Ani_Time.View
             Grid.VerticalAlignment = VerticalAlignment.Top;
             */
 
+
+        }
+
+        private void AddToCart_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

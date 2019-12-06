@@ -5,57 +5,71 @@
     xmlns:local="using:Pizza_Ani_Time.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <ScrollViewer HorizontalContentAlignment="Center" MaxWidth="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Assets/444.jpg" Stretch="UniformToFill"></ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition MinHeight="550"></RowDefinition>
-            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Padding="0,200,0,0" MinWidth="300">
-
-            
-            <Grid Padding="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="8*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Name: " Foreground="Gray"></TextBlock>
-                <TextBox Grid.Column="1" Height="40" />
+        <Grid Grid.Row="1" Width="900" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" RowSpan="2">
+                <interactivity:Interaction.Behaviors>
+                    <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
+                </interactivity:Interaction.Behaviors>
             </Grid>
+            <Grid Grid.Row="0" Padding="5">
+                <StackPanel HorizontalAlignment="Stretch" MinWidth="300">
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="8*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Name: " Foreground="Black"></TextBlock>
+                        <TextBox Grid.Column="1" Height="40" CornerRadius="5"/>
+                    </Grid>
 
-            <Grid Padding="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="8*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="E-mail: " Foreground="Gray"></TextBlock>
-                <TextBox Grid.Column="1" Height="40" />
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="8*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="E-mail: " Foreground="Black"></TextBlock>
+                        <TextBox Grid.Column="1" Height="40" CornerRadius="5"/>
+                    </Grid>
+
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="8*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Message: " Foreground="Black"></TextBlock>
+                        <TextBox Grid.Column="1" Height="180" CornerRadius="5"/>
+                    </Grid>
+                    <Button Width="100" Style="{StaticResource ButtonRevealStyle}" Background="White" BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Content="Send" HorizontalAlignment="Center" Click="SendButton_Click"/>
+                </StackPanel>
             </Grid>
-
-            <Grid Padding="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="8*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Massage: " Foreground="Gray"></TextBlock>
-                <TextBox Grid.Column="1" Height="180" />
+            <Grid Grid.Row="1">
+                <StackPanel Padding="5">
+                    <TextBlock Text="Contact us:" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Phone: +4512345678" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Address: 4000, Maglegaardsvej 2,Roskilde" HorizontalAlignment="Center"/>
+                    <TextBlock Height="25"/>
+                    <TextBlock Text="Pizza Ani-Time" HorizontalAlignment="Center" Foreground="Gray"/>
+                    <TextBlock Text="Version: 1.0" HorizontalAlignment="Center" Foreground="Gray"/>
+                </StackPanel>
             </Grid>
-
-            <Button Width="100" Style="{StaticResource ButtonRevealStyle}" Background="Green" Content="Send" HorizontalAlignment="Center" Click="SendButton_Click"/>
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Padding="0,0,0,50">
-            <TextBlock Text="Pizza Ani-Time" HorizontalAlignment="Center" Foreground="Gray"/>
-            <TextBlock Text="Version: 1.0" HorizontalAlignment="Center" Foreground="Gray"/>
-            <TextBlock Height="25"/>
-            <TextBlock Text="Contact us:" HorizontalAlignment="Center"/>
-            <TextBlock Text="Phone: +4512345678" HorizontalAlignment="Center"/>
-            <TextBlock Text="Address: 4000, Maglegaardsvej 2,Roskilde" HorizontalAlignment="Center"/>
-        </StackPanel>
         </Grid>
-    </ScrollViewer>
-
-
+    </Grid>
 </Page>

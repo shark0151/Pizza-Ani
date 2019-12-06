@@ -12,7 +12,10 @@ namespace Pizza_Ani_Time.Model
         public List<Order> _orderCatalog;
 
         //Constructor
-        public OrderCatalog() { }
+        public OrderCatalog()
+        {
+            _orderCatalog=new List<Order>();
+        }
 
         //Methods
         public void CreateOrder(ShoppingCart cart)

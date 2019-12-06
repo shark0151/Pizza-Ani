@@ -78,7 +78,7 @@ namespace Pizza_Ani_Time.View
             toCart.Click += AddToCart_Click;
             toCart.HorizontalAlignment = HorizontalAlignment.Stretch;
             toCart.VerticalAlignment = VerticalAlignment.Stretch;
-            toCart.DataContext = item;
+            toCart.DataContext = item;  //what we want te get when pressing button
 
             TextFields.Children.Add(price);
             TextFields.Children.Add(name);
@@ -132,6 +132,7 @@ namespace Pizza_Ani_Time.View
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
+            //Get the product from the button as a product object;
             Product content = (sender as Button).DataContext as Product;
         }
     }

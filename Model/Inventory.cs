@@ -86,19 +86,18 @@ namespace Pizza_Ani_Time.Model
             string ImageFolder = "Assets/Products/";
             //Copy paste this to add items
             await Windows.Storage.FileIO.WriteTextAsync(DataFile
-                ,"Chicago Bold Fold;"+ImageFolder+"pz_Chicago"+".png;50;Pepperoni, Marinara, Mozarella;"
-                + "Tes2;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "test3;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "test4;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "Tes2;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "test3;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "test4;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "Tes2;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "test3;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "test4;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "Tes2;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "test3;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                + "test4;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                ,"The Beast;"+ImageFolder+"pz_Beast"+".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Chicago Bold Fold;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Chorus Spice;" + ImageFolder + "pz_Chorus" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Godspell Beef Load;" + ImageFolder + "pz_Godspell" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Gypsy Euro;" + ImageFolder + "pz_Gypsy" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Mamma Mia;" + ImageFolder + "pz_MamaMia" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Phantom;" + ImageFolder + "pz_Phantom" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Poppin' BBQ;" + ImageFolder + "pz_Popping" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Tarzan Tikka;" + ImageFolder + "pz_Tarzan" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Westside Garlic;" + ImageFolder + "pz_WestSide" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                + "Wicked Blend;" + ImageFolder + "pz_Wicked" + ".png;50;Pepperoni, Marinara, Mozarella;"
+               
                 );
 
 

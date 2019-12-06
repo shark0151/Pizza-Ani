@@ -30,8 +30,7 @@ namespace Pizza_Ani_Time.View
         {
             
             Grid Main = new Grid();
-            ProductGrid.Children.Add(Main);
-
+            
             RowDefinition row0 = new RowDefinition();
             RowDefinition row1 = new RowDefinition();
             Main.RowDefinitions.Add(row0);
@@ -75,6 +74,8 @@ namespace Pizza_Ani_Time.View
             Button toCart = new Button();
             toCart.Content = "Add To Cart";
             toCart.Click += AddToCart_Click;
+            toCart.HorizontalAlignment = HorizontalAlignment.Stretch;
+            toCart.VerticalAlignment = VerticalAlignment.Stretch;
 
             TextFields.Children.Add(price);
             TextFields.Children.Add(name);
@@ -84,7 +85,9 @@ namespace Pizza_Ani_Time.View
             Grid.SetRow(name, 1);
             Grid.SetRow(description, 2);
             Grid.SetRow(toCart, 3);
-           
+
+            ProductGrid.Children.Add(Main);
+
 
         }
         public ProductList()
@@ -96,10 +99,13 @@ namespace Pizza_Ani_Time.View
             
             try
             {
+                
                 foreach (var item in List)
                 {
                     CreateProductItem(item);
+                    
                 }
+                ProductGrid.UpdateLayout();
             }
             catch 
             {
@@ -119,7 +125,7 @@ namespace Pizza_Ani_Time.View
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

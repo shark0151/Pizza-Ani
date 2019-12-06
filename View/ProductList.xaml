@@ -5,14 +5,46 @@
     xmlns:local="using:Pizza_Ani_Time.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <ScrollViewer HorizontalContentAlignment="Center" Margin="40">
-        <Grid>
-            <ListView x:Name="List">
 
-            </ListView>
-        </Grid>
-    </ScrollViewer>
+    <Pivot x:Name="rootPivot">
+        <Pivot.Background>
+            <ImageBrush ImageSource="../Assets/444.jpg" Stretch="UniformToFill"></ImageBrush>
+        </Pivot.Background>
+        <PivotItem Header="Products" >
+            <ScrollViewer HorizontalContentAlignment="Center" Margin="40">
+                <Grid>
+                    <ListView x:Name="List">
+
+                    </ListView>
+                </Grid>
+            </ScrollViewer>
+        </PivotItem>
+        <PivotItem Header="Promotions">
+            <Grid Width="950">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" CornerRadius="10">
+                    <interactivity:Interaction.Behaviors>
+                        <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
+                    </interactivity:Interaction.Behaviors>
+                </Grid>
+                <Grid Grid.Row="1" CornerRadius="10">
+                    <ScrollViewer HorizontalContentAlignment="Center" Margin="40">
+                        <ListView x:Name="Promotions" Padding="15">
+
+                        </ListView>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </PivotItem>
+
+    </Pivot>
 </Page>

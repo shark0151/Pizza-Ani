@@ -29,6 +29,7 @@ namespace Pizza_Ani_Time.View
     /// </summary>
     public sealed partial class ShoppingCartPage : Page
     {
+        PizzaViewModel viewModel = new PizzaViewModel();
         private void CreateProductLayout(Product item)
         {
 
@@ -114,7 +115,7 @@ namespace Pizza_Ani_Time.View
         {
             this.InitializeComponent();
 
-            PizzaViewModel viewModel = new PizzaViewModel();
+            
             List<Product> List = viewModel.GetCart();
             //check for empty
 
@@ -140,7 +141,10 @@ namespace Pizza_Ani_Time.View
         }
         private void RemoveItem_Click(object sender, RoutedEventArgs e)
         {
+            //Get the product from the button as a product object;
+            Product content = (sender as Button).DataContext as Product;
 
+            viewModel.RemoveItemFromCart(content);
         }
     }
 }

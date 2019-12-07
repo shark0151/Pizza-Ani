@@ -40,7 +40,7 @@
                         <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
                     </interactivity:Interaction.Behaviors>
                 </Grid>
-                <Grid>
+                
                     <TextBlock
                         Padding="10"
                         VerticalAlignment="Top" 
@@ -50,7 +50,7 @@
                         Foreground="Black" 
                         FontSize="30">
                     </TextBlock>
-                </Grid>
+                
             </Grid>
             <Grid Column="0" Row="2">
 

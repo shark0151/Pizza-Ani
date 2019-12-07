@@ -139,12 +139,12 @@ namespace Pizza_Ani_Time.View
             var messageDialog = new MessageDialog("Failed to crate layout");
             await messageDialog.ShowAsync();
         }
-        private void RemoveItem_Click(object sender, RoutedEventArgs e)
+        private void RemoveItem_Click(object sender, RoutedEventArgs e) //works but have to refresh layout
         {
             //Get the product from the button as a product object;
             Product content = (sender as Button).DataContext as Product;
-
             viewModel.RemoveItemFromCart(content);
+            
         }
     }
 }

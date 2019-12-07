@@ -168,6 +168,15 @@
     <Content Include="Assets\Offer3.jpg" />
     <Content Include="Assets\LogoTextBottom.png" />
     <Content Include="Assets\LogoTextTop.png" />
+    <Content Include="Assets\Products\drk_Cola03l.png" />
+    <Content Include="Assets\Products\drk_Cola05l.png" />
+    <Content Include="Assets\Products\drk_Cola2l.png" />
+    <Content Include="Assets\Products\drk_Fanta03l.png" />
+    <Content Include="Assets\Products\drk_Fanta05l.png" />
+    <Content Include="Assets\Products\drk_Fanta2l.png" />
+    <Content Include="Assets\Products\drk_Pepsi03l.png" />
+    <Content Include="Assets\Products\drk_Pepsi05l.png" />
+    <Content Include="Assets\Products\drk_Pepsi2l.png" />
     <Content Include="Assets\Products\pz_Beast.png" />
     <Content Include="Assets\Products\pz_Chicago.png" />
     <Content Include="Assets\Products\pz_Chorus.png" />

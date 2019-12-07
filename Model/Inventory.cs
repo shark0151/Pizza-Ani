@@ -41,13 +41,13 @@ namespace Pizza_Ani_Time.Model
             try
             {
                 string[] line = Text.Split(";");
-                for (int i = 0; i < line.Count() - 3; i++)
+                for (int i = 0; i < line.Count() - 4; i++)
                 {
 
-                    Product p = new Product(line[i], line[i + 1], double.Parse(line[i + 2]), line[i + 3]);
+                    Product p = new Product(line[i], line[i + 1], double.Parse(line[i + 2]), line[i + 3],line[i+4]);
                     AllAvailableProducts.Add(p);
 
-                    i = i + 3;
+                    i = i + 4;
                 }
             }
             catch
@@ -92,17 +92,28 @@ namespace Pizza_Ani_Time.Model
                 string ImageFolder = "Assets/Products/";
                 //Copy paste this to add items
                 await Windows.Storage.FileIO.WriteTextAsync(DataFile
-                    , "The Beast;" + ImageFolder + "pz_Beast" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Chicago Bold Fold;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Chorus Spice;" + ImageFolder + "pz_Chorus" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Godspell Beef Load;" + ImageFolder + "pz_Godspell" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Gypsy Euro;" + ImageFolder + "pz_Gypsy" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Mamma Mia;" + ImageFolder + "pz_MamaMia" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Phantom;" + ImageFolder + "pz_Phantom" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Poppin' BBQ;" + ImageFolder + "pz_Popping" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Tarzan Tikka;" + ImageFolder + "pz_Tarzan" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Westside Garlic;" + ImageFolder + "pz_WestSide" + ".png;50;Pepperoni, Marinara, Mozarella;"
-                    + "Wicked Blend;" + ImageFolder + "pz_Wicked" + ".png;50;Pepperoni, Marinara, Mozarella;"
+                    , "The Beast;" + ImageFolder + "pz_Beast" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Chicago Bold Fold;" + ImageFolder + "pz_Chicago" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Chorus Spice;" + ImageFolder + "pz_Chorus" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Godspell Beef Load;" + ImageFolder + "pz_Godspell" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Gypsy Euro;" + ImageFolder + "pz_Gypsy" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Mamma Mia;" + ImageFolder + "pz_MamaMia" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Phantom;" + ImageFolder + "pz_Phantom" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Poppin' BBQ;" + ImageFolder + "pz_Popping" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Tarzan Tikka;" + ImageFolder + "pz_Tarzan" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Westside Garlic;" + ImageFolder + "pz_WestSide" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+                    + "Wicked Blend;" + ImageFolder + "pz_Wicked" + ".png;50;Pepperoni, Marinara, Mozarella;Pizza;"
+
+                    + "Pepsi 0,33l;" + ImageFolder + "drk_Pepsi03l" + ".png;50;Refreshing drink;Drink;"
+                    + "Pepsi 0,5l;" + ImageFolder + "drk_Pepsi05l" + ".png;50;Refreshing drink;Drink;"
+                    + "Pepsi 2l;" + ImageFolder + "drk_Pepsi2l" + ".png;50;Refreshing drink;Drink;"
+                    + "Fanta 0,33l;" + ImageFolder + "drk_Fanta03l" + ".png;50;Refreshing drink;Drink;"
+                    + "Fanta 0,5l;" + ImageFolder + "drk_Fanta05l" + ".png;50;Refreshing drink;Drink;"
+                    + "Fanta 2l;" + ImageFolder + "drk_Fanta2l" + ".png;50;Refreshing drink;Drink;"
+                    + "Cola 0,33l;" + ImageFolder + "drk_Cola03l" + ".png;50;Refreshing drink;Drink;"
+                    + "Cola 0,5l;" + ImageFolder + "drk_Cola05l" + ".png;50;Refreshing drink;Drink;"
+                    + "Cola 2l;" + ImageFolder + "drk_Cola2l" + ".png;50;Refreshing drink;Drink;"
+
 
                     );
             }

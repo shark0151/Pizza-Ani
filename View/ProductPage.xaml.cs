@@ -106,9 +106,18 @@ namespace Pizza_Ani_Time.View
             {
                 foreach (var item in List)
                 {
+                    if(item.Category == "Pizza")
                     CreateProductLayout(item);
                     
                 }
+
+                foreach (var item in List)
+                {
+                    if (item.Category == "Drink")
+                        CreateProductLayout(item);
+
+                }
+
                 ProductGrid.UpdateLayout(); //might not be needed but whatever
             }
             catch 

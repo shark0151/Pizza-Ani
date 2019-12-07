@@ -27,7 +27,7 @@ namespace Pizza_Ani_Time.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ProductList : Page
+    public sealed partial class ProductPage : Page
     {
         private void CreateProductLayout(Product item)
         {
@@ -94,12 +94,10 @@ namespace Pizza_Ani_Time.View
 
 
         }
-        public ProductList()
+        public ProductPage()
         {
             this.InitializeComponent();
             PizzaViewModel viewModel = new PizzaViewModel();
-            List<Product> x = viewModel.GetInventory();
-
             List<Product> List = viewModel.GetInventory();
             //check for empty
 
@@ -110,7 +108,7 @@ namespace Pizza_Ani_Time.View
                     CreateProductLayout(item);
                     
                 }
-                ProductGrid.UpdateLayout();
+                ProductGrid.UpdateLayout(); //might not be needed but whatever
             }
             catch 
             {
@@ -140,6 +138,8 @@ namespace Pizza_Ani_Time.View
         {
             //Get the product from the button as a product object;
             Product content = (sender as Button).DataContext as Product;
+            PizzaViewModel viewModel = new PizzaViewModel();
+            viewModel.AddItemToCart(content);
         }
     }
 }

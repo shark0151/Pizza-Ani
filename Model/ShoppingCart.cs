@@ -9,11 +9,14 @@ namespace Pizza_Ani_Time.Model
     class ShoppingCart
     {
         //Instance Fields
-        public List<Product> Products { get; }
+        private List<Product> Products = new List<Product>();
         public User Customer { get; }
 
         //Constructors
-        public ShoppingCart() { }
+        public ShoppingCart() 
+        {
+            
+        }
 
         //Properties
         public double TotalAmount
@@ -38,6 +41,10 @@ namespace Pizza_Ani_Time.Model
         public void RemoveProduct(Product product)
         {
             Products.Remove(product);
+        }
+        public List<Product> All()
+        {
+            return Products;
         }
     }
 }

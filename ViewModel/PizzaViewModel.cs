@@ -19,11 +19,7 @@ namespace Pizza_Ani_Time.ViewModel
 
         //Methods
         //XAML Pages
-        public void DisplayCart()
-        {
-            //code to display in xaml
-        }
-
+        
         public void DisplayOrders()
         {
             //code to display in xaml
@@ -53,6 +49,11 @@ namespace Pizza_Ani_Time.ViewModel
         public List<Product> GetInventory()
         {
             return inv.All();
+        }
+
+        public List<Product> GetCart()
+        {
+            return sc.All();
         }
 
     }

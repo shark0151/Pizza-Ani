@@ -20,7 +20,7 @@ namespace Pizza_Ani_Time.Model
         //Methods
         public void CreateOrder(ShoppingCart cart)
         {
-            Order NewOrder = new Order(cart.Products, cart.Customer);
+            Order NewOrder = new Order(cart.All(), cart.Customer);
             NewOrder.Active = true;
             _orderCatalog.Add(NewOrder);
         }

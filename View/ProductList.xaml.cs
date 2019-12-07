@@ -29,7 +29,7 @@ namespace Pizza_Ani_Time.View
     /// </summary>
     public sealed partial class ProductList : Page
     {
-        private void CreateProductItem(Product item)
+        private void CreateProductLayout(Product item)
         {
             
             Grid Main = new Grid();
@@ -105,17 +105,16 @@ namespace Pizza_Ani_Time.View
 
             try
             {
-                
                 foreach (var item in List)
                 {
-                    CreateProductItem(item);
+                    CreateProductLayout(item);
                     
                 }
                 ProductGrid.UpdateLayout();
             }
             catch 
             {
-                layoytError();
+                LayoutError();
             }
 
             
@@ -131,7 +130,7 @@ namespace Pizza_Ani_Time.View
 
         }
 
-        private async void layoytError()  //Error message
+        private async void LayoutError()  //Error message
         {
             var messageDialog = new MessageDialog("Failed to crate layout");
             await messageDialog.ShowAsync();

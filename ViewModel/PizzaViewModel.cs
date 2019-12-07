@@ -10,8 +10,8 @@ namespace Pizza_Ani_Time.ViewModel
     class PizzaViewModel
     {
         //Instance Fields
-        readonly Inventory inv = new Inventory();
-        ShoppingCart sc = new ShoppingCart();
+        readonly Inventory inv = new Inventory(); //make staticc?
+        static ShoppingCart sc = new ShoppingCart(); //should be static
         OrderCatalog oc = new OrderCatalog();
 
         //Constructor

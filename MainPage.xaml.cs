@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 using Pizza_Ani_Time.View;
+using Pizza_Ani_Time.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -24,10 +25,13 @@ namespace Pizza_Ani_Time
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        PizzaViewModel viewModel = new PizzaViewModel();//should look into singleton
+        
         public MainPage()
         {
             this.InitializeComponent();
             SideMenu.DataContext = SideMenu.CompactPaneLength;
+            CartI.DataContext = viewModel;
             Content.Navigate(typeof(PromotionsPage), null);
         }
 

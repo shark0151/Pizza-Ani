@@ -32,7 +32,6 @@ namespace Pizza_Ani_Time.View
         private void CreateProductLayout(Product item)
         {
 
-            
             Grid Main = new Grid();
 
             ColumnDefinition col0 = new ColumnDefinition();

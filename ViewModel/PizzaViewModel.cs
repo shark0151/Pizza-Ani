@@ -1,29 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Pizza_Ani_Time.Model;
 
 namespace Pizza_Ani_Time.ViewModel
 {
-    class PizzaViewModel
-    {
+    class PizzaViewModel : INotifyPropertyChanged
+    { 
+    
         //Instance Fields
         readonly Inventory inv = new Inventory(); //make staticc?
         static ShoppingCart sc = new ShoppingCart(); //should be static
         OrderCatalog oc = new OrderCatalog();
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //
+        public int CartNumber { get { return GetCart().Count; } }
+
         //Constructor
-        public PizzaViewModel() { }
+        public PizzaViewModel() {}
 
         //Methods
-        //XAML Pages
-        
-        public void DisplayOrders()
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            //code to display in xaml
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        
 
         //Orders
         public void CreateOrder()
@@ -40,10 +48,13 @@ namespace Pizza_Ani_Time.ViewModel
         public void AddItemToCart(Product product)
         {
             sc.AddProduct(product);
+            //CartNumber++;
+            OnPropertyChanged("CartNumber");
         }
 
         public void RemoveItemFromCart(Product product)
         {
+            //CartNumber--;
             sc.RemoveProduct(product);
         }
         public List<Product> GetInventory()

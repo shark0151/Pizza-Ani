@@ -83,7 +83,7 @@
                         </Button>
 
 
-                        <Button Grid.Row="3" Click="History_Click"  Style="{StaticResource ButtonStyle}">
+                        <Button Grid.Row="4" Click="History_Click"  Style="{StaticResource ButtonStyle}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition  Width="50"></ColumnDefinition>
@@ -96,13 +96,14 @@
                         </Button>
 
 
-                        <Button Grid.Row="4" Click="Cart_Click" Style="{StaticResource ButtonStyle}">
+                        <Button Grid.Row="3" Click="Cart_Click" Style="{StaticResource ButtonStyle}" x:Name="CartI">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition  Width="50"></ColumnDefinition>
                                     <ColumnDefinition Width="150"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <FontIcon Grid.Column="0" FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE7BF;"></FontIcon>
+                                <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="{Binding CartNumber}" Padding="3" FontSize="12"></TextBlock> 
                                 <TextBlock Grid.Column="1" Text="Shopping Cart" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 </TextBlock>
                             </Grid>

@@ -16,7 +16,6 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Media.Imaging;
 using Pizza_Ani_Time.ViewModel;
 using Pizza_Ani_Time.Model;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Text;
 using Windows.UI.Popups;
 
@@ -115,18 +114,17 @@ namespace Pizza_Ani_Time.View
         {
             this.InitializeComponent();
 
-            
-            List<Product> List = viewModel.GetCart();
+            ShoppingList.DataContext = viewModel.GetCart();
             //check for empty
 
             try
             {
-                foreach (var item in List)
+                
+                foreach (var item in ShoppingList.DataContext as List<Product>)
                 {
                     CreateProductLayout(item);
-
                 }
-                ShoppingList.UpdateLayout(); //might not be needed but whatever
+                
             }
             catch
             {
@@ -139,12 +137,18 @@ namespace Pizza_Ani_Time.View
             var messageDialog = new MessageDialog("Failed to crate layout");
             await messageDialog.ShowAsync();
         }
-        private void RemoveItem_Click(object sender, RoutedEventArgs e) //works but have to refresh layout
+        private void RemoveItem_Click(object sender, RoutedEventArgs e)
         {
             //Get the product from the button as a product object;
             Product content = (sender as Button).DataContext as Product;
             viewModel.RemoveItemFromCart(content);
-            
+            foreach(ListViewItem item in ShoppingList.Items)
+            {
+                if(item == ((sender as Button).Parent as Grid).Parent)
+                {
+                    ShoppingList.Items.Remove(item);
+                }
+            }
         }
     }
 }

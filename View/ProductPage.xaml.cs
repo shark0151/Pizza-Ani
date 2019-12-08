@@ -13,11 +13,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Drawing;
-using System.IO;
 using Windows.UI.Xaml.Media.Imaging;
 using Pizza_Ani_Time.ViewModel;
 using Pizza_Ani_Time.Model;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Text;
 using Windows.UI.Popups;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238

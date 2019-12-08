@@ -25,7 +25,7 @@ namespace Pizza_Ani_Time
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        PizzaViewModel viewModel = new PizzaViewModel();//should look into singleton
+        PizzaViewModel viewModel = new PizzaViewModel(); //The only instance of the viewmodel
         
         public MainPage()
         {
@@ -87,6 +87,26 @@ namespace Pizza_Ani_Time
         private void ContactUs_Click(object sender, RoutedEventArgs e)
         {
             Content.Navigate(typeof(ContactUs), e);
+        }
+
+        
+
+        private void Content_Navigated(object sender, NavigationEventArgs e)
+        {
+            Page destinationPage = e.Content as Page;
+            if (destinationPage.GetType() == typeof(ProductPage))
+            {
+
+                // Change property of destination page
+                (destinationPage as ProductPage).viewModel = viewModel;
+            }
+
+            if (destinationPage.GetType() == typeof(ShoppingCartPage))
+            {
+
+                // Change property of destination page
+                (destinationPage as ShoppingCartPage).viewModel = viewModel;
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pizza_Ani_Time.Model
 {
-    class Product
+    public class Product
     {
         //Instance Fields
         public string Name { get; }

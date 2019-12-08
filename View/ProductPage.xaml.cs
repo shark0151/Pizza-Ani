@@ -27,7 +27,7 @@ namespace Pizza_Ani_Time.View
     /// </summary>
     public sealed partial class ProductPage : Page
     {
-        PizzaViewModel viewModel = new PizzaViewModel(); //Initialize view model here
+        public PizzaViewModel viewModel;
         
         private void CreateProductLayout(Product item)
         {
@@ -97,6 +97,10 @@ namespace Pizza_Ani_Time.View
         public ProductPage()
         {
             this.InitializeComponent();
+            
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
             List<Product> List = viewModel.GetInventory();
             //check for empty
 
@@ -104,9 +108,9 @@ namespace Pizza_Ani_Time.View
             {
                 foreach (var item in List)
                 {
-                    if(item.Category == "Pizza")
-                    CreateProductLayout(item);
-                    
+                    if (item.Category == "Pizza")
+                        CreateProductLayout(item);
+
                 }
 
                 foreach (var item in List)
@@ -118,24 +122,11 @@ namespace Pizza_Ani_Time.View
 
                 ProductGrid.UpdateLayout(); //might not be needed but whatever
             }
-            catch 
+            catch
             {
                 LayoutError();
             }
-
-            
-            /*
-            //example of adding xaml from c#
-            Windows.UI.Xaml.Controls.Button buttonfromcode= new Button();
-            buttonfromcode.Content = "Press me";
-           
-            Grid.Children.Add(buttonfromcode);
-            Grid.VerticalAlignment = VerticalAlignment.Top;
-            */
-
-
         }
-
         private async void LayoutError()  //Error message
         {
             var messageDialog = new MessageDialog("Failed to crate layout");

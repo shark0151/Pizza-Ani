@@ -9,7 +9,7 @@ using Pizza_Ani_Time.Model;
 
 namespace Pizza_Ani_Time.ViewModel
 {
-    class PizzaViewModel : INotifyPropertyChanged
+    public class PizzaViewModel : INotifyPropertyChanged
     { 
     
         //Instance Fields
@@ -56,6 +56,7 @@ namespace Pizza_Ani_Time.ViewModel
         {
             //CartNumber--;
             sc.RemoveProduct(product);
+            OnPropertyChanged("CartNumber");
         }
         public List<Product> GetInventory()
         {

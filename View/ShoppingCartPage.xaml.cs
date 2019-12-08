@@ -28,7 +28,7 @@ namespace Pizza_Ani_Time.View
     /// </summary>
     public sealed partial class ShoppingCartPage : Page
     {
-        PizzaViewModel viewModel = new PizzaViewModel();
+        public PizzaViewModel viewModel;
         private void CreateProductLayout(Product item)
         {
 
@@ -112,18 +112,21 @@ namespace Pizza_Ani_Time.View
         public ShoppingCartPage()
         {
             this.InitializeComponent();
+        }
 
-            ShoppingList.DataContext = viewModel.GetCart();
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            List<Product> List = viewModel.GetCart();
             //check for empty
 
             try
             {
-                
-                foreach (var item in ShoppingList.DataContext as List<Product>)
+
+                foreach (var item in List)
                 {
                     CreateProductLayout(item);
                 }
-                
+
             }
             catch
             {

@@ -152,7 +152,7 @@
             </SplitView.Pane>
 
             <SplitView.Content>
-                <Frame x:Name="Content"></Frame>
+                <Frame x:Name="Content" Navigated="Content_Navigated" ></Frame>
             </SplitView.Content>
         </SplitView>
     </Grid>

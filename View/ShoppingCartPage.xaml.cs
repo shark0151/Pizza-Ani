@@ -132,6 +132,7 @@ namespace Pizza_Ani_Time.View
             {
                 LayoutError();
             }
+            Total.Text = viewModel.GetCartTotal().ToString();
         }
 
         private async void LayoutError()  //Error message

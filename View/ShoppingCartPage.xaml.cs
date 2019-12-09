@@ -166,7 +166,7 @@ namespace Pizza_Ani_Time.View
             viewModel.RemoveItemFromCart(content);
             foreach (ListViewItem item in ShoppingList.Items)
             {
-                if (item == ((sender as Button).Parent as Grid).Parent)
+                if (item == (((sender as Button).Parent as Grid).Parent as Grid).Parent)
                 {
                     ShoppingList.Items.Remove(item);
                 }

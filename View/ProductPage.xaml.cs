@@ -167,16 +167,20 @@ namespace Pizza_Ani_Time.View
                 Grid myGrid = new Grid();
                 RowDefinition r1 = new RowDefinition();
                 RowDefinition r2 = new RowDefinition();
+                r2.Height = GridLength.Auto;
                 RowDefinition r3 = new RowDefinition();
+                r3.Height = GridLength.Auto;
                 RowDefinition r4 = new RowDefinition();
+                r4.Height = GridLength.Auto;
                 RowDefinition r5 = new RowDefinition();
+                r5.Height = GridLength.Auto;
                 myGrid.RowDefinitions.Add(r1);
                 myGrid.RowDefinitions.Add(r2);
                 myGrid.RowDefinitions.Add(r3);
                 myGrid.RowDefinitions.Add(r4);
                 myGrid.RowDefinitions.Add(r5);
                 myGrid.Children.Add(blurGrid);
-                myGrid.Height = 500;
+                myGrid.Height = 450;
 
                 
                 Image pic = new Image { Source = new BitmapImage(new Uri("ms-appx:///Assets/"+v.Image+".jpg")) };
@@ -186,11 +190,13 @@ namespace Pizza_Ani_Time.View
                 TextBlock t1 = new TextBlock { Text = v.Name, Foreground = new SolidColorBrush(Colors.White) };
                 t1.VerticalAlignment = VerticalAlignment.Center;
                 t1.HorizontalAlignment = HorizontalAlignment.Center;
+                t1.Padding=new Thickness(0,10,0,10);
                 Grid.SetRow(t1, 1);
                 myGrid.Children.Add(t1);
                 TextBlock t2 = new TextBlock { Text = v.Details, Foreground = new SolidColorBrush(Colors.White) };
                 t2.VerticalAlignment = VerticalAlignment.Center;
                 t2.HorizontalAlignment = HorizontalAlignment.Center;
+                t2.Padding = new Thickness(0, 10, 0, 10);
                 Grid.SetRow(t2, 2);
                 myGrid.Children.Add(t2);
                 TextBlock t3 = new TextBlock
@@ -198,14 +204,17 @@ namespace Pizza_Ani_Time.View
                     Text = v.Price.ToString() + " kr",
                     Foreground = new SolidColorBrush(Colors.White),
                     HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Center
-
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Padding = new Thickness(0,10,0,10)
                 };
                 Grid.SetRow(t3, 3);
                 myGrid.Children.Add(t3);
-                Button b = new Button();
-                b.VerticalAlignment = VerticalAlignment.Center;
-                b.HorizontalAlignment = HorizontalAlignment.Center;
+                Button b = new Button
+                {
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Padding = new Thickness(0, 10, 0, 10)
+                };
                 Grid.SetRow(b, 4);
                 b.Content = "Add to cart";
                 b.Foreground = new SolidColorBrush(Colors.White);

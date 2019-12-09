@@ -12,7 +12,7 @@ namespace Pizza_Ani_Time.Model
         private List<Product> Products = new List<Product>();
         public User Customer { get; }
 
-        //Constructors
+        //Constructor
         public ShoppingCart() 
         {
             

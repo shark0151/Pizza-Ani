@@ -6,20 +6,27 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <ScrollViewer HorizontalContentAlignment="Center" Margin="40">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition MaxHeight="200"></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid x:Name="PromotionsGrid" Grid.Row="0">
-                <!--Promotions should go here-->
-            </Grid>
-            <controls:UniformGrid Orientation="Horizontal" Grid.Row="0" x:Name="ProductGrid" Columns="3" ColumnSpacing="10" RowSpacing="10">
-                <!--
+    <Pivot x:Name="Pivot">
+        <Pivot.Background>
+            <ImageBrush ImageSource="../Assets/Background.jpg" Stretch="UniformToFill"></ImageBrush>
+        </Pivot.Background>
+        <PivotItem Header="Products" >
+            <ScrollViewer HorizontalContentAlignment="Center" Margin="40">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="200"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="PromotionsGrid" Grid.Row="0">
+                        <!--Promotions should go here-->
+                    </Grid>
+                    <controls:UniformGrid Orientation="Horizontal" Grid.Row="0" x:Name="ProductGrid" Columns="3" ColumnSpacing="10" RowSpacing="10">
+                        <!--
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -40,7 +47,30 @@
                 </Grid>
             </Grid>
             -->
-            </controls:UniformGrid>
-        </Grid>
-    </ScrollViewer>
+                    </controls:UniformGrid>
+                </Grid>
+            </ScrollViewer>
+        </PivotItem>
+        <PivotItem Header="Promotions">
+            <Grid Width="950">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" CornerRadius="10" Background="#99999999">
+                    <interactivity:Interaction.Behaviors>
+                        <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
+                    </interactivity:Interaction.Behaviors>
+                </Grid>
+                <Grid Grid.Row="1" CornerRadius="10">
+                    <ScrollViewer HorizontalContentAlignment="Center" Margin="40">
+                        <ListView x:Name="Promotions" Padding="15">
+                            
+                        </ListView>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </PivotItem>
+    </Pivot>
 </Page>

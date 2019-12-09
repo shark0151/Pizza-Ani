@@ -35,22 +35,20 @@
                 <Image Source="../Assets/LOGO.png" Width="140" Height="150" ></Image>
             </Grid>
             <Grid Grid.Column="0" Grid.Row="1" Margin="50" CornerRadius="10">
-                <Grid>
+                <Grid Background="#99999999">
                     <interactivity:Interaction.Behaviors>
                         <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
                     </interactivity:Interaction.Behaviors>
                 </Grid>
-                
-                    <TextBlock
+                <TextBlock
                         Padding="10"
                         VerticalAlignment="Top" 
                         FontFamily="Freestyle Script" 
                         TextWrapping="WrapWholeWords"
                         Text="Delicious food at reasonable prices? We have it! At Pizza Ani-time we keep the standards up with our fresh and high quality products. Get ready to choose your preferences from our diversity of pizzas "
-                        Foreground="Black" 
+                        Foreground="White" 
                         FontSize="30">
-                    </TextBlock>
-                
+                </TextBlock>
             </Grid>
             <Grid Column="0" Row="2">
 

@@ -13,11 +13,14 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Drawing;
+using Windows.UI;
 using Windows.UI.Xaml.Media.Imaging;
 using Pizza_Ani_Time.ViewModel;
 using Pizza_Ani_Time.Model;
 using Windows.UI.Text;
 using Windows.UI.Popups;
+using Color = System.Drawing.Color;
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Pizza_Ani_Time.View
@@ -102,8 +105,14 @@ namespace Pizza_Ani_Time.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             List<Product> List = viewModel.GetInventory();
+            List<Product> promoList = new List<Product>
+            {
+                new Product("Offer 1", "", 70, "Buy 1 pizza and 1 drink with a discount","Promo"),
+                new Product("Offer 2", "", 130, "Buy 2 pizzas and 2 drinks with a discount","Promo"),
+                new Product("Offer 3", "", 200, "DISCOUNT","Promo")
+            };
             //check for empty
-
+            //Product page
             try
             {
                 foreach (var item in List)
@@ -125,6 +134,54 @@ namespace Pizza_Ani_Time.View
             catch
             {
                 LayoutError();
+            }
+
+            //Promo page
+            foreach (var v in promoList)
+            {
+                Grid myGrid = new Grid();
+                ColumnDefinition c1 = new ColumnDefinition();
+                c1.Width = new GridLength(200);
+                ColumnDefinition c2 = new ColumnDefinition();
+                c2.Width = new GridLength(100);
+                ColumnDefinition c3 = new ColumnDefinition();
+                c3.Width = new GridLength(300);
+                ColumnDefinition c4 = new ColumnDefinition();
+                c4.Width = new GridLength(100);
+                ColumnDefinition c5 = new ColumnDefinition();
+                c5.Width = new GridLength(100);
+                myGrid.ColumnDefinitions.Add(c1);
+                myGrid.ColumnDefinitions.Add(c2);
+                myGrid.ColumnDefinitions.Add(c3);
+                myGrid.ColumnDefinitions.Add(c4);
+                myGrid.ColumnDefinitions.Add(c5);
+                RowDefinition r = new RowDefinition();
+                myGrid.RowDefinitions.Add(r);
+                Image pic = new Image();
+
+                pic.Stretch = Stretch.UniformToFill;
+                Grid.SetColumn(pic, 0);
+                TextBlock t1 = new TextBlock();
+                t1.Text = v.Name;
+                t1.Foreground = new SolidColorBrush(Colors.White);
+                Grid.SetColumn(t1, 1);
+                myGrid.Children.Add(t1);
+                TextBlock t2 = new TextBlock();
+                t2.Text = v.Details;
+                t2.Foreground = new SolidColorBrush(Colors.White);
+                Grid.SetColumn(t2, 2);
+                myGrid.Children.Add(t2);
+                TextBlock t3 = new TextBlock();
+                t3.Text = v.Price.ToString() + " kr";
+                t3.Foreground = new SolidColorBrush(Colors.White);
+                Grid.SetColumn(t3, 3);
+                myGrid.Children.Add(t3);
+                Button b = new Button();
+                Grid.SetColumn(b, 4);
+                b.Content = "Add to cart";
+                b.Foreground=new SolidColorBrush(Colors.White);
+                myGrid.Children.Add(b);
+                Promotions.Items.Add(myGrid);
             }
         }
         private async void LayoutError()  //Error message

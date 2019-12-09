@@ -13,7 +13,6 @@
             <Setter Property="HorizontalAlignment" Value="Stretch" ></Setter>
             <Setter Property="Height" Value="50" ></Setter>
             <Setter Property="BorderThickness" Value="0"></Setter>
-
             <Setter Property="Background" Value="Transparent" ></Setter>
             <Setter Property="Padding" Value="0"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>

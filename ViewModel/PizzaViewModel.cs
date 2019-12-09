@@ -68,5 +68,10 @@ namespace Pizza_Ani_Time.ViewModel
             return sc.All();
         }
 
+        public double GetCartTotal()
+        {
+            return sc.TotalAmount;
+        }
+
     }
 }

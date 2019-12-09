@@ -9,7 +9,16 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Margin="50">
-        <ListView x:Name="ShoppingList" >
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="150"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock x:Name="Total"></TextBlock>
+            <Button Content=""></Button>
+        </Grid>
+        
+        <ListView x:Name="ShoppingList" Grid.Row="1">
             <!--
             <ListViewItem HorizontalContentAlignment="Stretch" MaxHeight="200">
                 <Grid>

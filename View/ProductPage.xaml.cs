@@ -102,6 +102,7 @@ namespace Pizza_Ani_Time.View
             toCart.VerticalAlignment = VerticalAlignment.Stretch;
             toCart.DataContext = item;  //what we want te get when pressing button
             toCart.Foreground = new SolidColorBrush(Colors.White);
+            toCart.CornerRadius=new CornerRadius(0,0,10,10);
 
             TextFields.Children.Add(price);
             TextFields.Children.Add(name);
@@ -181,12 +182,11 @@ namespace Pizza_Ani_Time.View
                 myGrid.RowDefinitions.Add(r5);
                 myGrid.Children.Add(blurGrid);
                 myGrid.Height = 450;
-
+                myGrid.CornerRadius=new CornerRadius(10);
                 
                 Image pic = new Image { Source = new BitmapImage(new Uri("ms-appx:///Assets/"+v.Image+".jpg")) };
-                myGrid.Children.Add(pic);
-
                 Grid.SetRow(pic, 0);
+                myGrid.Children.Add(pic);
                 TextBlock t1 = new TextBlock { Text = v.Name, Foreground = new SolidColorBrush(Colors.White) };
                 t1.VerticalAlignment = VerticalAlignment.Center;
                 t1.HorizontalAlignment = HorizontalAlignment.Center;
@@ -218,7 +218,8 @@ namespace Pizza_Ani_Time.View
                 Grid.SetRow(b, 4);
                 b.Content = "Add to cart";
                 b.Foreground = new SolidColorBrush(Colors.White);
-                b.CornerRadius = new CornerRadius(5);
+                b.HorizontalAlignment = HorizontalAlignment.Stretch;
+                b.CornerRadius=new CornerRadius(0,0,10,10);
                 myGrid.Children.Add(b);
                 Promotions.Children.Add(myGrid);
 

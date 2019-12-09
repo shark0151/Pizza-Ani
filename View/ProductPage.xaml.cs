@@ -19,6 +19,9 @@ using Pizza_Ani_Time.ViewModel;
 using Pizza_Ani_Time.Model;
 using Windows.UI.Text;
 using Windows.UI.Popups;
+using Microsoft.Toolkit.Uwp.UI.Animations;
+using Microsoft.Toolkit.Uwp.UI.Animations.Behaviors;
+using Microsoft.Xaml.Interactivity;
 using Color = System.Drawing.Color;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -31,21 +34,34 @@ namespace Pizza_Ani_Time.View
     public sealed partial class ProductPage : Page
     {
         public PizzaViewModel viewModel;
-        
+
         private void CreateProductLayout(Product item)
         {
-            
+
             Grid Main = new Grid();
-            
+            Grid blurGrid = new Grid();
+            Blur blur=new Blur();
+            blur.Value = 10;
+            blur.Delay = 0;
+            blur.Duration = 0;
+            blur.AutomaticallyStart = true;
+            blur.Attach(blurGrid);
+            Grid.SetRowSpan(blurGrid,2);
+            blurGrid.Background=new SolidColorBrush(Windows.UI.Color.FromArgb(153,153,153,153));
+            Main.Children.Add(blurGrid);
+
             RowDefinition row0 = new RowDefinition();
             RowDefinition row1 = new RowDefinition();
             Main.RowDefinitions.Add(row0);
             Main.RowDefinitions.Add(row1);
 
+            Grid imageGrid=new Grid();
             Image image = new Image();
-            image.Source = new BitmapImage(new Uri("ms-appx:///"+ item.Image));
-            Main.Children.Add(image);
-            Grid.SetRow(image, 0);
+            image.Source = new BitmapImage(new Uri("ms-appx:///" + item.Image));
+            imageGrid.Children.Add(image);
+            imageGrid.Padding = new Thickness(0,10,0,0);
+            Grid.SetRow(imageGrid, 0);
+            Main.Children.Add(imageGrid);
 
             Grid TextFields = new Grid();
             Grid.SetRow(TextFields, 1);
@@ -60,22 +76,25 @@ namespace Pizza_Ani_Time.View
             Main.Children.Add(TextFields);
 
             TextBlock price = new TextBlock();
-            price.Text = item.Price.ToString()+"kr";
+            price.Text = item.Price.ToString() + "kr";
             price.FontSize = 20;
             price.HorizontalAlignment = HorizontalAlignment.Center;
             price.FontWeight = FontWeights.Bold;
+            price.Foreground=new SolidColorBrush(Colors.White);
 
             TextBlock name = new TextBlock();
             name.Text = item.Name;
             name.FontSize = 30;
             name.HorizontalAlignment = HorizontalAlignment.Center;
             name.FontWeight = FontWeights.SemiLight;
+            name.Foreground = new SolidColorBrush(Colors.White);
 
             TextBlock description = new TextBlock();
             description.Text = item.Details;
             description.FontSize = 20;
             description.HorizontalAlignment = HorizontalAlignment.Center;
             description.FontWeight = FontWeights.Light;
+            description.Foreground = new SolidColorBrush(Colors.White);
 
             Button toCart = new Button();
             toCart.Content = "Add To Cart";
@@ -83,6 +102,7 @@ namespace Pizza_Ani_Time.View
             toCart.HorizontalAlignment = HorizontalAlignment.Stretch;
             toCart.VerticalAlignment = VerticalAlignment.Stretch;
             toCart.DataContext = item;  //what we want te get when pressing button
+            toCart.Foreground = new SolidColorBrush(Colors.White);
 
             TextFields.Children.Add(price);
             TextFields.Children.Add(name);
@@ -92,7 +112,8 @@ namespace Pizza_Ani_Time.View
             Grid.SetRow(name, 1);
             Grid.SetRow(description, 2);
             Grid.SetRow(toCart, 3);
-
+            Main.CornerRadius = new CornerRadius(10);
+            
             ProductGrid.Children.Add(Main);
 
 
@@ -100,7 +121,7 @@ namespace Pizza_Ani_Time.View
         public ProductPage()
         {
             this.InitializeComponent();
-            
+
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -179,7 +200,7 @@ namespace Pizza_Ani_Time.View
                 Button b = new Button();
                 Grid.SetColumn(b, 4);
                 b.Content = "Add to cart";
-                b.Foreground=new SolidColorBrush(Colors.White);
+                b.Foreground = new SolidColorBrush(Colors.White);
                 myGrid.Children.Add(b);
                 Promotions.Items.Add(myGrid);
             }
@@ -194,7 +215,7 @@ namespace Pizza_Ani_Time.View
         {
             //Get the product from the button as a product object;
             Product content = (sender as Button).DataContext as Product;
-            
+
             viewModel.AddItemToCart(content);
         }
     }

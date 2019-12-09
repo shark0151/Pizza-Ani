@@ -36,11 +36,7 @@ namespace Pizza_Ani_Time.View
             Grid mainMain = new Grid();
             Grid Main = new Grid();
             Grid blurGrid = new Grid();
-            Blur blur = new Blur();
-            blur.Value = 10;
-            blur.Delay = 0;
-            blur.Duration = 0;
-            blur.AutomaticallyStart = true;
+            Blur blur = new Blur { Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true };
             blur.Attach(blurGrid);
             Grid.SetColumnSpan(blurGrid, 6);
             blurGrid.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 153));
@@ -62,8 +58,7 @@ namespace Pizza_Ani_Time.View
             Main.ColumnDefinitions.Add(col4);
             Main.ColumnDefinitions.Add(col5);
 
-            Image image = new Image();
-            image.Source = new BitmapImage(new Uri("ms-appx:///" + item.Image));
+            Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
             Main.Children.Add(image);
             Grid.SetColumn(image, 0);
 
@@ -78,29 +73,34 @@ namespace Pizza_Ani_Time.View
 
             Main.Children.Add(TextFields);
 
-            TextBlock price = new TextBlock();
-            price.Text = item.Price.ToString() + "kr";
-            price.FontSize = 20;
-            price.HorizontalAlignment = HorizontalAlignment.Center;
-            price.FontWeight = FontWeights.Bold;
-            price.Foreground=new SolidColorBrush(Colors.White);
+            TextBlock price = new TextBlock
+            {
+                Text = item.Price.ToString() + "kr",
+                FontSize = 20,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Colors.White)
+            };
 
-            TextBlock name = new TextBlock();
-            name.Text = item.Name;
-            name.FontSize = 30;
-            name.HorizontalAlignment = HorizontalAlignment.Center;
-            name.FontWeight = FontWeights.SemiLight;
-            name.Foreground = new SolidColorBrush(Colors.White);
+            TextBlock name = new TextBlock
+            {
+                Text = item.Name,
+                FontSize = 30,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontWeight = FontWeights.SemiLight,
+                Foreground = new SolidColorBrush(Colors.White)
+            };
 
-            TextBlock description = new TextBlock();
-            description.Text = item.Details;
-            description.FontSize = 20;
-            description.HorizontalAlignment = HorizontalAlignment.Center;
-            description.FontWeight = FontWeights.Light;
-            description.Foreground = new SolidColorBrush(Colors.White);
+            TextBlock description = new TextBlock
+            {
+                Text = item.Details,
+                FontSize = 20,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontWeight = FontWeights.Light,
+                Foreground = new SolidColorBrush(Colors.White)
+            };
 
-            Button removeFromCart = new Button();
-            removeFromCart.Content = "Remove From Cart";
+            Button removeFromCart = new Button {Content = "Remove From Cart"};
             removeFromCart.Click += RemoveItem_Click;
             removeFromCart.HorizontalAlignment = HorizontalAlignment.Stretch;
             removeFromCart.VerticalAlignment = VerticalAlignment.Top;
@@ -119,11 +119,13 @@ namespace Pizza_Ani_Time.View
             Grid.SetColumn(price, 4);
             Grid.SetColumn(removeFromCart, 5);
 
-            ListViewItem listViewItem = new ListViewItem();
-            listViewItem.HorizontalContentAlignment = HorizontalAlignment.Stretch;
-            listViewItem.MaxHeight = 200;
-            listViewItem.Padding = new Thickness(5);
-            listViewItem.Content = mainMain;
+            ListViewItem listViewItem = new ListViewItem
+            {
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                MaxHeight = 200,
+                Padding = new Thickness(5),
+                Content = mainMain
+            };
             ShoppingList.Items.Add(listViewItem);
 
 

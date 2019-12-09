@@ -48,7 +48,7 @@
                         <TextBlock Grid.Row="1" Text="Wow!" HorizontalAlignment="Center" FontSize="30" FontWeight="Light" ></TextBlock>
                     </Grid>
                     
-                    <TextBlock Grid.Colum   Content="Remove from Cart"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" Click="RemoveItem_Click"></Button>
+                    <TextBlock Grid.Column   Content="Remove from Cart"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" Click="RemoveItem_Click"></Button>
                 </Grid>
             </ListViewItem>
             -->

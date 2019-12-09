@@ -21,7 +21,7 @@ namespace Pizza_Ani_Time.ViewModel
 
         //
         public int CartNumber { get { return GetCart().Count; } }
-        public double CartTotal { get { return sc.TotalAmount; } }
+        public string CartTotal { get { return sc.TotalAmount.ToString()+" kr"; } }
 
         //Constructor
         public PizzaViewModel() {}

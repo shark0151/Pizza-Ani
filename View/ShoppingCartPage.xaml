@@ -7,24 +7,27 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Assets/Background.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition MaxHeight="75"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" HorizontalAlignment="Stretch" Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45*"></ColumnDefinition>
+                    <ColumnDefinition MaxWidth="220" Width="200*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
-    <Grid Margin="40">
-        <Grid.RowDefinitions>
-            <RowDefinition ></RowDefinition>
-            <RowDefinition MaxHeight="100"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="1" HorizontalAlignment="Stretch" Padding="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="45*"></ColumnDefinition>
-                <ColumnDefinition MaxWidth="220" Width="200*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+                <TextBlock x:Name="Total" Grid.Column="0" Text="{Binding CartTotal}" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,20,0"></TextBlock>
+                <Button Content="Check out" Grid.Column="1" CornerRadius="5" HorizontalAlignment="Stretch" Foreground="White" VerticalAlignment="Bottom" Click="Checkout_OnClick"/>
+            </Grid>
 
-            <TextBlock x:Name="Total" Grid.Column="0" Text="{Binding CartTotal}" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center" Height="41" Padding="0,0,20,0" Width="90"></TextBlock>
-            <Button Content="Check out" Grid.Column="1" Background="Green" CornerRadius="10" Height="41" HorizontalAlignment="Stretch"/>
-        </Grid>
-
-        <ListView x:Name="ShoppingList" Grid.Row="0">
-            <!--
+            <ListView x:Name="ShoppingList" Grid.Row="0">
+                <!--
             <ListViewItem HorizontalContentAlignment="Stretch" MaxHeight="200">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -49,6 +52,7 @@
                 </Grid>
             </ListViewItem>
             -->
-        </ListView>
+            </ListView>
+        </Grid>
     </Grid>
 </Page>

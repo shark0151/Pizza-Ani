@@ -8,17 +8,22 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Margin="50">
+    <Grid Margin="40">
         <Grid.RowDefinitions>
-            <RowDefinition MaxHeight="150"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition MaxHeight="100"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <TextBlock x:Name="Total"></TextBlock>
-            <Button Content=""></Button>
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" Padding="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45*"></ColumnDefinition>
+                <ColumnDefinition MaxWidth="220" Width="200*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="Total" Grid.Column="0" Text='232' FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center" Height="41" Padding="0,0,20,0" Width="90"></TextBlock>
+            <Button Content="Check out" Grid.Column="1" Background="Green" CornerRadius="10" Height="41" HorizontalAlignment="Stretch"/>
         </Grid>
-        
-        <ListView x:Name="ShoppingList" Grid.Row="1">
+
+        <ListView x:Name="ShoppingList" Grid.Row="0">
             <!--
             <ListViewItem HorizontalContentAlignment="Stretch" MaxHeight="200">
                 <Grid>
@@ -40,8 +45,7 @@
                         <TextBlock Grid.Row="1" Text="Wow!" HorizontalAlignment="Center" FontSize="30" FontWeight="Light" ></TextBlock>
                     </Grid>
                     
-                    <TextBlock Grid.Column="4" Text="50kr" HorizontalAlignment="Right" FontSize="30" FontWeight="Bold" ></TextBlock>
-                    <Button  Grid.Column="5"  Content="Remove from Cart"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" Click="RemoveItem_Click"></Button>
+                    <TextBlock Grid.Colum   Content="Remove from Cart"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" Click="RemoveItem_Click"></Button>
                 </Grid>
             </ListViewItem>
             -->

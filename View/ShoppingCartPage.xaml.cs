@@ -156,7 +156,7 @@ namespace Pizza_Ani_Time.View
 
         private void Checkout_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            viewModel.CreateOrder();
         }
     }
 }

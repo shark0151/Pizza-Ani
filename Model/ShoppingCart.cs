@@ -10,8 +10,7 @@ namespace Pizza_Ani_Time.Model
     {
         //Instance Fields
         private List<Product> Products = new List<Product>();
-        public User Customer { get; }
-
+        
         //Constructor
         public ShoppingCart() 
         {

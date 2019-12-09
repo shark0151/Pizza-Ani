@@ -16,7 +16,7 @@ namespace Pizza_Ani_Time.ViewModel
         readonly Inventory inv = new Inventory(); //make staticc?
         static ShoppingCart sc = new ShoppingCart(); //should be static
         OrderCatalog oc = new OrderCatalog();
-
+        User Hero = new User();
         public event PropertyChangedEventHandler PropertyChanged;
 
         //
@@ -32,12 +32,16 @@ namespace Pizza_Ani_Time.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        
+        public void CreateUser()
+        {
+            Hero.SetName("Johnny Storm");
+            Hero.SetID();
+        }
 
         //Orders
         public void CreateOrder()
         {
-            oc.CreateOrder(sc);
+            oc.CreateOrder(sc,Hero);
         }
 
         public void DeactivateOrder()

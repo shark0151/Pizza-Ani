@@ -30,6 +30,7 @@ namespace Pizza_Ani_Time
         public MainPage()
         {
             this.InitializeComponent();
+            viewModel.CreateUser();
             SideMenu.DataContext = SideMenu.CompactPaneLength;
             CartI.DataContext = viewModel;
             Content.Navigate(typeof(PromotionsPage), null);

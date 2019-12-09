@@ -178,18 +178,22 @@ namespace Pizza_Ani_Time.View
 
                 Grid.SetColumn(pic, 0);
                 TextBlock t1 = new TextBlock {Text = v.Name, Foreground = new SolidColorBrush(Colors.White)};
+                t1.VerticalAlignment = VerticalAlignment.Center;
                 Grid.SetColumn(t1, 1);
                 myGrid.Children.Add(t1);
                 TextBlock t2 = new TextBlock {Text = v.Details, Foreground = new SolidColorBrush(Colors.White)};
+                t2.VerticalAlignment = VerticalAlignment.Center;
                 Grid.SetColumn(t2, 2);
                 myGrid.Children.Add(t2);
                 TextBlock t3 = new TextBlock
                 {
                     Text = v.Price.ToString() + " kr", Foreground = new SolidColorBrush(Colors.White)
                 };
+                t3.VerticalAlignment = VerticalAlignment.Center;
                 Grid.SetColumn(t3, 3);
                 myGrid.Children.Add(t3);
                 Button b = new Button();
+                b.VerticalAlignment = VerticalAlignment.Center;
                 Grid.SetColumn(b, 4);
                 b.Content = "Add to cart";
                 b.Foreground = new SolidColorBrush(Colors.White);

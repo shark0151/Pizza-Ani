@@ -52,23 +52,20 @@
             </ScrollViewer>
         </PivotItem>
         <PivotItem Header="Promotions">
-            <Grid Width="950" CornerRadius="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="1" Background="#99999999">
-                    <interactivity:Interaction.Behaviors>
-                        <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
-                    </interactivity:Interaction.Behaviors>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <ScrollViewer HorizontalContentAlignment="Center" Margin="40">
-                        <ListView x:Name="Promotions" Padding="15">
-                            
-                        </ListView>
-                    </ScrollViewer>
+            <Grid>
+                <Grid Width="950" VerticalAlignment="Center">
+                    <Grid Background="#99999999">
+                        <interactivity:Interaction.Behaviors>
+                            <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                    <Grid>
+                        <ScrollViewer HorizontalContentAlignment="Center" Padding="10">
+                            <ListView x:Name="Promotions" Padding="15">
+
+                            </ListView>
+                        </ScrollViewer>
+                    </Grid>
                 </Grid>
             </Grid>
         </PivotItem>

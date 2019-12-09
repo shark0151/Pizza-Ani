@@ -127,8 +127,8 @@ namespace Pizza_Ani_Time.View
             List<Product> List = viewModel.GetInventory();
             List<Product> promoList = new List<Product>
             {
-                new Product("Offer 1", "", 70, "Buy 1 pizza and 1 drink with a discount","Promo"),
-                new Product("Offer 2", "", 130, "Buy 2 pizzas and 2 drinks with a discount","Promo"),
+                new Product("Offer 1", "Offer1", 70, "Buy 1 pizza and 1 drink with a discount","Promo"),
+                new Product("Offer 2", "Offer2", 130, "Buy 2 pizzas and 2 drinks with a discount","Promo"),
             };
             //check for empty
             //Product page
@@ -178,8 +178,9 @@ namespace Pizza_Ani_Time.View
                 myGrid.Children.Add(blurGrid);
                 myGrid.Height = 500;
 
-                Image pic = new Image();
-
+                
+                Image pic = new Image { Source = new BitmapImage(new Uri("ms-appx:///Assets/"+v.Image+".jpg")) };
+                myGrid.Children.Add(pic);
 
                 Grid.SetRow(pic, 0);
                 TextBlock t1 = new TextBlock { Text = v.Name, Foreground = new SolidColorBrush(Colors.White) };

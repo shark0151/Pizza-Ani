@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -18,6 +19,7 @@ using Pizza_Ani_Time.ViewModel;
 using Pizza_Ani_Time.Model;
 using Windows.UI.Text;
 using Windows.UI.Popups;
+using Microsoft.Toolkit.Uwp.UI.Animations.Behaviors;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,8 +33,21 @@ namespace Pizza_Ani_Time.View
         public PizzaViewModel viewModel;
         private void CreateProductLayout(Product item)
         {
-
+            Grid mainMain = new Grid();
             Grid Main = new Grid();
+            Grid blurGrid = new Grid();
+            Blur blur = new Blur();
+            blur.Value = 10;
+            blur.Delay = 0;
+            blur.Duration = 0;
+            blur.AutomaticallyStart = true;
+            blur.Attach(blurGrid);
+            Grid.SetColumnSpan(blurGrid, 6);
+            blurGrid.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 153));
+            mainMain.Children.Add(blurGrid);
+            mainMain.CornerRadius = new CornerRadius(10);
+            Main.Padding = new Thickness(10);
+            mainMain.Children.Add(Main);
 
             ColumnDefinition col0 = new ColumnDefinition();
             ColumnDefinition col1 = new ColumnDefinition();
@@ -68,18 +83,21 @@ namespace Pizza_Ani_Time.View
             price.FontSize = 20;
             price.HorizontalAlignment = HorizontalAlignment.Center;
             price.FontWeight = FontWeights.Bold;
+            price.Foreground=new SolidColorBrush(Colors.White);
 
             TextBlock name = new TextBlock();
             name.Text = item.Name;
             name.FontSize = 30;
             name.HorizontalAlignment = HorizontalAlignment.Center;
             name.FontWeight = FontWeights.SemiLight;
+            name.Foreground = new SolidColorBrush(Colors.White);
 
             TextBlock description = new TextBlock();
             description.Text = item.Details;
             description.FontSize = 20;
             description.HorizontalAlignment = HorizontalAlignment.Center;
             description.FontWeight = FontWeights.Light;
+            description.Foreground = new SolidColorBrush(Colors.White);
 
             Button removeFromCart = new Button();
             removeFromCart.Content = "Remove From Cart";
@@ -87,13 +105,14 @@ namespace Pizza_Ani_Time.View
             removeFromCart.HorizontalAlignment = HorizontalAlignment.Stretch;
             removeFromCart.VerticalAlignment = VerticalAlignment.Top;
             removeFromCart.DataContext = item;  //what we want te get when pressing button
+            removeFromCart.CornerRadius = new CornerRadius(5);
+            removeFromCart.Foreground = new SolidColorBrush(Colors.White);
 
-            
             TextFields.Children.Add(name);
             TextFields.Children.Add(description);
             Main.Children.Add(price);
             Main.Children.Add(removeFromCart);
-            
+
             Grid.SetRow(name, 0);
             Grid.SetRow(description, 1);
 
@@ -104,7 +123,7 @@ namespace Pizza_Ani_Time.View
             listViewItem.HorizontalContentAlignment = HorizontalAlignment.Stretch;
             listViewItem.MaxHeight = 200;
             listViewItem.Padding = new Thickness(5);
-            listViewItem.Content = Main;
+            listViewItem.Content = mainMain;
             ShoppingList.Items.Add(listViewItem);
 
 
@@ -145,9 +164,9 @@ namespace Pizza_Ani_Time.View
             //Get the product from the button as a product object;
             Product content = (sender as Button).DataContext as Product;
             viewModel.RemoveItemFromCart(content);
-            foreach(ListViewItem item in ShoppingList.Items)
+            foreach (ListViewItem item in ShoppingList.Items)
             {
-                if(item == ((sender as Button).Parent as Grid).Parent)
+                if (item == ((sender as Button).Parent as Grid).Parent)
                 {
                     ShoppingList.Items.Remove(item);
                 }

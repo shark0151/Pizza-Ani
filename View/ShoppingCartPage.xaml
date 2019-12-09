@@ -23,10 +23,10 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock x:Name="Total" Grid.Column="0" Text="{Binding CartTotal}" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,20,0"></TextBlock>
-                <Button Content="Check out" Grid.Column="1" CornerRadius="5" HorizontalAlignment="Stretch" Foreground="White" VerticalAlignment="Bottom" Click="Checkout_OnClick"/>
+                <Button Content="Check out" Grid.Column="1" CornerRadius="5" HorizontalAlignment="Stretch" Foreground="White" VerticalAlignment="Center" Click="Checkout_OnClick"/>
             </Grid>
 
-            <ListView x:Name="ShoppingList" Grid.Row="0">
+            <ListView x:Name="ShoppingList" Grid.Row="0" SelectionMode="None">
                 <!--
             <ListViewItem HorizontalContentAlignment="Stretch" MaxHeight="200">
                 <Grid>

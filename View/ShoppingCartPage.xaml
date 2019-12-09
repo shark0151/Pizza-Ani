@@ -26,7 +26,7 @@
                 <Button Content="Check out" Grid.Column="1" CornerRadius="5" HorizontalAlignment="Stretch" Foreground="White" VerticalAlignment="Center" Click="Checkout_OnClick"/>
             </Grid>
 
-            <ListView x:Name="ShoppingList" Grid.Row="0">
+            <ListView x:Name="ShoppingList" Grid.Row="0" SelectionMode="None">
                 <!--
             <ListViewItem HorizontalContentAlignment="Stretch" MaxHeight="200">
                 <Grid>

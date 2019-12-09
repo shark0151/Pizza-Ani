@@ -37,7 +37,6 @@ namespace Pizza_Ani_Time.View
 
         private void CreateProductLayout(Product item)
         {
-
             Grid Main = new Grid();
             Grid blurGrid = new Grid();
             Blur blur=new Blur();
@@ -178,9 +177,10 @@ namespace Pizza_Ani_Time.View
                 myGrid.ColumnDefinitions.Add(c5);
                 RowDefinition r = new RowDefinition();
                 myGrid.RowDefinitions.Add(r);
+
                 Image pic = new Image();
 
-                pic.Stretch = Stretch.UniformToFill;
+
                 Grid.SetColumn(pic, 0);
                 TextBlock t1 = new TextBlock();
                 t1.Text = v.Name;
@@ -201,6 +201,7 @@ namespace Pizza_Ani_Time.View
                 Grid.SetColumn(b, 4);
                 b.Content = "Add to cart";
                 b.Foreground = new SolidColorBrush(Colors.White);
+                b.CornerRadius=new CornerRadius(5);
                 myGrid.Children.Add(b);
                 Promotions.Items.Add(myGrid);
             }

@@ -15,7 +15,7 @@
         <Pivot.Background>
             <ImageBrush ImageSource="../Assets/Background.jpg" Stretch="UniformToFill"></ImageBrush>
         </Pivot.Background>
-        <PivotItem Header="Products" >
+        <PivotItem Header="Products">
             <ScrollViewer HorizontalContentAlignment="Center" Padding="10">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -52,18 +52,18 @@
             </ScrollViewer>
         </PivotItem>
         <PivotItem Header="Promotions">
-            <Grid Width="950">
+            <Grid Width="950" CornerRadius="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="1" CornerRadius="10" Background="#99999999">
+                <Grid Grid.Row="1" Background="#99999999">
                     <interactivity:Interaction.Behaviors>
                         <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
                     </interactivity:Interaction.Behaviors>
                 </Grid>
-                <Grid Grid.Row="1" CornerRadius="10">
+                <Grid Grid.Row="1">
                     <ScrollViewer HorizontalContentAlignment="Center" Margin="40">
                         <ListView x:Name="Promotions" Padding="15">
                             

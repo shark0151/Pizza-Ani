@@ -33,16 +33,23 @@ namespace Pizza_Ani_Time.View
         public PizzaViewModel viewModel;
         private void CreateProductLayout(Product item)
         {
-            Grid mainMain = new Grid();
-            Grid Main = new Grid();
-            Grid blurGrid = new Grid();
+            Grid mainMain = new Grid()
+            {
+                CornerRadius = new CornerRadius(10)
+            };
+            Grid Main = new Grid()
+            {
+                Padding = new Thickness(10)
+            };
+            Grid blurGrid = new Grid()
+            {
+                Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 153))
+            };
             Blur blur = new Blur { Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true };
             blur.Attach(blurGrid);
             Grid.SetColumnSpan(blurGrid, 6);
-            blurGrid.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 153));
+            
             mainMain.Children.Add(blurGrid);
-            mainMain.CornerRadius = new CornerRadius(10);
-            Main.Padding = new Thickness(10);
             mainMain.Children.Add(Main);
 
             ColumnDefinition col0 = new ColumnDefinition();
@@ -100,13 +107,17 @@ namespace Pizza_Ani_Time.View
                 Foreground = new SolidColorBrush(Colors.White)
             };
 
-            Button removeFromCart = new Button {Content = "Remove From Cart"};
+            Button removeFromCart = new Button 
+            {
+                Content = "Remove From Cart",
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Top,
+                CornerRadius = new CornerRadius(5),
+                Foreground = new SolidColorBrush(Colors.White)
+            };
             removeFromCart.Click += RemoveItem_Click;
-            removeFromCart.HorizontalAlignment = HorizontalAlignment.Stretch;
-            removeFromCart.VerticalAlignment = VerticalAlignment.Top;
             removeFromCart.DataContext = item;  //what we want te get when pressing button
-            removeFromCart.CornerRadius = new CornerRadius(5);
-            removeFromCart.Foreground = new SolidColorBrush(Colors.White);
+            
 
             TextFields.Children.Add(name);
             TextFields.Children.Add(description);

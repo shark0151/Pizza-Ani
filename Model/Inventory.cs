@@ -113,9 +113,11 @@ namespace Pizza_Ani_Time.Model
                     + "Cola 0,33l;" + ImageFolder + "drk_Cola03l" + ".png;50;Refreshing drink;Drink;"
                     + "Cola 0,5l;" + ImageFolder + "drk_Cola05l" + ".png;50;Refreshing drink;Drink;"
                     + "Cola 2l;" + ImageFolder + "drk_Cola2l" + ".png;50;Refreshing drink;Drink;"
-
+                    + "Offer 1;" + ImageFolder + "pr_Offer1" + ".jpg;70;Buy 1 pizza and 1 drink;Promo;"
+                    + "Offer 2;" + ImageFolder + "pr_Offer2" + ".jpg;130;Buy 2 pizzas and 2 drinks;Promo;"
 
                     );
+
             }
 
         }

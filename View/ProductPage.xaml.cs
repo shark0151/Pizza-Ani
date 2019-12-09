@@ -39,11 +39,7 @@ namespace Pizza_Ani_Time.View
         {
             Grid Main = new Grid();
             Grid blurGrid = new Grid();
-            Blur blur=new Blur();
-            blur.Value = 10;
-            blur.Delay = 0;
-            blur.Duration = 0;
-            blur.AutomaticallyStart = true;
+            Blur blur = new Blur {Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true};
             blur.Attach(blurGrid);
             Grid.SetRowSpan(blurGrid,2);
             blurGrid.Background=new SolidColorBrush(Windows.UI.Color.FromArgb(153,153,153,153));
@@ -55,8 +51,7 @@ namespace Pizza_Ani_Time.View
             Main.RowDefinitions.Add(row1);
 
             Grid imageGrid=new Grid();
-            Image image = new Image();
-            image.Source = new BitmapImage(new Uri("ms-appx:///" + item.Image));
+            Image image = new Image {Source = new BitmapImage(new Uri("ms-appx:///" + item.Image))};
             imageGrid.Children.Add(image);
             imageGrid.Padding = new Thickness(0,10,0,0);
             Grid.SetRow(imageGrid, 0);
@@ -74,29 +69,34 @@ namespace Pizza_Ani_Time.View
             TextFields.RowDefinitions.Add(trow3);
             Main.Children.Add(TextFields);
 
-            TextBlock price = new TextBlock();
-            price.Text = item.Price.ToString() + "kr";
-            price.FontSize = 20;
-            price.HorizontalAlignment = HorizontalAlignment.Center;
-            price.FontWeight = FontWeights.Bold;
-            price.Foreground=new SolidColorBrush(Colors.White);
+            TextBlock price = new TextBlock
+            {
+                Text = item.Price.ToString() + "kr",
+                FontSize = 20,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Colors.White)
+            };
 
-            TextBlock name = new TextBlock();
-            name.Text = item.Name;
-            name.FontSize = 30;
-            name.HorizontalAlignment = HorizontalAlignment.Center;
-            name.FontWeight = FontWeights.SemiLight;
-            name.Foreground = new SolidColorBrush(Colors.White);
+            TextBlock name = new TextBlock
+            {
+                Text = item.Name,
+                FontSize = 30,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontWeight = FontWeights.SemiLight,
+                Foreground = new SolidColorBrush(Colors.White)
+            };
 
-            TextBlock description = new TextBlock();
-            description.Text = item.Details;
-            description.FontSize = 20;
-            description.HorizontalAlignment = HorizontalAlignment.Center;
-            description.FontWeight = FontWeights.Light;
-            description.Foreground = new SolidColorBrush(Colors.White);
+            TextBlock description = new TextBlock
+            {
+                Text = item.Details,
+                FontSize = 20,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontWeight = FontWeights.Light,
+                Foreground = new SolidColorBrush(Colors.White)
+            };
 
-            Button toCart = new Button();
-            toCart.Content = "Add To Cart";
+            Button toCart = new Button {Content = "Add To Cart"};
             toCart.Click += AddToCart_Click;
             toCart.HorizontalAlignment = HorizontalAlignment.Stretch;
             toCart.VerticalAlignment = VerticalAlignment.Stretch;
@@ -160,16 +160,11 @@ namespace Pizza_Ani_Time.View
             foreach (var v in promoList)
             {
                 Grid myGrid = new Grid();
-                ColumnDefinition c1 = new ColumnDefinition();
-                c1.Width = new GridLength(200);
-                ColumnDefinition c2 = new ColumnDefinition();
-                c2.Width = new GridLength(100);
-                ColumnDefinition c3 = new ColumnDefinition();
-                c3.Width = new GridLength(300);
-                ColumnDefinition c4 = new ColumnDefinition();
-                c4.Width = new GridLength(100);
-                ColumnDefinition c5 = new ColumnDefinition();
-                c5.Width = new GridLength(100);
+                ColumnDefinition c1 = new ColumnDefinition {Width = new GridLength(200)};
+                ColumnDefinition c2 = new ColumnDefinition {Width = new GridLength(100)};
+                ColumnDefinition c3 = new ColumnDefinition {Width = new GridLength(300)};
+                ColumnDefinition c4 = new ColumnDefinition {Width = new GridLength(100)};
+                ColumnDefinition c5 = new ColumnDefinition {Width = new GridLength(100)};
                 myGrid.ColumnDefinitions.Add(c1);
                 myGrid.ColumnDefinitions.Add(c2);
                 myGrid.ColumnDefinitions.Add(c3);
@@ -182,19 +177,16 @@ namespace Pizza_Ani_Time.View
 
 
                 Grid.SetColumn(pic, 0);
-                TextBlock t1 = new TextBlock();
-                t1.Text = v.Name;
-                t1.Foreground = new SolidColorBrush(Colors.White);
+                TextBlock t1 = new TextBlock {Text = v.Name, Foreground = new SolidColorBrush(Colors.White)};
                 Grid.SetColumn(t1, 1);
                 myGrid.Children.Add(t1);
-                TextBlock t2 = new TextBlock();
-                t2.Text = v.Details;
-                t2.Foreground = new SolidColorBrush(Colors.White);
+                TextBlock t2 = new TextBlock {Text = v.Details, Foreground = new SolidColorBrush(Colors.White)};
                 Grid.SetColumn(t2, 2);
                 myGrid.Children.Add(t2);
-                TextBlock t3 = new TextBlock();
-                t3.Text = v.Price.ToString() + " kr";
-                t3.Foreground = new SolidColorBrush(Colors.White);
+                TextBlock t3 = new TextBlock
+                {
+                    Text = v.Price.ToString() + " kr", Foreground = new SolidColorBrush(Colors.White)
+                };
                 Grid.SetColumn(t3, 3);
                 myGrid.Children.Add(t3);
                 Button b = new Button();

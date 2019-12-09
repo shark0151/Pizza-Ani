@@ -19,7 +19,7 @@
                 <ColumnDefinition MaxWidth="220" Width="200*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="Total" Grid.Column="0" Text='232' FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center" Height="41" Padding="0,0,20,0" Width="90"></TextBlock>
+            <TextBlock x:Name="Total" Grid.Column="0" Text="{Binding CartTotal}" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center" Height="41" Padding="0,0,20,0" Width="90"></TextBlock>
             <Button Content="Check out" Grid.Column="1" Background="Green" CornerRadius="10" Height="41" HorizontalAlignment="Stretch"/>
         </Grid>
 

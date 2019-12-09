@@ -21,6 +21,7 @@ namespace Pizza_Ani_Time.ViewModel
 
         //
         public int CartNumber { get { return GetCart().Count; } }
+        public double CartTotal { get { return sc.TotalAmount; } }
 
         //Constructor
         public PizzaViewModel() {}
@@ -50,6 +51,7 @@ namespace Pizza_Ani_Time.ViewModel
             sc.AddProduct(product);
             //CartNumber++;
             OnPropertyChanged("CartNumber");
+            OnPropertyChanged("CartTotal");
         }
 
         public void RemoveItemFromCart(Product product)
@@ -57,6 +59,8 @@ namespace Pizza_Ani_Time.ViewModel
             //CartNumber--;
             sc.RemoveProduct(product);
             OnPropertyChanged("CartNumber");
+            OnPropertyChanged("CartTotal");
+
         }
         public List<Product> GetInventory()
         {
@@ -68,10 +72,6 @@ namespace Pizza_Ani_Time.ViewModel
             return sc.All();
         }
 
-        public double GetCartTotal()
-        {
-            return sc.TotalAmount;
-        }
 
     }
 }

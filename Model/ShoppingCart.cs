@@ -40,7 +40,7 @@ namespace Pizza_Ani_Time.Model
 
         public void RemoveProduct(Product product)
         {
-            //must find a different way to remove items
+            
             Products.Remove(product);
         }
         public List<Product> All()

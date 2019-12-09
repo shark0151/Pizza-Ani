@@ -22,9 +22,7 @@
                         <RowDefinition MaxHeight="200"></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Grid x:Name="PromotionsGrid" Grid.Row="0">
-                        <!--Promotions should go here-->
-                    </Grid>
+
                     <controls:UniformGrid Orientation="Horizontal" Grid.Row="0" x:Name="ProductGrid" Columns="4" ColumnSpacing="10" RowSpacing="10">
                         <!--
             <Grid>
@@ -54,18 +52,11 @@
         <PivotItem Header="Promotions">
             <Grid>
                 <Grid Width="950" VerticalAlignment="Center">
-                    <Grid Background="#99999999">
-                        <interactivity:Interaction.Behaviors>
-                            <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
-                        </interactivity:Interaction.Behaviors>
-                    </Grid>
-                    <Grid>
-                        <ScrollViewer HorizontalContentAlignment="Center" Padding="10">
-                            <ListView x:Name="Promotions" Padding="15">
+                    <ScrollViewer HorizontalContentAlignment="Center" Padding="10">
+                        <controls:UniformGrid Orientation="Horizontal" x:Name="Promotions" Columns="2" ColumnSpacing="10" RowSpacing="10">
 
-                            </ListView>
-                        </ScrollViewer>
-                    </Grid>
+                        </controls:UniformGrid>
+                    </ScrollViewer>
                 </Grid>
             </Grid>
         </PivotItem>

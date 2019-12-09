@@ -39,10 +39,10 @@ namespace Pizza_Ani_Time.View
         {
             Grid Main = new Grid();
             Grid blurGrid = new Grid();
-            Blur blur = new Blur {Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true};
+            Blur blur = new Blur { Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true };
             blur.Attach(blurGrid);
-            Grid.SetRowSpan(blurGrid,2);
-            blurGrid.Background=new SolidColorBrush(Windows.UI.Color.FromArgb(153,153,153,153));
+            Grid.SetRowSpan(blurGrid, 2);
+            blurGrid.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 153));
             Main.Children.Add(blurGrid);
 
             RowDefinition row0 = new RowDefinition();
@@ -50,10 +50,10 @@ namespace Pizza_Ani_Time.View
             Main.RowDefinitions.Add(row0);
             Main.RowDefinitions.Add(row1);
 
-            Grid imageGrid=new Grid();
-            Image image = new Image {Source = new BitmapImage(new Uri("ms-appx:///" + item.Image))};
+            Grid imageGrid = new Grid();
+            Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
             imageGrid.Children.Add(image);
-            imageGrid.Padding = new Thickness(0,10,0,0);
+            imageGrid.Padding = new Thickness(0, 10, 0, 0);
             Grid.SetRow(imageGrid, 0);
             Main.Children.Add(imageGrid);
 
@@ -96,7 +96,7 @@ namespace Pizza_Ani_Time.View
                 Foreground = new SolidColorBrush(Colors.White)
             };
 
-            Button toCart = new Button {Content = "Add To Cart"};
+            Button toCart = new Button { Content = "Add To Cart" };
             toCart.Click += AddToCart_Click;
             toCart.HorizontalAlignment = HorizontalAlignment.Stretch;
             toCart.VerticalAlignment = VerticalAlignment.Stretch;
@@ -112,7 +112,7 @@ namespace Pizza_Ani_Time.View
             Grid.SetRow(description, 2);
             Grid.SetRow(toCart, 3);
             Main.CornerRadius = new CornerRadius(10);
-            
+
             ProductGrid.Children.Add(Main);
 
 
@@ -129,7 +129,6 @@ namespace Pizza_Ani_Time.View
             {
                 new Product("Offer 1", "", 70, "Buy 1 pizza and 1 drink with a discount","Promo"),
                 new Product("Offer 2", "", 130, "Buy 2 pizzas and 2 drinks with a discount","Promo"),
-                new Product("Offer 3", "", 200, "DISCOUNT","Promo")
             };
             //check for empty
             //Product page
@@ -159,47 +158,60 @@ namespace Pizza_Ani_Time.View
             //Promo page
             foreach (var v in promoList)
             {
+                Grid blurGrid = new Grid();
+                Blur blur = new Blur { Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true };
+                blur.Attach(blurGrid);
+                Grid.SetRowSpan(blurGrid, 5);
+                blurGrid.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 153));
+
                 Grid myGrid = new Grid();
-                ColumnDefinition c1 = new ColumnDefinition {Width = new GridLength(200)};
-                ColumnDefinition c2 = new ColumnDefinition {Width = new GridLength(100)};
-                ColumnDefinition c3 = new ColumnDefinition {Width = new GridLength(300)};
-                ColumnDefinition c4 = new ColumnDefinition {Width = new GridLength(100)};
-                ColumnDefinition c5 = new ColumnDefinition {Width = new GridLength(100)};
-                myGrid.ColumnDefinitions.Add(c1);
-                myGrid.ColumnDefinitions.Add(c2);
-                myGrid.ColumnDefinitions.Add(c3);
-                myGrid.ColumnDefinitions.Add(c4);
-                myGrid.ColumnDefinitions.Add(c5);
-                RowDefinition r = new RowDefinition();
-                myGrid.RowDefinitions.Add(r);
+                RowDefinition r1 = new RowDefinition();
+                RowDefinition r2 = new RowDefinition();
+                RowDefinition r3 = new RowDefinition();
+                RowDefinition r4 = new RowDefinition();
+                RowDefinition r5 = new RowDefinition();
+                myGrid.RowDefinitions.Add(r1);
+                myGrid.RowDefinitions.Add(r2);
+                myGrid.RowDefinitions.Add(r3);
+                myGrid.RowDefinitions.Add(r4);
+                myGrid.RowDefinitions.Add(r5);
+                myGrid.Children.Add(blurGrid);
+                myGrid.Height = 500;
 
                 Image pic = new Image();
 
 
-                Grid.SetColumn(pic, 0);
-                TextBlock t1 = new TextBlock {Text = v.Name, Foreground = new SolidColorBrush(Colors.White)};
+                Grid.SetRow(pic, 0);
+                TextBlock t1 = new TextBlock { Text = v.Name, Foreground = new SolidColorBrush(Colors.White) };
                 t1.VerticalAlignment = VerticalAlignment.Center;
-                Grid.SetColumn(t1, 1);
+                t1.HorizontalAlignment = HorizontalAlignment.Center;
+                Grid.SetRow(t1, 1);
                 myGrid.Children.Add(t1);
-                TextBlock t2 = new TextBlock {Text = v.Details, Foreground = new SolidColorBrush(Colors.White)};
+                TextBlock t2 = new TextBlock { Text = v.Details, Foreground = new SolidColorBrush(Colors.White) };
                 t2.VerticalAlignment = VerticalAlignment.Center;
-                Grid.SetColumn(t2, 2);
+                t2.HorizontalAlignment = HorizontalAlignment.Center;
+                Grid.SetRow(t2, 2);
                 myGrid.Children.Add(t2);
                 TextBlock t3 = new TextBlock
                 {
-                    Text = v.Price.ToString() + " kr", Foreground = new SolidColorBrush(Colors.White)
+                    Text = v.Price.ToString() + " kr",
+                    Foreground = new SolidColorBrush(Colors.White),
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center
+
                 };
-                t3.VerticalAlignment = VerticalAlignment.Center;
-                Grid.SetColumn(t3, 3);
+                Grid.SetRow(t3, 3);
                 myGrid.Children.Add(t3);
                 Button b = new Button();
                 b.VerticalAlignment = VerticalAlignment.Center;
-                Grid.SetColumn(b, 4);
+                b.HorizontalAlignment = HorizontalAlignment.Center;
+                Grid.SetRow(b, 4);
                 b.Content = "Add to cart";
                 b.Foreground = new SolidColorBrush(Colors.White);
-                b.CornerRadius=new CornerRadius(5);
+                b.CornerRadius = new CornerRadius(5);
                 myGrid.Children.Add(b);
-                Promotions.Items.Add(myGrid);
+                Promotions.Children.Add(myGrid);
+
             }
         }
         private async void LayoutError()  //Error message

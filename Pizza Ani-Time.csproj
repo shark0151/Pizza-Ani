@@ -160,9 +160,9 @@
     <Content Include="Assets\free drink.jpg" />
     <Content Include="Assets\LOGO.png" />
     <Content Include="Assets\Menu.jpg" />
-    <Content Include="Assets\Offer1.jpg" />
-    <Content Include="Assets\Offer2.jpg" />
-    <Content Include="Assets\Offer3.jpg" />
+    <Content Include="Assets\Products\pr_Offer1.jpg" />
+    <Content Include="Assets\Products\pr_Offer2.jpg" />
+    <Content Include="Assets\Products\pr_Offer3.jpg" />
     <Content Include="Assets\LogoTextBottom.png" />
     <Content Include="Assets\LogoTextTop.png" />
     <Content Include="Assets\Products\drk_Cola03l.png" />

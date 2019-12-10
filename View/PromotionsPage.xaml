@@ -61,15 +61,15 @@
                                  ScrollViewerContainer="{Binding ElementName=FlipView, Mode=OneTime}">
                 <FlipView x:Name="FlipView">
                     <Border>
-                        <Image Source="../Assets/Offer1.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></Image>
+                        <Image Source="../Assets/Products/pr_Offer1.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></Image>
                     </Border>
 
                     <Border>
-                        <Image Source="../Assets/Offer2.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                        <Image Source="../Assets/Products/pr_Offer2.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                     </Border>
 
                     <Border>
-                        <Image Source="../Assets/Offer3.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                        <Image Source="../Assets/Products/pr_Offer3.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                     </Border>
                 </FlipView>
             </controls:TileControl>

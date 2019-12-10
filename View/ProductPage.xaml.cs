@@ -144,11 +144,9 @@ namespace Pizza_Ani_Time.View
             myGrid.Padding = new Thickness(0, 10, 0, 0);
             Main.Children.Add(myGrid);
 
-            Grid imageGrid = new Grid { CornerRadius = new CornerRadius(5) };
             Image Image = new Image { Source = new BitmapImage(new Uri("ms-appx:///"+ item.Image)) };
-            imageGrid.Children.Add(Image);
-            Grid.SetRow(imageGrid, 0);
-            myGrid.Children.Add(imageGrid);
+            Grid.SetRow(Image, 0);
+            myGrid.Children.Add(Image);
 
             TextBlock name = new TextBlock
             {

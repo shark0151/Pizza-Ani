@@ -144,9 +144,14 @@ namespace Pizza_Ani_Time.View
             myGrid.Padding = new Thickness(0, 10, 0, 0);
             Main.Children.Add(myGrid);
 
-            Grid imageGrid = new Grid { CornerRadius = new CornerRadius(5) };
             Image Image = new Image { Source = new BitmapImage(new Uri("ms-appx:///"+ item.Image)) };
+            Grid imageGrid = new Grid();
+            imageGrid.HorizontalAlignment = HorizontalAlignment.Center;
+            imageGrid.VerticalAlignment = VerticalAlignment.Center;
             imageGrid.Children.Add(Image);
+            
+            imageGrid.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 0, 255));
+            imageGrid.CornerRadius = new CornerRadius(5);
             Grid.SetRow(imageGrid, 0);
             myGrid.Children.Add(imageGrid);
 

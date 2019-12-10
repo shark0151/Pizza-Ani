@@ -47,7 +47,7 @@ namespace Pizza_Ani_Time.Model
                     Product p = new Product(line[i], line[i + 1], double.Parse(line[i + 2]), line[i + 3],line[i+4]);
                     AllAvailableProducts.Add(p);
 
-                    i = i + 4;
+                    i += 4;
                 }
             }
             catch

@@ -10,8 +10,8 @@ using Pizza_Ani_Time.Model;
 namespace Pizza_Ani_Time.ViewModel
 {
     public class PizzaViewModel : INotifyPropertyChanged
-    { 
-    
+    {
+
         //Instance Fields
         readonly Inventory inv = new Inventory(); //make static?
         static ShoppingCart sc = new ShoppingCart(); //should be static
@@ -21,10 +21,10 @@ namespace Pizza_Ani_Time.ViewModel
 
         //
         public int CartNumber { get { return GetCart().Count; } }
-        public string CartTotal { get { return sc.TotalAmount.ToString()+" kr"; } }
+        public string CartTotal { get { return sc.TotalAmount.ToString() + " kr"; } }
 
         //Constructor
-        public PizzaViewModel() {}
+        public PizzaViewModel() { }
 
         //Methods
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -41,12 +41,12 @@ namespace Pizza_Ani_Time.ViewModel
         //Orders
         public void CreateOrder()
         {
-            oc.CreateOrder(sc,Hero);
+            oc.CreateOrder(sc, Hero);
         }
 
         public void DeactivateOrder(Order o)
         {
-            oc._orderCatalog.Find(x=>x==o).Active = false;
+            oc._orderCatalog.Find(x => x == o).Active = false;
         }
 
         //Shopping Cart
@@ -81,6 +81,16 @@ namespace Pizza_Ani_Time.ViewModel
             sc.ClearShoppingCart();
             OnPropertyChanged("CartNumber");
             OnPropertyChanged("CartTotal");
+        }
+
+        public List<Order> GetActiveOrders()
+        {
+            return oc.GetActiveOrders();
+        }
+
+        public List<Order> GetRecentOrders()
+        {
+            return oc.GetRecentOrders();
         }
     }
 }

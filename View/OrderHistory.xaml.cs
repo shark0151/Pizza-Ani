@@ -22,6 +22,16 @@ namespace Pizza_Ani_Time.View
     /// </summary>
     public sealed partial class OrderHistory : Page
     {
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            CreateLayout();
+        }
+
+        private void CreateLayout()
+        {
+
+        }
+
         public OrderHistory()
         {
             this.InitializeComponent();

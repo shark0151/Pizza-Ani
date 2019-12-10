@@ -56,8 +56,7 @@ namespace Pizza_Ani_Time.View
             ColumnDefinition col2 = new ColumnDefinition();
             ColumnDefinition col3 = new ColumnDefinition();
             ColumnDefinition col4 = new ColumnDefinition();
-            ColumnDefinition col5 = new ColumnDefinition();
-            col5.Width = new GridLength(200);
+            ColumnDefinition col5 = new ColumnDefinition {Width = new GridLength(200)};
             Main.ColumnDefinitions.Add(col0);
             Main.ColumnDefinitions.Add(col1);
             Main.ColumnDefinitions.Add(col2);

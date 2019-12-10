@@ -14,14 +14,24 @@ namespace Pizza_Ani_Time.Model
         //Constructor
         public OrderCatalog()
         {
-            _orderCatalog=new List<Order>();
+            _orderCatalog = new List<Order>();
         }
 
         //Methods
         public void CreateOrder(ShoppingCart cart, User user)
         {
-            Order NewOrder = new Order(cart.All(), user) {Active = true};
+            Order NewOrder = new Order(cart.All(), user) { Active = true };
             _orderCatalog.Add(NewOrder);
+        }
+
+        public List<Order> GetActiveOrders()
+        {
+            return _orderCatalog.FindAll(x => x.Active == true);
+        }
+
+        public List<Order> GetRecentOrders()
+        {
+            return _orderCatalog.FindAll(x => x.Active == false);
         }
     }
 }

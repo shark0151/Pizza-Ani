@@ -1,24 +1,16 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.UI.Animations.Behaviors;
+using Pizza_Ani_Time.Model;
+using Pizza_Ani_Time.ViewModel;
+using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI;
+using Windows.UI.Popups;
+using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Media.Imaging;
-using Pizza_Ani_Time.ViewModel;
-using Pizza_Ani_Time.Model;
-using Windows.UI.Text;
-using Windows.UI.Popups;
-using Microsoft.Toolkit.Uwp.UI.Animations.Behaviors;
+using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -152,11 +144,17 @@ namespace Pizza_Ani_Time.View
 
             try
             {
+                if (viewModel.CartNumber < 1)
+                {
+                    EmptyCardMessage();
+                }
 
                 foreach (var item in List)
                 {
                     CreateProductLayout(item);
+
                 }
+
 
             }
             catch
@@ -164,6 +162,11 @@ namespace Pizza_Ani_Time.View
                 LayoutError();
             }
             Total.DataContext = viewModel;
+        }
+        private async void EmptyCardMessage()  //Error message
+        {
+            var messageDialog = new MessageDialog("Put some pizzas in your card :D");
+            await messageDialog.ShowAsync();
         }
 
         private async void LayoutError()  //Error message

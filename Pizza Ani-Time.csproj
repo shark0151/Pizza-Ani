@@ -185,6 +185,7 @@
     <Content Include="Assets\Products\pz_Tarzan.png" />
     <Content Include="Assets\Products\pz_WestSide.png" />
     <Content Include="Assets\Products\pz_Wicked.png" />
+    <Content Include="Assets\Products\sprite_2.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

@@ -229,8 +229,6 @@ namespace Pizza_Ani_Time.View
                         CreatePromoLayout(item);
 
                 }
-
-                
             }
             catch
             {

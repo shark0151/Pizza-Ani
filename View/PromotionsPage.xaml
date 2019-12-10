@@ -60,17 +60,20 @@
                 ParallaxSpeedRatio="1.2"
                                  ScrollViewerContainer="{Binding ElementName=FlipView, Mode=OneTime}">
                 <FlipView x:Name="FlipView">
-                    <Border>
+                    <Grid CornerRadius="10">
                         <Image Source="../Assets/Products/pr_Offer1.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></Image>
-                    </Border>
+                        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" CornerRadius="10"></Button>
+                    </Grid>
 
-                    <Border>
-                        <Image Source="../Assets/Products/pr_Offer2.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
-                    </Border>
+                    <Grid CornerRadius="10">
+                        <Image Source="../Assets/Products/pr_Offer2.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></Image>
+                        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" CornerRadius="10"></Button>
+                    </Grid>
 
-                    <Border>
-                        <Image Source="../Assets/Products/pr_Offer3.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
-                    </Border>
+                    <Grid CornerRadius="10">
+                        <Image  Source="../Assets/Products/pr_Offer3.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></Image>
+                        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" CornerRadius="10"></Button>
+                    </Grid>
                 </FlipView>
             </controls:TileControl>
         </Grid>

@@ -50,15 +50,13 @@
             </ScrollViewer>
         </PivotItem>
         <PivotItem Header="Promotions">
-            <Grid>
-                <Grid Width="950" VerticalAlignment="Center">
+            <Grid Width="950" VerticalAlignment="Center">
                     <ScrollViewer HorizontalContentAlignment="Center" Padding="10">
                         <controls:UniformGrid Orientation="Horizontal" x:Name="Promotions" Columns="2" ColumnSpacing="10" RowSpacing="10">
 
                         </controls:UniformGrid>
                     </ScrollViewer>
                 </Grid>
-            </Grid>
         </PivotItem>
     </Pivot>
 </Page>

@@ -68,17 +68,7 @@ namespace Pizza_Ani_Time
             Content.Navigate(typeof(ShoppingCartPage), e);
 
         }
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            Content.Navigate(typeof(EmptyPage), e);
-
-        }
-        private void Find_Click(object sender, RoutedEventArgs e)
-        {
-            Content.Navigate(typeof(EmptyPage), e);
-
-        }
-
+       
         private void ContactUs_Click(object sender, RoutedEventArgs e)
         {
             Content.Navigate(typeof(ContactUs), e);

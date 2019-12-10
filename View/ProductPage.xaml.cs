@@ -148,8 +148,6 @@ namespace Pizza_Ani_Time.View
             imageGrid.HorizontalAlignment = HorizontalAlignment.Center;
             imageGrid.VerticalAlignment = VerticalAlignment.Center;
             imageGrid.Children.Add(Image);
-            
-            imageGrid.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 0, 255));
             imageGrid.CornerRadius = new CornerRadius(5);
             Grid.SetRow(imageGrid, 0);
             myGrid.Children.Add(imageGrid);

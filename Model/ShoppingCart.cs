@@ -9,7 +9,7 @@ namespace Pizza_Ani_Time.Model
     class ShoppingCart
     {
         //Instance Fields
-        private List<Product> Products = new List<Product>();
+        List<Product> Products = new List<Product>();
         
         //Constructor
         public ShoppingCart() 
@@ -45,6 +45,11 @@ namespace Pizza_Ani_Time.Model
         public List<Product> All()
         {
             return Products;
+        }
+
+        public void ClearShoppingCart()
+        {
+            Products.Clear();
         }
     }
 }

@@ -47,7 +47,7 @@ namespace Pizza_Ani_Time.View
             Blur blur = new Blur { Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true };
             blur.Attach(blurGrid);
             Grid.SetColumnSpan(blurGrid, 6);
-            
+
             mainMain.Children.Add(blurGrid);
             mainMain.Children.Add(Main);
 
@@ -57,6 +57,7 @@ namespace Pizza_Ani_Time.View
             ColumnDefinition col3 = new ColumnDefinition();
             ColumnDefinition col4 = new ColumnDefinition();
             ColumnDefinition col5 = new ColumnDefinition();
+            col5.Width = new GridLength(200);
             Main.ColumnDefinitions.Add(col0);
             Main.ColumnDefinitions.Add(col1);
             Main.ColumnDefinitions.Add(col2);
@@ -106,7 +107,7 @@ namespace Pizza_Ani_Time.View
                 Foreground = new SolidColorBrush(Colors.White)
             };
 
-            Button removeFromCart = new Button 
+            Button removeFromCart = new Button
             {
                 Content = "Remove From Cart",
                 HorizontalAlignment = HorizontalAlignment.Stretch,
@@ -116,7 +117,6 @@ namespace Pizza_Ani_Time.View
             };
             removeFromCart.Click += RemoveItem_Click;
             removeFromCart.DataContext = item;  //what we want te get when pressing button
-            
 
             TextFields.Children.Add(name);
             TextFields.Children.Add(description);
@@ -188,6 +188,8 @@ namespace Pizza_Ani_Time.View
         private void Checkout_OnClick(object sender, RoutedEventArgs e)
         {
             viewModel.CreateOrder();
+            viewModel.DeleteShoppingCart();
+            ShoppingList.Items.Clear();
         }
     }
 }

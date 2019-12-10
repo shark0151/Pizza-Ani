@@ -8,7 +8,7 @@ using Pizza_Ani_Time.Model;
 
 namespace Pizza_Ani_Time.Model
 {
-    class Order
+    public class Order
     {
         //Instance Fields
         public List<Product> Items { get; }

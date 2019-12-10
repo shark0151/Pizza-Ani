@@ -13,7 +13,7 @@ namespace Pizza_Ani_Time.ViewModel
     { 
     
         //Instance Fields
-        readonly Inventory inv = new Inventory(); //make staticc?
+        readonly Inventory inv = new Inventory(); //make static?
         static ShoppingCart sc = new ShoppingCart(); //should be static
         OrderCatalog oc = new OrderCatalog();
         User Hero = new User();
@@ -44,9 +44,9 @@ namespace Pizza_Ani_Time.ViewModel
             oc.CreateOrder(sc,Hero);
         }
 
-        public void DeactivateOrder()
+        public void DeactivateOrder(Order o)
         {
-            oc._orderCatalog.Last().Active = false;
+            oc._orderCatalog.Find(x=>x==o).Active = false;
         }
 
         //Shopping Cart
@@ -76,6 +76,11 @@ namespace Pizza_Ani_Time.ViewModel
             return sc.All();
         }
 
-
+        public void DeleteShoppingCart()
+        {
+            sc.ClearShoppingCart();
+            OnPropertyChanged("CartNumber");
+            OnPropertyChanged("CartTotal");
+        }
     }
 }

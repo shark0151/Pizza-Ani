@@ -12,7 +12,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using System.Drawing;
 using Windows.UI;
 using Windows.UI.Xaml.Media.Imaging;
 using Pizza_Ani_Time.ViewModel;

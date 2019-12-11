@@ -18,6 +18,7 @@ using Microsoft.Toolkit.Uwp.UI.Animations.Behaviors;
 using Microsoft.Toolkit.Uwp.UI.Controls;
 using Pizza_Ani_Time.Model;
 using Pizza_Ani_Time.ViewModel;
+using Windows.UI.Text;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,6 +35,28 @@ namespace Pizza_Ani_Time.View
             CreateLayout();
         }
 
+        private void CreateEmptyLayout()
+        {
+            if (activeOrders.Items.Count == 0)
+            {
+                noActive.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                noActive.Visibility = Visibility.Collapsed;
+            }
+
+            if (recentOrders.Items.Count == 0)
+            {
+                noRecent.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                noRecent.Visibility = Visibility.Collapsed;
+            }
+
+
+        }
         private void Create(string action,ListView destination,List<Order> source )
         {
             foreach (var order in source)
@@ -139,13 +162,17 @@ namespace Pizza_Ani_Time.View
         {
             Create("Claim", activeOrders, viewModel.GetActiveOrders());
             Create("Add to cart", recentOrders, viewModel.GetRecentOrders());
+            CreateEmptyLayout();
         }
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
             //Get the product from the button as a product object;
-            Product content = (sender as Button).DataContext as Product;
-
-            viewModel.AddItemToCart(content);
+            Order content = (sender as Button).DataContext as Order;
+            foreach (Product item in content.Items)
+            {
+                viewModel.AddItemToCart(item);
+            }
+            //should display a message or go to cart
         }
 
         private void Claim_Click(object sender, RoutedEventArgs e)

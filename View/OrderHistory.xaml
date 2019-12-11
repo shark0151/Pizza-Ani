@@ -6,12 +6,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="../Assets/Background.jpg"></ImageBrush>
+            <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/Background.jpg"></ImageBrush>
         </Grid.Background>
         <Grid Margin="10">
             <Grid.RowDefinitions>
@@ -23,10 +25,44 @@
             <ListView x:Name="activeOrders" Grid.Row="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" SelectionMode="None">
 
             </ListView>
-            <Border Grid.Row="1" Background="#99999999" Height="5" CornerRadius="2.5"></Border>
+            <Border Grid.Row="1" Background="#99363636" Height="5" CornerRadius="2.5"></Border>
             <ListView Grid.Row="2" x:Name="recentOrders">
 
             </ListView>
+
+            <Grid Grid.Row="0" Margin="50" CornerRadius="10" x:Name="noActive" Visibility="Collapsed">
+                <Grid Background="#99999999">
+                    <interactivity:Interaction.Behaviors>
+                        <behaviors:Blur   Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
+                    </interactivity:Interaction.Behaviors>
+                </Grid>
+                <TextBlock
+                        Padding="10"
+                        VerticalAlignment="Center" 
+                    HorizontalAlignment="Center"
+                        TextWrapping="WrapWholeWords"
+                        Text="No Active Orders"
+                        Foreground="White" 
+                        FontSize="30">
+                </TextBlock>
+            </Grid>
+
+            <Grid Grid.Row="3" Margin="50" CornerRadius="10"  x:Name="noRecent" Visibility="Collapsed">
+                <Grid Background="#99999999">
+                    <interactivity:Interaction.Behaviors>
+                        <behaviors:Blur Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
+                    </interactivity:Interaction.Behaviors>
+                </Grid>
+                <TextBlock
+                        Padding="10"
+                        VerticalAlignment="Center" 
+                    HorizontalAlignment="Center"
+                        TextWrapping="WrapWholeWords"
+                        Text="No Recent Orders"
+                        Foreground="White" 
+                        FontSize="30">
+                </TextBlock>
+            </Grid>
 
             <!--
             <ListView>

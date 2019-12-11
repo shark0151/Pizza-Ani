@@ -11,7 +11,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="../Assets/Background.jpg"></ImageBrush>
+            <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/Background.jpg"></ImageBrush>
         </Grid.Background>
         <Grid Padding="10" x:Name="Cart">
             <Grid.RowDefinitions>

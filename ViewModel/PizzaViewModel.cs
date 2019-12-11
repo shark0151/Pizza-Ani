@@ -15,7 +15,7 @@ namespace Pizza_Ani_Time.ViewModel
         //Instance Fields
         readonly Inventory inv = new Inventory(); //make static?
         static ShoppingCart sc = new ShoppingCart(); //should be static
-        OrderCatalog oc = new OrderCatalog();
+        static OrderCatalog oc = new OrderCatalog();
         User Hero = new User();
         public event PropertyChangedEventHandler PropertyChanged;
 

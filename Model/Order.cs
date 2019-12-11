@@ -14,6 +14,7 @@ namespace Pizza_Ani_Time.Model
         public List<Product> Items { get; }
         public User Customer { get; }
         public bool Active { get; set; }
+        public DateTime date { get; set; }
 
         //Constructor
         public Order(List<Product> items, User user)

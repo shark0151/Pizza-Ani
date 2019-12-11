@@ -70,13 +70,13 @@ namespace Pizza_Ani_Time.View
                 ListView itemsListView = new ListView();
                 foreach (var item in order.Items)
                 {
-                    Grid itemGrid = new Grid();
+                    Grid itemsGrid = new Grid();
                     ColumnDefinition cd1 = new ColumnDefinition();
                     ColumnDefinition cd2 = new ColumnDefinition();
                     ColumnDefinition cd3 = new ColumnDefinition();
-                    itemGrid.ColumnDefinitions.Add(cd1);
-                    itemGrid.ColumnDefinitions.Add(cd2);
-                    itemGrid.ColumnDefinitions.Add(cd3);
+                    itemsGrid.ColumnDefinitions.Add(cd1);
+                    itemsGrid.ColumnDefinitions.Add(cd2);
+                    itemsGrid.ColumnDefinitions.Add(cd3);
                     Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
                     Grid.SetColumn(image, 0);
                     itemsGrid.Children.Add(image);
@@ -86,13 +86,12 @@ namespace Pizza_Ani_Time.View
                     TextBlock t2 = new TextBlock { Text = item.Price.ToString() + " kr" };
                     Grid.SetColumn(t2, 2);
                     itemsGrid.Children.Add(t2);
-                    itemsListView.Items.Add(itemsGrid);
                     ListViewItem listViewItem = new ListViewItem
                     {
                         HorizontalContentAlignment = HorizontalAlignment.Stretch,
                         MaxHeight = 200,
                         Padding = new Thickness(5),
-                        Content = itemGrid
+                        Content = itemsGrid
                     };
                     itemsListView.Items.Add(listViewItem);
                 }
@@ -101,7 +100,7 @@ namespace Pizza_Ani_Time.View
                 {
                     Header = orderGrid,
                     Content = itemsListView,
-                    Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 0)),
+                    Background = new SolidColorBrush(Windows.UI.Color.FromArgb(0, 0, 0, 0)),
                     HorizontalContentAlignment = HorizontalAlignment.Stretch,
                     HorizontalAlignment = HorizontalAlignment.Stretch
                 };

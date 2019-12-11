@@ -90,6 +90,13 @@ namespace Pizza_Ani_Time
                 // Change property of destination page
                 (destinationPage as ShoppingCartPage).viewModel = viewModel;
             }
+
+            if (destinationPage.GetType() == typeof(OrderHistory))
+            {
+
+                // Change property of destination page
+                (destinationPage as OrderHistory).viewModel = viewModel;
+            }
         }
     }
 }

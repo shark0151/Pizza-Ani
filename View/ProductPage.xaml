@@ -16,14 +16,14 @@
             <ImageBrush ImageSource="../Assets/Background.jpg" Stretch="UniformToFill"></ImageBrush>
         </Pivot.Background>
         <PivotItem Header="Products">
-            <ScrollViewer HorizontalContentAlignment="Center" Padding="10" CornerRadius="10">
+            <ScrollViewer HorizontalContentAlignment="Center" Padding="25" CornerRadius="10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition MaxHeight="200"></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <controls:UniformGrid Orientation="Horizontal" Grid.Row="0" x:Name="ProductGrid" Columns="4" ColumnSpacing="10" RowSpacing="10">
+                    <controls:UniformGrid Orientation="Horizontal" Grid.Row="0" x:Name="ProductGrid" Columns="3" ColumnSpacing="10" RowSpacing="10">
                         <!--
             <Grid>
                 <Grid.RowDefinitions>

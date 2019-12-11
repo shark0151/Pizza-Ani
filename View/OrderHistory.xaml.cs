@@ -63,17 +63,18 @@ namespace Pizza_Ani_Time.View
                 Button claim = new Button { Content = "Add to cart", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Right, Width = 200, VerticalAlignment = VerticalAlignment.Center };
                 Grid.SetColumn(claim, 2);
                 orderGrid.Children.Add(claim);
-                expander.Header = orderGrid;
+
+                //Content
                 ListView itemsListView = new ListView();
                 foreach (var item in order.Items)
                 {
-                    Grid itemsGrid = new Grid();
+                    Grid itemGrid = new Grid();
                     ColumnDefinition cd1 = new ColumnDefinition();
                     ColumnDefinition cd2 = new ColumnDefinition();
                     ColumnDefinition cd3 = new ColumnDefinition();
-                    itemsGrid.ColumnDefinitions.Add(cd1);
-                    itemsGrid.ColumnDefinitions.Add(cd2);
-                    itemsGrid.ColumnDefinitions.Add(cd3);
+                    itemGrid.ColumnDefinitions.Add(cd1);
+                    itemGrid.ColumnDefinitions.Add(cd2);
+                    itemGrid.ColumnDefinitions.Add(cd3);
                     Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
                     Grid.SetColumn(image, 0);
                     itemsGrid.Children.Add(image);
@@ -84,6 +85,14 @@ namespace Pizza_Ani_Time.View
                     Grid.SetColumn(t2, 2);
                     itemsGrid.Children.Add(t2);
                     itemsListView.Items.Add(itemsGrid);
+                    ListViewItem listViewItem = new ListViewItem
+                    {
+                        HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                        MaxHeight = 200,
+                        Padding = new Thickness(5),
+                        Content = itemGrid
+                    };
+                    itemsListView.Items.Add(listViewItem);
                 }
                 expander.Content = itemsListView;
                 Main.Children.Add(expander);

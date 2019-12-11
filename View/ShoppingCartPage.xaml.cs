@@ -138,17 +138,14 @@ namespace Pizza_Ani_Time.View
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            List<Product> List = viewModel.GetCart();
-            //check for empty
-
             try
             {
                 if (viewModel.CartNumber < 1)
                 {
-                    EmptyCardMessage();
+                   // EmptyCardMessage();
                 }
 
-                foreach (var item in List)
+                foreach (var item in viewModel.GetCart())
                 {
                     CreateProductLayout(item);
 

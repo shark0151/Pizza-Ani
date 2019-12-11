@@ -13,12 +13,56 @@
         <Grid.Background>
             <ImageBrush ImageSource="../Assets/Background.jpg"></ImageBrush>
         </Grid.Background>
-        <ListView x:Name="activeOrders" HorizontalAlignment="Center" Padding="25">
-            
-        </ListView>
-        <Border Background="#99999999" Height="5" Margin="50" CornerRadius="2.5"></Border>
-        <ListView x:Name="recentOrders" HorizontalAlignment="Center" Padding="25">
-            
-        </ListView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <ListView x:Name="activeOrders" Grid.Row="0">
+
+            </ListView>
+            <Border Grid.Row="1" Background="#99999999" Height="5" CornerRadius="2.5"></Border>
+            <ListView Grid.Row="1" x:Name="recentOrders">
+
+            </ListView>
+
+            <!--
+            <ListView>
+                <ListViewItem>
+                    <controls:Expander>
+                        <ListView>
+                            <ListViewItem>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="../Assets/Products/pz_Chicago.png"></Image>
+                                    <Grid Grid.Column="1" Grid.ColumnSpan="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="0"  Text="Super Pizza" HorizontalAlignment="Center" FontSize="50" FontWeight="Light" ></TextBlock>
+                                        <TextBlock Grid.Row="1" Text="Wow!" HorizontalAlignment="Center" FontSize="30" FontWeight="Light" ></TextBlock>
+                                    </Grid>
+
+                                    <Button Grid.Column="5"   Content="Remove from Cart"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10"></Button>
+                                </Grid>
+                            </ListViewItem>
+                        </ListView>
+                    </controls:Expander>
+
+                </ListViewItem>
+            </ListView>
+            -->
+        </Grid>
+
     </Grid>
 </Page>

@@ -38,7 +38,7 @@ namespace Pizza_Ani_Time.View
         {
             foreach (var order in viewModel.GetActiveOrders())
             {
-                Grid Main = new Grid { CornerRadius = new CornerRadius(10), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
+                Grid Main = new Grid { CornerRadius = new CornerRadius(10), HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Center };
                 Grid blurGrid = new Grid()
                 {
                     Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 153))
@@ -56,13 +56,13 @@ namespace Pizza_Ani_Time.View
                 orderGrid.ColumnDefinitions.Add(c1);
                 orderGrid.ColumnDefinitions.Add(c2);
                 orderGrid.ColumnDefinitions.Add(c3);
-                TextBlock date = new TextBlock { Text = order.date.ToShortDateString(), HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center };
+                TextBlock date = new TextBlock { Text = order.date.ToShortDateString(), HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center , Foreground = new SolidColorBrush(Colors.White) };
                 Grid.SetColumn(date, 0);
                 orderGrid.Children.Add(date);
-                TextBlock price = new TextBlock { Text = order.TotalPrice.ToString() + " kr", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center };
+                TextBlock price = new TextBlock { Text = order.TotalPrice.ToString() + " kr", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
                 Grid.SetColumn(price, 1);
                 orderGrid.Children.Add(price);
-                Button claim = new Button { Content = "Claim", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Right, Width = 200, VerticalAlignment = VerticalAlignment.Center };
+                Button claim = new Button { Content = "Claim", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Right, Width = 200, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
                 Grid.SetColumn(claim, 2);
                 orderGrid.Children.Add(claim);
 
@@ -80,10 +80,10 @@ namespace Pizza_Ani_Time.View
                     Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
                     Grid.SetColumn(image, 0);
                     itemsGrid.Children.Add(image);
-                    TextBlock t1 = new TextBlock { Text = item.Name, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center };
+                    TextBlock t1 = new TextBlock { Text = item.Name, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
                     Grid.SetColumn(t1, 1);
                     itemsGrid.Children.Add(t1);
-                    TextBlock t2 = new TextBlock { Text = item.Price.ToString() + " kr" };
+                    TextBlock t2 = new TextBlock { Text = item.Price.ToString() + " kr" , HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
                     Grid.SetColumn(t2, 2);
                     itemsGrid.Children.Add(t2);
                     ListViewItem listViewItem = new ListViewItem
@@ -110,7 +110,7 @@ namespace Pizza_Ani_Time.View
                     HorizontalContentAlignment = HorizontalAlignment.Stretch,
                     HorizontalAlignment = HorizontalAlignment.Stretch,
                     Padding = new Thickness(5),
-                    Content = Main
+                    Content = Main,
                 };
                 activeOrders.Items.Add(orderListItem);
             }

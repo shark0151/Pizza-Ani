@@ -131,6 +131,50 @@ namespace Pizza_Ani_Time.View
 
 
         }
+
+        private void CreateEmptyLayout(string message)
+        {
+            if (Cart.Children.Count < 3)
+            {
+                Grid mainMain = new Grid()
+                {
+                    CornerRadius = new CornerRadius(10),
+                    Margin = new Thickness(100)
+
+                };
+                Grid Main = new Grid()
+                {
+                    Padding = new Thickness(10),
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center
+
+                };
+                Grid blurGrid = new Grid()
+                {
+                    Background = new SolidColorBrush(Windows.UI.Color.FromArgb(150, 150, 150, 150))
+                };
+                Blur blur = new Blur { Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true };
+                blur.Attach(blurGrid);
+
+
+                TextBlock text = new TextBlock
+                {
+                    Text = message,
+                    FontSize = 30,
+                    HorizontalAlignment = HorizontalAlignment.Stretch,
+                    VerticalAlignment = VerticalAlignment.Stretch,
+                    FontWeight = FontWeights.SemiLight,
+                    Foreground = new SolidColorBrush(Colors.White)
+                };
+
+                Main.Children.Add(text);
+                mainMain.Children.Add(blurGrid);
+                mainMain.Children.Add(Main);
+                Cart.Children.Add(mainMain);
+            }
+
+            
+        }
         public ShoppingCartPage()
         {
             this.InitializeComponent();
@@ -142,7 +186,7 @@ namespace Pizza_Ani_Time.View
             {
                 if (viewModel.CartNumber < 1)
                 {
-                   // EmptyCardMessage();
+                    CreateEmptyLayout("Nothing here");
                 }
 
                 foreach (var item in viewModel.GetCart())
@@ -189,6 +233,7 @@ namespace Pizza_Ani_Time.View
             viewModel.CreateOrder();
             viewModel.DeleteShoppingCart();
             ShoppingList.Items.Clear();
+            CreateEmptyLayout("Thank You!");
         }
     }
 }

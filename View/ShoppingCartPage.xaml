@@ -5,24 +5,31 @@
     xmlns:local="using:Pizza_Ani_Time.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="../Assets/Background.jpg"></ImageBrush>
         </Grid.Background>
-        <Grid Padding="10">
+        <Grid Padding="10" x:Name="Cart">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition MaxHeight="75"></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="1" HorizontalAlignment="Stretch" Padding="5">
+            <Grid Grid.Row="1" HorizontalAlignment="Stretch" Padding="5" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="45*"></ColumnDefinition>
                     <ColumnDefinition MaxWidth="220" Width="200*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                <Grid Background="#96969696" Grid.ColumnSpan="2" CornerRadius="10">
+                    <interactivity:Interaction.Behaviors>
+                        <behaviors:Blur x:Name="BlurBehavior" Value="10" Duration="0" Delay="0" AutomaticallyStart="True"></behaviors:Blur>
+                    </interactivity:Interaction.Behaviors>
+                </Grid>
 
-                <TextBlock x:Name="Total" Grid.Column="0" Text="{Binding CartTotal}" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,20,0"></TextBlock>
+                <TextBlock x:Name="Total" Grid.Column="0" Text="{Binding CartTotal}" Foreground="White"  FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,20,0"></TextBlock>
                 <Button Content="Check out" Grid.Column="1" CornerRadius="5" Width="200" HorizontalAlignment="Stretch" Background="#99009900" Foreground="White" VerticalAlignment="Center" Click="Checkout_OnClick"/>
             </Grid>
 

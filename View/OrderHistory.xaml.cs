@@ -47,19 +47,24 @@ namespace Pizza_Ani_Time.View
                 blur.Attach(blurGrid);
                 Main.Children.Add(blurGrid);
 
-
-                //Header
-                Grid orderGrid = new Grid();
-                ColumnDefinition c1 = new ColumnDefinition { Width = new GridLength(300) };
-                ColumnDefinition c2 = new ColumnDefinition { Width = new GridLength(300) };
-                ColumnDefinition c3 = new ColumnDefinition { Width = new GridLength(300) };
+                //HeaderGrid
+                //now overlayed on the expander menu -- because xaml
+                Grid orderGrid = new Grid()
+                {
+                    Height = 40,
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Padding = new Thickness(100,0,10,0),
+                };
+                ColumnDefinition c1 = new ColumnDefinition { MinWidth = 100 };
+                ColumnDefinition c2 = new ColumnDefinition { MinWidth = 100 };
+                ColumnDefinition c3 = new ColumnDefinition { MinWidth = 200 };
                 orderGrid.ColumnDefinitions.Add(c1);
                 orderGrid.ColumnDefinitions.Add(c2);
                 orderGrid.ColumnDefinitions.Add(c3);
-                TextBlock date = new TextBlock { Text = order.date.ToShortDateString(), HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center , Foreground = new SolidColorBrush(Colors.White) };
+                TextBlock date = new TextBlock { Text = order.date.ToShortDateString(),IsHitTestVisible = false, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center , Foreground = new SolidColorBrush(Colors.White) };
                 Grid.SetColumn(date, 0);
                 orderGrid.Children.Add(date);
-                TextBlock price = new TextBlock { Text = order.TotalPrice.ToString() + " kr", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
+                TextBlock price = new TextBlock { Text = order.TotalPrice.ToString() + " kr", IsHitTestVisible = false, HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
                 Grid.SetColumn(price, 1);
                 orderGrid.Children.Add(price);
                 Button claim = new Button { Content = "Claim", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Right, Width = 200, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
@@ -95,16 +100,21 @@ namespace Pizza_Ani_Time.View
                     };
                     itemsListView.Items.Add(listViewItem);
                 }
-                //
+
+                //Header
                 Expander expander = new Expander()
                 {
-                    Header = orderGrid,
+                    Header = "",
                     Content = itemsListView,
                     Background = new SolidColorBrush(Windows.UI.Color.FromArgb(0, 0, 0, 0)),
                     HorizontalContentAlignment = HorizontalAlignment.Stretch,
                     HorizontalAlignment = HorizontalAlignment.Stretch
                 };
+
                 Main.Children.Add(expander);
+                Main.Children.Add(orderGrid);
+
+
                 ListViewItem orderListItem = new ListViewItem
                 {
                     HorizontalContentAlignment = HorizontalAlignment.Stretch,

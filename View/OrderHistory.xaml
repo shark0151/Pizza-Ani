@@ -24,7 +24,7 @@
 
             </ListView>
             <Border Grid.Row="1" Background="#99999999" Height="5" CornerRadius="2.5"></Border>
-            <ListView Grid.Row="1" x:Name="recentOrders">
+            <ListView Grid.Row="2" x:Name="recentOrders">
 
             </ListView>
 

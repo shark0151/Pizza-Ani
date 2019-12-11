@@ -59,9 +59,9 @@ namespace Pizza_Ani_Time.View
                 TextBlock price = new TextBlock { Text = order.TotalPrice.ToString(), HorizontalAlignment = HorizontalAlignment.Right };
                 Grid.SetColumn(price, 1);
                 orderGrid.Children.Add(price);
-                Button orderAll = new Button { Content = "Add to cart", HorizontalAlignment = HorizontalAlignment.Right, Width = 200 };
-                Grid.SetColumn(orderAll, 2);
-                orderGrid.Children.Add(orderAll);
+                Button claim = new Button { Content = "Add to cart", HorizontalAlignment = HorizontalAlignment.Right, Width = 200 };
+                Grid.SetColumn(claim, 2);
+                orderGrid.Children.Add(claim);
                 expander.Header = orderGrid;
                 ListView itemsListView = new ListView();
                 foreach (var item in order.Items)
@@ -78,9 +78,6 @@ namespace Pizza_Ani_Time.View
                     itemsGrid.Children.Add(image);
                     TextBlock t1 = new TextBlock { Text = item.Name, HorizontalAlignment = HorizontalAlignment.Left };
                     Grid.SetColumn(t1, 1);
-                    Button orderButton = new Button { Content = "Add to cart", HorizontalAlignment = HorizontalAlignment.Right, Width = 200, DataContext = item };
-                    orderButton.Click += AddToCart_Click;
-                    Grid.SetColumn(orderButton, 2);
                 }
                 Main.Children.Add(expander);
                 activeOrders.Items.Add(Main);

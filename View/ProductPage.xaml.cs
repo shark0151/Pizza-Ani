@@ -210,13 +210,11 @@ namespace Pizza_Ani_Time.View
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            List<Product> List = viewModel.GetInventory();
             
-            //check for empty
             //Product page
             try
             {
-                foreach (var item in List)
+                foreach (var item in viewModel.GetInventory())
                 {
                     //split by category
                     if (item.Category == "Pizza")

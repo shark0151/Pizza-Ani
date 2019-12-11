@@ -37,6 +37,7 @@ namespace Pizza_Ani_Time.View
         {
             foreach (var order in viewModel.GetActiveOrders())
             {
+                
                 Grid Main = new Grid();
                 Grid blurGrid = new Grid()
                 {
@@ -45,7 +46,9 @@ namespace Pizza_Ani_Time.View
                 Blur blur = new Blur { Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true };
                 blur.Attach(blurGrid);
                 Main.Children.Add(blurGrid);
-                Expander expander = new Expander();
+
+                
+                //Header
                 Grid orderGrid = new Grid();
                 ColumnDefinition c1 = new ColumnDefinition();
                 ColumnDefinition c2 = new ColumnDefinition();
@@ -53,34 +56,57 @@ namespace Pizza_Ani_Time.View
                 orderGrid.ColumnDefinitions.Add(c1);
                 orderGrid.ColumnDefinitions.Add(c2);
                 orderGrid.ColumnDefinitions.Add(c3);
+
                 TextBlock date = new TextBlock { Text = order.date.ToShortDateString(), HorizontalAlignment = HorizontalAlignment.Left };
                 Grid.SetColumn(date, 0);
                 orderGrid.Children.Add(date);
+
                 TextBlock price = new TextBlock { Text = order.TotalPrice.ToString(), HorizontalAlignment = HorizontalAlignment.Right };
                 Grid.SetColumn(price, 1);
                 orderGrid.Children.Add(price);
+
                 Button claim = new Button { Content = "Add to cart", HorizontalAlignment = HorizontalAlignment.Right, Width = 200 };
                 Grid.SetColumn(claim, 2);
                 orderGrid.Children.Add(claim);
-                expander.Header = orderGrid;
+
+                //Content
                 ListView itemsListView = new ListView();
                 foreach (var item in order.Items)
                 {
-                    Grid itemsGrid = new Grid();
+                    Grid itemGrid = new Grid();
                     ColumnDefinition cd1 = new ColumnDefinition();
                     ColumnDefinition cd2 = new ColumnDefinition();
                     ColumnDefinition cd3 = new ColumnDefinition();
-                    itemsGrid.ColumnDefinitions.Add(cd1);
-                    itemsGrid.ColumnDefinitions.Add(cd2);
-                    itemsGrid.ColumnDefinitions.Add(cd3);
+                    itemGrid.ColumnDefinitions.Add(cd1);
+                    itemGrid.ColumnDefinitions.Add(cd2);
+                    itemGrid.ColumnDefinitions.Add(cd3);
                     Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
                     Grid.SetColumn(image, 0);
-                    itemsGrid.Children.Add(image);
+                    itemGrid.Children.Add(image);
                     TextBlock t1 = new TextBlock { Text = item.Name, HorizontalAlignment = HorizontalAlignment.Left };
                     Grid.SetColumn(t1, 1);
+                    ListViewItem listViewItem = new ListViewItem
+                    {
+                        HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                        MaxHeight = 200,
+                        Padding = new Thickness(5),
+                        Content = itemGrid
+                    };
+                    itemsListView.Items.Add(listViewItem);
                 }
-                Main.Children.Add(expander);
-                activeOrders.Items.Add(Main);
+                //
+                Expander expander = new Expander();
+                expander.Header = orderGrid;
+                expander.Content = itemsListView;
+                //Main.Children.Add(expander);
+                ListViewItem orderListItem = new ListViewItem
+                {
+                    HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                    MaxHeight = 200,
+                    Padding = new Thickness(5),
+                    Content = expander
+                };
+                activeOrders.Items.Add(orderListItem);
             }
 
             foreach (var order in viewModel.GetRecentOrders())

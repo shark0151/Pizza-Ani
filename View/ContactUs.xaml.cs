@@ -41,6 +41,9 @@ namespace Pizza_Ani_Time.View
             if (name.Text != "" && email.Text != "" && message.Text != "")
             {
                 Thanks();
+                name.Text = "";
+                email.Text = "";
+                message.Text = "";
             }
             else
             {

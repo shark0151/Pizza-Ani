@@ -62,7 +62,7 @@ namespace Pizza_Ani_Time.View
                 TextBlock price = new TextBlock { Text = order.TotalPrice.ToString() + " kr", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center };
                 Grid.SetColumn(price, 1);
                 orderGrid.Children.Add(price);
-                Button claim = new Button { Content = "Add to cart", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Right, Width = 200, VerticalAlignment = VerticalAlignment.Center };
+                Button claim = new Button { Content = "Claim", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Right, Width = 200, VerticalAlignment = VerticalAlignment.Center };
                 Grid.SetColumn(claim, 2);
                 orderGrid.Children.Add(claim);
 
@@ -104,13 +104,13 @@ namespace Pizza_Ani_Time.View
                     HorizontalContentAlignment = HorizontalAlignment.Stretch,
                     HorizontalAlignment = HorizontalAlignment.Stretch
                 };
-                //Main.Children.Add(expander);
+                Main.Children.Add(expander);
                 ListViewItem orderListItem = new ListViewItem
                 {
                     HorizontalContentAlignment = HorizontalAlignment.Stretch,
                     HorizontalAlignment = HorizontalAlignment.Stretch,
                     Padding = new Thickness(5),
-                    Content = expander
+                    Content = Main
                 };
                 activeOrders.Items.Add(orderListItem);
             }

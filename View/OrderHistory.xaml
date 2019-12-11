@@ -13,11 +13,11 @@
         <Grid.Background>
             <ImageBrush ImageSource="../Assets/Background.jpg"></ImageBrush>
         </Grid.Background>
-        <ListView x:Name="activeOrders" HorizontalAlignment="Center">
+        <ListView x:Name="activeOrders" HorizontalAlignment="Center" Padding="25">
             
         </ListView>
         <Border Background="#99999999" Height="5" Margin="50" CornerRadius="2.5"></Border>
-        <ListView x:Name="recentOrders" HorizontalAlignment="Center">
+        <ListView x:Name="recentOrders" HorizontalAlignment="Center" Padding="25">
             
         </ListView>
     </Grid>

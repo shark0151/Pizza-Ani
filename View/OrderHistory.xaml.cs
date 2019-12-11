@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -37,8 +38,7 @@ namespace Pizza_Ani_Time.View
         {
             foreach (var order in viewModel.GetActiveOrders())
             {
-                
-                Grid Main = new Grid();
+                Grid Main = new Grid { CornerRadius = new CornerRadius(10), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
                 Grid blurGrid = new Grid()
                 {
                     Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 153))
@@ -50,23 +50,19 @@ namespace Pizza_Ani_Time.View
                 
                 //Header
                 Grid orderGrid = new Grid();
-                orderGrid.HorizontalAlignment = HorizontalAlignment.Stretch;
-                ColumnDefinition c1 = new ColumnDefinition();
-                ColumnDefinition c2 = new ColumnDefinition();
-                ColumnDefinition c3 = new ColumnDefinition();
+                ColumnDefinition c1 = new ColumnDefinition { Width = new GridLength(300) };
+                ColumnDefinition c2 = new ColumnDefinition { Width = new GridLength(300) };
+                ColumnDefinition c3 = new ColumnDefinition { Width = new GridLength(300) };
                 orderGrid.ColumnDefinitions.Add(c1);
                 orderGrid.ColumnDefinitions.Add(c2);
                 orderGrid.ColumnDefinitions.Add(c3);
-
-                TextBlock date = new TextBlock { Text = order.date.ToShortDateString(), HorizontalAlignment = HorizontalAlignment.Left };
+                TextBlock date = new TextBlock { Text = order.date.ToShortDateString(), HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center };
                 Grid.SetColumn(date, 0);
                 orderGrid.Children.Add(date);
-
-                TextBlock price = new TextBlock { Text = order.TotalPrice.ToString(), HorizontalAlignment = HorizontalAlignment.Right };
+                TextBlock price = new TextBlock { Text = order.TotalPrice.ToString() + " kr", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center };
                 Grid.SetColumn(price, 1);
                 orderGrid.Children.Add(price);
-
-                Button claim = new Button { Content = "Add to cart", HorizontalAlignment = HorizontalAlignment.Right, Width = 200 };
+                Button claim = new Button { Content = "Add to cart", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Right, Width = 200, VerticalAlignment = VerticalAlignment.Center };
                 Grid.SetColumn(claim, 2);
                 orderGrid.Children.Add(claim);
 
@@ -83,10 +79,14 @@ namespace Pizza_Ani_Time.View
                     itemGrid.ColumnDefinitions.Add(cd3);
                     Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
                     Grid.SetColumn(image, 0);
-                    itemGrid.Children.Add(image);
-                    TextBlock t1 = new TextBlock { Text = item.Name, HorizontalAlignment = HorizontalAlignment.Left };
+                    itemsGrid.Children.Add(image);
+                    TextBlock t1 = new TextBlock { Text = item.Name, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center };
                     Grid.SetColumn(t1, 1);
-                    itemGrid.Children.Add(t1);
+                    itemsGrid.Children.Add(t1);
+                    TextBlock t2 = new TextBlock { Text = item.Price.ToString() + " kr" };
+                    Grid.SetColumn(t2, 2);
+                    itemsGrid.Children.Add(t2);
+                    itemsListView.Items.Add(itemsGrid);
                     ListViewItem listViewItem = new ListViewItem
                     {
                         HorizontalContentAlignment = HorizontalAlignment.Stretch,
@@ -118,7 +118,7 @@ namespace Pizza_Ani_Time.View
 
             foreach (var order in viewModel.GetRecentOrders())
             {
-                Grid Main = new Grid();
+                Grid Main = new Grid { CornerRadius = new CornerRadius(10), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
                 Grid blurGrid = new Grid()
                 {
                     Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 153))
@@ -126,7 +126,7 @@ namespace Pizza_Ani_Time.View
                 Blur blur = new Blur { Value = 10, Delay = 0, Duration = 0, AutomaticallyStart = true };
                 blur.Attach(blurGrid);
                 Main.Children.Add(blurGrid);
-                Expander expander = new Expander();
+                Expander expander = new Expander { HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center, Background = new SolidColorBrush(Colors.Transparent) };
                 Grid orderGrid = new Grid();
                 ColumnDefinition c1 = new ColumnDefinition();
                 ColumnDefinition c2 = new ColumnDefinition();
@@ -134,13 +134,13 @@ namespace Pizza_Ani_Time.View
                 orderGrid.ColumnDefinitions.Add(c1);
                 orderGrid.ColumnDefinitions.Add(c2);
                 orderGrid.ColumnDefinitions.Add(c3);
-                TextBlock date = new TextBlock { Text = order.date.ToShortDateString(), HorizontalAlignment = HorizontalAlignment.Left };
+                TextBlock date = new TextBlock { Text = order.date.ToShortDateString(), HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center };
                 Grid.SetColumn(date, 0);
                 orderGrid.Children.Add(date);
-                TextBlock price = new TextBlock { Text = order.TotalPrice.ToString(), HorizontalAlignment = HorizontalAlignment.Right };
+                TextBlock price = new TextBlock { Text = order.TotalPrice.ToString(), HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center };
                 Grid.SetColumn(price, 1);
                 orderGrid.Children.Add(price);
-                Button orderAll = new Button { Content = "Add to cart", HorizontalAlignment = HorizontalAlignment.Right, Width = 200 };
+                Button orderAll = new Button { Content = "Add to cart", HorizontalAlignment = HorizontalAlignment.Right, Width = 200, VerticalAlignment = VerticalAlignment.Center };
                 Grid.SetColumn(orderAll, 2);
                 orderGrid.Children.Add(orderAll);
                 expander.Header = orderGrid;
@@ -154,14 +154,16 @@ namespace Pizza_Ani_Time.View
                     itemsGrid.ColumnDefinitions.Add(cd1);
                     itemsGrid.ColumnDefinitions.Add(cd2);
                     itemsGrid.ColumnDefinitions.Add(cd3);
-                    Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
+                    Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)), Stretch = Stretch.UniformToFill };
                     Grid.SetColumn(image, 0);
                     itemsGrid.Children.Add(image);
-                    TextBlock t1 = new TextBlock { Text = item.Name, HorizontalAlignment = HorizontalAlignment.Left };
+                    TextBlock t1 = new TextBlock { Text = item.Name, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center };
                     Grid.SetColumn(t1, 1);
-                    Button orderButton = new Button { Content = "Add to cart", HorizontalAlignment = HorizontalAlignment.Right, Width = 200, DataContext = item };
+                    itemsGrid.Children.Add(t1);
+                    Button orderButton = new Button { Content = "Add to cart", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Right, Width = 200, DataContext = item, VerticalAlignment = VerticalAlignment.Center };
                     orderButton.Click += AddToCart_Click;
                     Grid.SetColumn(orderButton, 2);
+                    itemsGrid.Children.Add(orderButton);
                     itemsListView.Items.Add(itemsGrid);
                 }
                 expander.Content = itemsListView;

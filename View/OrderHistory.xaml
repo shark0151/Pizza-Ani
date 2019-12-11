@@ -13,14 +13,14 @@
         <Grid.Background>
             <ImageBrush ImageSource="../Assets/Background.jpg"></ImageBrush>
         </Grid.Background>
-        <Grid>
+        <Grid Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="20"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <ListView x:Name="activeOrders" Grid.Row="0">
+            <ListView x:Name="activeOrders" Grid.Row="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
 
             </ListView>
             <Border Grid.Row="1" Background="#99999999" Height="5" CornerRadius="2.5"></Border>

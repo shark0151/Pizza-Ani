@@ -50,6 +50,7 @@ namespace Pizza_Ani_Time.View
                 
                 //Header
                 Grid orderGrid = new Grid();
+                orderGrid.HorizontalAlignment = HorizontalAlignment.Stretch;
                 ColumnDefinition c1 = new ColumnDefinition();
                 ColumnDefinition c2 = new ColumnDefinition();
                 ColumnDefinition c3 = new ColumnDefinition();
@@ -85,6 +86,7 @@ namespace Pizza_Ani_Time.View
                     itemGrid.Children.Add(image);
                     TextBlock t1 = new TextBlock { Text = item.Name, HorizontalAlignment = HorizontalAlignment.Left };
                     Grid.SetColumn(t1, 1);
+                    itemGrid.Children.Add(t1);
                     ListViewItem listViewItem = new ListViewItem
                     {
                         HorizontalContentAlignment = HorizontalAlignment.Stretch,
@@ -95,14 +97,19 @@ namespace Pizza_Ani_Time.View
                     itemsListView.Items.Add(listViewItem);
                 }
                 //
-                Expander expander = new Expander();
-                expander.Header = orderGrid;
-                expander.Content = itemsListView;
+                Expander expander = new Expander()
+                {
+                    Header = orderGrid,
+                    Content = itemsListView,
+                    Background = new SolidColorBrush(Windows.UI.Color.FromArgb(153, 153, 153, 0)),
+                    HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                    HorizontalAlignment = HorizontalAlignment.Stretch
+                };
                 //Main.Children.Add(expander);
                 ListViewItem orderListItem = new ListViewItem
                 {
                     HorizontalContentAlignment = HorizontalAlignment.Stretch,
-                    MaxHeight = 200,
+                    HorizontalAlignment = HorizontalAlignment.Stretch,
                     Padding = new Thickness(5),
                     Content = expander
                 };

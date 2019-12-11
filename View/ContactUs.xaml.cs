@@ -38,11 +38,24 @@ namespace Pizza_Ani_Time.View
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
             this.InitializeComponent();
-            Thanks();
+            if (name.Text != "" && email.Text != "" && message.Text != "")
+            {
+                Thanks();
+            }
+            else
+            {
+                Empty();
+            }
         }
         private async void Thanks()
         {
             var messageDialog = new MessageDialog("Thank you!");
+            await messageDialog.ShowAsync();
+        }
+
+        private async void Empty()
+        {
+            MessageDialog messageDialog = new MessageDialog("Fill out all the fields!");
             await messageDialog.ShowAsync();
         }
     }

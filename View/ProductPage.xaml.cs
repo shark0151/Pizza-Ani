@@ -144,9 +144,10 @@ namespace Pizza_Ani_Time.View
             Main.Children.Add(myGrid);
 
             Image Image = new Image { Source = new BitmapImage(new Uri("ms-appx:///"+ item.Image)) };
-            Grid imageGrid = new Grid();
-            imageGrid.HorizontalAlignment = HorizontalAlignment.Center;
-            imageGrid.VerticalAlignment = VerticalAlignment.Center;
+            Grid imageGrid = new Grid
+            {
+                HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center
+            };
             imageGrid.Children.Add(Image);
             imageGrid.CornerRadius = new CornerRadius(5);
             Grid.SetRow(imageGrid, 0);

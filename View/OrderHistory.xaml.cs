@@ -47,7 +47,7 @@ namespace Pizza_Ani_Time.View
                 blur.Attach(blurGrid);
                 Main.Children.Add(blurGrid);
 
-                
+
                 //Header
                 Grid orderGrid = new Grid();
                 ColumnDefinition c1 = new ColumnDefinition { Width = new GridLength(300) };
@@ -177,6 +177,15 @@ namespace Pizza_Ani_Time.View
 
             viewModel.AddItemToCart(content);
         }
+
+        private void Claim(object sender, RoutedEventArgs e)
+        {
+            //Get the product from the button as a product object;
+            Order content = (sender as Button).DataContext as Order;
+            viewModel.DeactivateOrder(content);
+            Frame.Navigate(typeof(OrderHistory), e);
+        }
+
         public OrderHistory()
         {
             this.InitializeComponent();

@@ -15,6 +15,7 @@
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/Background.jpg"></ImageBrush>
         </Grid.Background>
+        <ScrollViewer>
         <Grid Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
@@ -99,6 +100,6 @@
             </ListView>
             -->
         </Grid>
-
+        </ScrollViewer>
     </Grid>
 </Page>

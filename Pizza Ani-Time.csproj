@@ -160,6 +160,8 @@
     <Content Include="Assets\free drink.jpg" />
     <Content Include="Assets\LOGO.png" />
     <Content Include="Assets\Menu.jpg" />
+    <Content Include="Assets\Products\drk_Sprite03l.png" />
+    <Content Include="Assets\Products\drk_Sprite05l.png" />
     <Content Include="Assets\Products\pr_Offer1.jpg" />
     <Content Include="Assets\Products\pr_Offer2.jpg" />
     <Content Include="Assets\Products\pr_Offer3.jpg" />
@@ -185,7 +187,7 @@
     <Content Include="Assets\Products\pz_Tarzan.png" />
     <Content Include="Assets\Products\pz_WestSide.png" />
     <Content Include="Assets\Products\pz_Wicked.png" />
-    <Content Include="Assets\Products\sprite_2.png" />
+    <Content Include="Assets\Products\drk_Sprite2l.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

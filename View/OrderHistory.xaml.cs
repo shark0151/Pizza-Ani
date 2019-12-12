@@ -84,7 +84,7 @@ namespace Pizza_Ani_Time.View
                 orderGrid.ColumnDefinitions.Add(c1);
                 orderGrid.ColumnDefinitions.Add(c2);
                 orderGrid.ColumnDefinitions.Add(c3);
-                TextBlock date = new TextBlock { Text = order.date.ToShortDateString(), IsHitTestVisible = false, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
+                TextBlock date = new TextBlock { Text = order.date.ToString(), IsHitTestVisible = false, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
                 Grid.SetColumn(date, 0);
                 orderGrid.Children.Add(date);
                 TextBlock price = new TextBlock { Text = order.TotalPrice.ToString() + " kr", IsHitTestVisible = false, HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
@@ -99,6 +99,11 @@ namespace Pizza_Ani_Time.View
                 else
                 {
                     actionButton.Click += AddToCart_Click;
+                }
+
+                if (action == "Claim")
+                {
+                    actionButton.Background=new SolidColorBrush(Color.FromArgb(153,0,153,0));
                 }
                 actionButton.DataContext = order;
                 Grid.SetColumn(actionButton, 2);

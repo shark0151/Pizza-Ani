@@ -235,5 +235,11 @@ namespace Pizza_Ani_Time.View
             ShoppingList.Items.Clear();
             CreateEmptyLayout("Thank You!");
         }
+
+        private void EmptyCart_OnClick(object sender, RoutedEventArgs e)
+        {
+            viewModel.DeleteShoppingCart();
+            ShoppingList.Items.Clear();
+        }
     }
 }

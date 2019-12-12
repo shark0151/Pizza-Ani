@@ -15,7 +15,7 @@
         <Pivot.Background>
             <ImageBrush ImageSource="../Assets/Background.jpg" Stretch="UniformToFill"></ImageBrush>
         </Pivot.Background>
-        <PivotItem Header="Products">
+        <PivotItem Header="Pizzas">
             <ScrollViewer HorizontalContentAlignment="Center" Padding="25" CornerRadius="10">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -45,6 +45,20 @@
                 </Grid>
             </Grid>
             -->
+                    </controls:UniformGrid>
+                </Grid>
+            </ScrollViewer>
+        </PivotItem>
+        <PivotItem x:Name="Drinks" Header="Drinks">
+            <ScrollViewer HorizontalContentAlignment="Center" Padding="25" CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="200"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <controls:UniformGrid Orientation="Horizontal" Grid.Row="0" x:Name="DrinksGrid" Columns="3" ColumnSpacing="10" RowSpacing="10">
+                       
                     </controls:UniformGrid>
                 </Grid>
             </ScrollViewer>

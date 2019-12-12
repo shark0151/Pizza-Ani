@@ -70,6 +70,7 @@ namespace Pizza_Ani_Time.View
                 Text = item.Price.ToString() + "kr",
                 FontSize = 20,
                 HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
                 FontWeight = FontWeights.Bold,
                 Foreground = new SolidColorBrush(Colors.White)
             };
@@ -109,10 +110,14 @@ namespace Pizza_Ani_Time.View
             Grid.SetRow(description, 2);
             Grid.SetRow(toCart, 3);
             Main.CornerRadius = new CornerRadius(10);
-
-            ProductGrid.Children.Add(Main);
-
-
+            if (item.Category=="Pizza")
+            {
+                ProductGrid.Children.Add(Main);
+            }
+            else if(item.Category=="Drink")
+            {
+                DrinksGrid.Children.Add(Main);
+            }
         }
 
         private void CreatePromoLayout(Product item)
@@ -216,7 +221,7 @@ namespace Pizza_Ani_Time.View
             }
             if (selectitem.Equals("promoPivot"))
             {
-                Pivot.SelectedIndex = 1;
+                Pivot.SelectedIndex = 2;
             }
             //Product page
             try

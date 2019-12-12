@@ -52,7 +52,7 @@ namespace Pizza_Ani_Time.View
 
 
         }
-        private void Create(string action,ListView destination,List<Order> source )
+        private void Create(string action, ListView destination, List<Order> source)
         {
             foreach (var order in source)
             {
@@ -87,7 +87,7 @@ namespace Pizza_Ani_Time.View
                 orderGrid.Children.Add(price);
 
                 Button actionButton = new Button { Content = action, CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Right, Width = 200, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
-                if(destination == activeOrders)
+                if (destination == activeOrders)
                 {
                     actionButton.Click += Claim_Click;
                 }
@@ -98,23 +98,25 @@ namespace Pizza_Ani_Time.View
 
                 if (action == "Claim")
                 {
-                    actionButton.Background=new SolidColorBrush(Color.FromArgb(153,0,153,0));
+                    actionButton.Background = new SolidColorBrush(Color.FromArgb(153, 0, 153, 0));
                 }
                 actionButton.DataContext = order;
                 Grid.SetColumn(actionButton, 2);
                 orderGrid.Children.Add(actionButton);
 
                 //Content
-                ListView itemsListView = new ListView();
+                ListView itemsListView = new ListView { SelectionMode = ListViewSelectionMode.None };
                 foreach (var item in order.Items)
                 {
                     Grid itemsGrid = new Grid();
                     ColumnDefinition cd1 = new ColumnDefinition();
                     ColumnDefinition cd2 = new ColumnDefinition();
                     ColumnDefinition cd3 = new ColumnDefinition();
+                    ColumnDefinition cd4 = new ColumnDefinition();
                     itemsGrid.ColumnDefinitions.Add(cd1);
                     itemsGrid.ColumnDefinitions.Add(cd2);
                     itemsGrid.ColumnDefinitions.Add(cd3);
+                    itemsGrid.ColumnDefinitions.Add(cd4);
                     Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
                     Grid.SetColumn(image, 0);
                     itemsGrid.Children.Add(image);
@@ -124,6 +126,10 @@ namespace Pizza_Ani_Time.View
                     TextBlock t2 = new TextBlock { Text = item.Price.ToString() + " kr", HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
                     Grid.SetColumn(t2, 2);
                     itemsGrid.Children.Add(t2);
+                    Button addToCart = new Button { Content = "Add to cart", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Stretch, MaxWidth = 220, Width = 200, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White), Background = new SolidColorBrush(Color.FromArgb(153, 153, 153, 153)) };
+                    addToCart.Click += AddToCart_Click2;
+                    Grid.SetColumn(addToCart, 3);
+                    itemsGrid.Children.Add(addToCart);
                     ListViewItem listViewItem = new ListViewItem
                     {
                         HorizontalContentAlignment = HorizontalAlignment.Stretch,
@@ -173,6 +179,12 @@ namespace Pizza_Ani_Time.View
                 viewModel.AddItemToCart(item);
             }
             //should display a message or go to cart
+        }
+
+        private void AddToCart_Click2(object sender, RoutedEventArgs e)
+        {
+            Product item = (sender as Button).DataContext as Product;
+            viewModel.AddItemToCart(item);
         }
 
         private void Claim_Click(object sender, RoutedEventArgs e)

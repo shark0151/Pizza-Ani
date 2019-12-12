@@ -128,6 +128,7 @@ namespace Pizza_Ani_Time.View
                     itemsGrid.Children.Add(t2);
                     Button addToCart = new Button { Content = "Add to cart", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Stretch, MaxWidth = 220, Width = 200, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White), Background = new SolidColorBrush(Color.FromArgb(153, 153, 153, 153)) };
                     addToCart.Click += AddToCart_Click2;
+                    addToCart.DataContext = item;
                     Grid.SetColumn(addToCart, 3);
                     itemsGrid.Children.Add(addToCart);
                     ListViewItem listViewItem = new ListViewItem

@@ -230,6 +230,7 @@ namespace Pizza_Ani_Time.View
         {
             viewModel.DeleteShoppingCart();
             ShoppingList.Items.Clear();
+            CreateEmptyLayout("Cart Emptied");
         }
     }
 }

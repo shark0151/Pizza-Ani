@@ -71,7 +71,7 @@ namespace Pizza_Ani_Time.View
                 {
                     Height = 40,
                     VerticalAlignment = VerticalAlignment.Top,
-                    Padding = new Thickness(100, 0, 10, 0),
+                    Padding = new Thickness(100, 0, 10, 0)
                 };
                 ColumnDefinition c1 = new ColumnDefinition { MinWidth = 100 };
                 ColumnDefinition c2 = new ColumnDefinition { MinWidth = 100 };
@@ -112,11 +112,19 @@ namespace Pizza_Ani_Time.View
                     ColumnDefinition cd1 = new ColumnDefinition();
                     ColumnDefinition cd2 = new ColumnDefinition();
                     ColumnDefinition cd3 = new ColumnDefinition();
-                    ColumnDefinition cd4 = new ColumnDefinition();
                     itemsGrid.ColumnDefinitions.Add(cd1);
                     itemsGrid.ColumnDefinitions.Add(cd2);
                     itemsGrid.ColumnDefinitions.Add(cd3);
-                    itemsGrid.ColumnDefinitions.Add(cd4);
+                    if (destination != activeOrders)
+                    {
+                        ColumnDefinition cd4 = new ColumnDefinition();
+                        itemsGrid.ColumnDefinitions.Add(cd4);
+                        Button addToCart = new Button { Content = "Add to cart", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Stretch, MaxWidth = 220, Width = 200, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
+                        addToCart.Click += AddToCart_Click2;
+                        addToCart.DataContext = item;
+                        Grid.SetColumn(addToCart, 3);
+                        itemsGrid.Children.Add(addToCart);
+                    }
                     Image image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
                     Grid.SetColumn(image, 0);
                     itemsGrid.Children.Add(image);
@@ -126,11 +134,6 @@ namespace Pizza_Ani_Time.View
                     TextBlock t2 = new TextBlock { Text = item.Price.ToString() + " kr", HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White) };
                     Grid.SetColumn(t2, 2);
                     itemsGrid.Children.Add(t2);
-                    Button addToCart = new Button { Content = "Add to cart", CornerRadius = new CornerRadius(5), HorizontalAlignment = HorizontalAlignment.Stretch, MaxWidth = 220, Width = 200, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Colors.White), Background = new SolidColorBrush(Color.FromArgb(153, 153, 153, 153)) };
-                    addToCart.Click += AddToCart_Click2;
-                    addToCart.DataContext = item;
-                    Grid.SetColumn(addToCart, 3);
-                    itemsGrid.Children.Add(addToCart);
                     ListViewItem listViewItem = new ListViewItem
                     {
                         HorizontalContentAlignment = HorizontalAlignment.Stretch,

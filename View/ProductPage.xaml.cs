@@ -23,16 +23,13 @@ using Microsoft.Toolkit.Uwp.UI.Animations.Behaviors;
 using Microsoft.Xaml.Interactivity;
 using Color = System.Drawing.Color;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Pizza_Ani_Time.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class ProductPage : Page
     {
         public PizzaViewModel viewModel;
+
+        private string selectitem = null; //From main page to promo
 
         private void CreateProductLayout(Product item)
         {
@@ -143,10 +140,11 @@ namespace Pizza_Ani_Time.View
             myGrid.Padding = new Thickness(0, 10, 0, 0);
             Main.Children.Add(myGrid);
 
-            Image Image = new Image { Source = new BitmapImage(new Uri("ms-appx:///"+ item.Image)) };
+            Image Image = new Image { Source = new BitmapImage(new Uri("ms-appx:///" + item.Image)) };
             Grid imageGrid = new Grid
             {
-                HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center
             };
             imageGrid.Children.Add(Image);
             imageGrid.CornerRadius = new CornerRadius(5);
@@ -201,17 +199,25 @@ namespace Pizza_Ani_Time.View
             toCartButton.DataContext = item; //important
 
             myGrid.Children.Add(toCartButton);
-            
+
             Promotions.Children.Add(Main);
         }
         public ProductPage()
         {
             this.InitializeComponent();
-
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
+            //From main page to promo
+            if (e.Parameter != null)
+            {
+                string getdata = e.Parameter.ToString();
+                selectitem = getdata;
+            }
+            if (selectitem.Equals("promoPivot"))
+            {
+                Pivot.SelectedIndex = 1;
+            }
             //Product page
             try
             {
@@ -231,8 +237,6 @@ namespace Pizza_Ani_Time.View
             {
                 LayoutError();
             }
-
-            
         }
         private async void LayoutError()  //Error message
         {

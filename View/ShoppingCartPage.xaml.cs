@@ -12,13 +12,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Pizza_Ani_Time.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class ShoppingCartPage : Page
     {
         public PizzaViewModel viewModel;
@@ -48,7 +43,7 @@ namespace Pizza_Ani_Time.View
             ColumnDefinition col2 = new ColumnDefinition();
             ColumnDefinition col3 = new ColumnDefinition();
             ColumnDefinition col4 = new ColumnDefinition();
-            ColumnDefinition col5 = new ColumnDefinition {Width = new GridLength(200)};
+            ColumnDefinition col5 = new ColumnDefinition { Width = new GridLength(200) };
             Main.ColumnDefinitions.Add(col0);
             Main.ColumnDefinitions.Add(col1);
             Main.ColumnDefinitions.Add(col2);
@@ -173,7 +168,7 @@ namespace Pizza_Ani_Time.View
                 Cart.Children.Add(mainMain);
             }
 
-            
+
         }
         public ShoppingCartPage()
         {
@@ -195,7 +190,6 @@ namespace Pizza_Ani_Time.View
 
                 }
 
-
             }
             catch
             {
@@ -203,17 +197,13 @@ namespace Pizza_Ani_Time.View
             }
             Total.DataContext = viewModel;
         }
-        private async void EmptyCardMessage()  //Error message
-        {
-            var messageDialog = new MessageDialog("Put some pizzas in your card :D");
-            await messageDialog.ShowAsync();
-        }
 
         private async void LayoutError()  //Error message
         {
             var messageDialog = new MessageDialog("Failed to crate layout");
             await messageDialog.ShowAsync();
         }
+
         private void RemoveItem_Click(object sender, RoutedEventArgs e)
         {
             //Get the product from the button as a product object;

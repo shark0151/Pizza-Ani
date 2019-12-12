@@ -14,26 +14,14 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
 
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Pizza_Ani_Time.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class ContactUs : Page
     {
         public ContactUs()
         {
             this.InitializeComponent();
         }
-
-        private void SendMail_Click(object sender, RoutedEventArgs e)
-        {
-            this.InitializeComponent();
-        }
-
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {

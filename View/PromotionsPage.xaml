@@ -62,17 +62,17 @@
                 <FlipView x:Name="FlipView">
                     <Grid CornerRadius="10">
                         <Image Source="../Assets/Products/pr_Offer1.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></Image>
-                        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" CornerRadius="10"></Button>
+                        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" CornerRadius="10" Click="GoToPromo"></Button>
                     </Grid>
 
                     <Grid CornerRadius="10">
                         <Image Source="../Assets/Products/pr_Offer2.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></Image>
-                        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" CornerRadius="10"></Button>
+                        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" CornerRadius="10" Click="GoToPromo"></Button>
                     </Grid>
 
                     <Grid CornerRadius="10">
                         <Image  Source="../Assets/Products/pr_Offer3.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></Image>
-                        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" CornerRadius="10"></Button>
+                        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" CornerRadius="10" Click="GoToPromo"></Button>
                     </Grid>
                 </FlipView>
             </controls:TileControl>

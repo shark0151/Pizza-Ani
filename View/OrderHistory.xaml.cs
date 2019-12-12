@@ -20,13 +20,8 @@ using Pizza_Ani_Time.Model;
 using Pizza_Ani_Time.ViewModel;
 using Windows.UI.Text;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Pizza_Ani_Time.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class OrderHistory : Page
     {
         public PizzaViewModel viewModel;

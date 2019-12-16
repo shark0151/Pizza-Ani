@@ -220,10 +220,17 @@ namespace Pizza_Ani_Time.View
 
         private void Checkout_OnClick(object sender, RoutedEventArgs e)
         {
-            viewModel.CreateOrder();
-            viewModel.DeleteShoppingCart();
-            ShoppingList.Items.Clear();
-            CreateEmptyLayout("Thank You!");
+            if (ShoppingList.Items.Count!=0)
+            {
+                viewModel.CreateOrder();
+                viewModel.DeleteShoppingCart();
+                ShoppingList.Items.Clear();
+                CreateEmptyLayout("Thank You!");
+            }
+            else
+            {
+                EmptyError();
+            }
         }
 
         private void EmptyCart_OnClick(object sender, RoutedEventArgs e)
@@ -231,6 +238,12 @@ namespace Pizza_Ani_Time.View
             viewModel.DeleteShoppingCart();
             ShoppingList.Items.Clear();
             CreateEmptyLayout("Cart Emptied");
+        }
+
+        private async void EmptyError()
+        {
+            MessageDialog md = new MessageDialog("Cart is empty!");
+            await md.ShowAsync();
         }
     }
 }

@@ -24,27 +24,7 @@
                     </Grid.RowDefinitions>
 
                     <controls:UniformGrid Orientation="Horizontal" Grid.Row="0" x:Name="ProductGrid" Columns="3" ColumnSpacing="10" RowSpacing="10">
-                        <!--
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Image Grid.Row="0" Source="../Assets/Products/pz_Chicago.png"></Image>
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Text="50kr" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" ></TextBlock>
-                    <TextBlock Grid.Row="1" Text="Super Pizza" HorizontalAlignment="Center" FontSize="50" FontWeight="Light" ></TextBlock>
-                    <TextBlock Grid.Row="2" Text="Wow!" HorizontalAlignment="Center" FontSize="30" FontWeight="Light" ></TextBlock>
-                    <Button Grid.Row="3" Content="Add to Cart"  HorizontalAlignment="Center" Click="AddToCart_Click"></Button>
-                </Grid>
-            </Grid>
-            -->
+                        
                     </controls:UniformGrid>
                 </Grid>
             </ScrollViewer>

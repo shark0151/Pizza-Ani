@@ -20,9 +20,7 @@
             <ColumnDefinition Width="*" MinWidth="200"/>
         </Grid.ColumnDefinitions>
         <Grid Column="0">
-            <!--  <Grid.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/wood4.jpg"/>
-            </Grid.Background> -->
+            
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="300"/>
@@ -79,68 +77,5 @@
         </Grid>
     </Grid>
 
-    <!--<Grid>
-        <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="../Assets/pizza-wallpaper-phone-amazing-wallpapers-in-2018-pinterest.jpg"/>
-        </Grid.Background>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="300"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Grid Margin="50" Grid.Row="0" HorizontalAlignment="Center">
-            <Image Source="../Assets/picturetopeople.org-5e221c24fbbc8153ce9063bbe1c842f414aaafe969453d36e0.png" Width="180" Height="160" VerticalAlignment="Top" ></Image>
-            <Image Source="../Assets/picturetopeople.org-2e26c0cafbeefad4fe8af17057fd49ef9eeef681f19a519b09.png" Width="180" Height="100" VerticalAlignment="Bottom"   ></Image>
-            <Image Source="../Assets/LOGO.png" Width="150" Height="150" ></Image>
-        </Grid>
-
-
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <Grid Grid.Column="0">
-                <Grid Margin="50" Background="White" CornerRadius="10,10,10,10" >
-                    <TextBlock
-                           
-                           VerticalAlignment="Top" 
-                           FontFamily="Garamond" 
-                           TextWrapping="WrapWholeWords"
-                           Text="Delicious food at reasonable prices? We have it! At Pizza Ani-time we keep the standards up with our fresh and high quality products. Get ready to choose your preferences from our diversity of pizzas "
-                           Foreground="Black" 
-                           FontSize="30" >
-                    </TextBlock>
-                </Grid>
-            </Grid>
-
-            <Grid Grid.Column="1" Margin="130.5,0,130.5,50">
-                <TextBlock Grid.Row="2"
-                           HorizontalAlignment="Center"
-                           FontSize="20"
-                           Text="It can also be used for background painting:" />
-
-                <controls:TileControl Grid.Row="3"
-                                      Background="DarkGray"
-                                      ParallaxSpeedRatio="1.2"
-                                      ScrollViewerContainer="{Binding ElementName=FlipView, Mode=OneTime}">
-                    <FlipView x:Name="FlipView">
-                        <Border>
-                            <Grid>
-                                <Image Source="../Assets/1 pizza 1 drink.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
-                            </Grid>
-                        </Border>
-
-                        <Border>
-                            <Grid>
-                                <Image Source="../Assets/2 pizzas 2 drinks.jpg"></Image>
-                            </Grid>
-                        </Border>
-                    </FlipView>
-                </controls:TileControl>
-            </Grid>
-        </Grid>
-    </Grid> -->
+    
 </Page>

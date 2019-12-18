@@ -65,40 +65,6 @@
                 </TextBlock>
             </Grid>
 
-            <!--
-            <ListView>
-                <ListViewItem>
-                    <controls:Expander>
-                        <ListView>
-                            <ListViewItem>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition></ColumnDefinition>
-                                        <ColumnDefinition></ColumnDefinition>
-                                        <ColumnDefinition></ColumnDefinition>
-                                        <ColumnDefinition></ColumnDefinition>
-                                        <ColumnDefinition></ColumnDefinition>
-                                        <ColumnDefinition></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="../Assets/Products/pz_Chicago.png"></Image>
-                                    <Grid Grid.Column="1" Grid.ColumnSpan="2">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition></RowDefinition>
-                                            <RowDefinition></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Grid.Row="0"  Text="Super Pizza" HorizontalAlignment="Center" FontSize="50" FontWeight="Light" ></TextBlock>
-                                        <TextBlock Grid.Row="1" Text="Wow!" HorizontalAlignment="Center" FontSize="30" FontWeight="Light" ></TextBlock>
-                                    </Grid>
-
-                                    <Button Grid.Column="5"   Content="Remove from Cart"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10"></Button>
-                                </Grid>
-                            </ListViewItem>
-                        </ListView>
-                    </controls:Expander>
-
-                </ListViewItem>
-            </ListView>
-            -->
         </Grid>
         </ScrollViewer>
     </Grid>
